@@ -3,10 +3,10 @@ import CategorySegment from "./CategorySegment";
 
 const Homepage = () => {
   return (
-    <>
+    <section className=" text-primaryBlue">
       {/* <HeroSegment /> */}
       <CategorySegment />
-    </>
+    </section>
   );
 };
 
