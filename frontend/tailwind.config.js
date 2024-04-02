@@ -2,16 +2,16 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 
-  colors: {
-    transparent: "transparent",
-    bodybg: "#FFF9EF",
-    primaryBlue: "#1C244B",
-    hoverBlue: "#4D5A96",
-    bgLightBlue: "#D9DFED",
-    bgLightPink: "#EDDAD9",
-  },
-  extend: {
-    theme: {
+  theme: {
+    extend: {
+      colors: {
+        "transparent": "transparent",
+        "bodybg": "#FFF9EF",
+        "primaryBlue": "#1C244B",
+        "hoverBlue": "#4D5A96",
+        "bgLightBlue": "#D9DFED",
+        "bgLightPink": "#EDDAD9",
+      },
       screens: {
         xmd: "780px", //Window size for tablet
       },
@@ -129,5 +129,6 @@ export default {
       },
     },
   },
+
   plugins: [],
 };
