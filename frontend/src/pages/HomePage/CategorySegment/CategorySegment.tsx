@@ -4,11 +4,11 @@ const CategorySegment = () => {
   console.log("This is only for github testing");
   return (
     <>
-      <section>
+      <section className=" bg-bgLightBlue h-90vh px-10vw py-5vh">
         <SortByPanel />
-        <div id="container">
-          <h1 className=" text-lg">
-            WE HAVE SOMETHING FOR EVERYONE IN THIS WORLD
+        <div id="container" className=" ">
+          <h1 className=" text-primaryBlue text-3xl font-bold w-50%">
+            WE HAVE SOMETHING FOR EVERYONE
           </h1>
         </div>
       </section>
