@@ -1,10 +1,10 @@
 import CategorySegment from "./CategorySegment";
-import HeroSegment from "./HeroSegment";
+// import HeroSegment from "./HeroSegment";
 
 const Homepage = () => {
   return (
     <>
-      <HeroSegment />
+      {/* <HeroSegment /> */}
       <CategorySegment />
     </>
   );

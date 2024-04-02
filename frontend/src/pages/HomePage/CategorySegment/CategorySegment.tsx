@@ -1,5 +1,14 @@
+import SortByPanel from "../SortByPanel";
+
 const CategorySegment = () => {
-  return <div>CategorySegment</div>;
+  return (
+    <>
+      <section>
+        <SortByPanel />
+        <div id="container"></div>
+      </section>
+    </>
+  );
 };
 
 export default CategorySegment;
