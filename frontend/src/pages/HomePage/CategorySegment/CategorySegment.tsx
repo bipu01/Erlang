@@ -6,7 +6,9 @@ const CategorySegment = () => {
       <section>
         <SortByPanel />
         <div id="container">
-          <h1 className=" text-lg">WE HAVE SOMETHING FOR EVERYONE</h1>
+          <h1 className=" text-lg">
+            WE HAVE SOMETHING FOR EVERYONE IN THIS WORLD
+          </h1>
         </div>
       </section>
     </>
