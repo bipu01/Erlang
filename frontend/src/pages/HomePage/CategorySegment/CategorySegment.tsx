@@ -1,6 +1,7 @@
 import SortByPanel from "../SortByPanel";
 
 const CategorySegment = () => {
+  console.log("This is only for github testing");
   return (
     <>
       <section>
