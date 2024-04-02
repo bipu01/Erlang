@@ -1,5 +1,5 @@
 const SortByPanel = () => {
-  return <div>SortByPanel</div>;
+  return <section className=" mb-5vh">SortByPanel</section>;
 };
 
 export default SortByPanel;

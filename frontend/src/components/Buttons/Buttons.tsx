@@ -11,5 +11,12 @@ export const TertiaryButton = () => {
 };
 
 export const AddToCartButton = () => {
-  return <div>AddToCartButton</div>;
+  return (
+    <>
+      <button className=" bg-primaryBlue text-bodybg py-2 px-5 rounded-md flex gap-2">
+        Add to cart
+        <img src="/icons/whiteCartMedium.svg" alt="whiteCart" />
+      </button>
+    </>
+  );
 };

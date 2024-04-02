@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
   return <div>
     <div className="  flex justify-around sm:justify-between items-center pt-1 px-2 sm:px-5 md:px-10 bg-bodybg">
       <div className="">
@@ -39,6 +40,7 @@ const Navbar = () => {
       <div className=" bg-black opacity-60 w-[95%] h-[1px] sm:h-[2px] "></div>
     </div>
   </div>;
+
 };
 
 export default Navbar;
