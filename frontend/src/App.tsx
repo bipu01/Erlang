@@ -1,10 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
 import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import CartPage from "./pages/CartPage";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import HeroSegment from "./pages/HomePage/HeroSegment";
+// import Footer from "./Footer";
+
 
 function App() {
   return (
@@ -12,12 +14,14 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HeroSegment/>}/>
           <Route path="/aboutUs" element={<AboutUsPage />} />
           <Route path="/contactUs" element={<ContactUsPage />} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
-        <Footer />
+
+        {/* <Footer /> */}
+
       </BrowserRouter>
     </>
   );
