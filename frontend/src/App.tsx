@@ -1,9 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HeroPage from "./pages/HomePage/HeroSegment";
+
 function App() {
   return (
     <>
-      <div>
-        <h1 className=" p-4">Hello world</h1>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HeroPage />} />
+          <Route path="/" element={<HeroPage />} />
+          <Route path="/" element={<HeroPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
