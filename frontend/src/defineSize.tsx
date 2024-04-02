@@ -1,1 +1,1 @@
-export const paddingForPage = `px-15vw  lg:px-25%`;
+export const paddingForPage = `px-15vw  lg:px-15%`;
