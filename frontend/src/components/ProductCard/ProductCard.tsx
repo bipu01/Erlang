@@ -1,5 +1,5 @@
 const ProductCard = () => {
-  return <div>ProductCard</div>;
+  return <div>ProductCardProductCardProductCardProductCardProductCard</div>;
 };
 
 export default ProductCard;
