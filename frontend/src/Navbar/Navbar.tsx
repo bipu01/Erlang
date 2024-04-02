@@ -1,13 +1,13 @@
 const Navbar = () => {
-  return <div>
-    <div className="">
+  return (
+    <div>
       <div className="">
-        <img src="./logos/logo.svg" alt="" />
-        this is test 
-        sunel isdkfjd
+        <div className="">
+          <img src="./logos/logo.svg" alt="" />
+        </div>
       </div>
     </div>
-  </div>;
+  );
 };
 
 export default Navbar;
