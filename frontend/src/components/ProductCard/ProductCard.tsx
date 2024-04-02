@@ -33,5 +33,5 @@ export const ProductCardRight = (prop: ProductCardProp) => {
   );
 };
 export const ProductCardLeft = () => {
-  return <div>ProductCardLeft</div>;
+  return <div>ProductCardLefteyyyyy</div>;
 };
