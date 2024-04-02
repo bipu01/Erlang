@@ -5,7 +5,9 @@ const CategorySegment = () => {
     <>
       <section>
         <SortByPanel />
-        <div id="container"></div>
+        <div id="container">
+          <h1 className=" text-lg">WE HAVE SOMETHING FOR EVERYONE</h1>
+        </div>
       </section>
     </>
   );
