@@ -13,7 +13,7 @@ export default {
         "bgLightPink": "#EDDAD9",
       },
       screens: {
-        xmd: "780px", //Window size for tablet
+        "xmd": "780px", //Window size for tablet
       },
       spacing: {
         "1%": "1%",
