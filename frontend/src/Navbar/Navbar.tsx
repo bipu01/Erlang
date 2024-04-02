@@ -3,6 +3,7 @@ const Navbar = () => {
     <div className="">
       <div className="">
         <img src="./logos/logo.svg" alt="" />
+        this is test 
       </div>
     </div>
   </div>;
