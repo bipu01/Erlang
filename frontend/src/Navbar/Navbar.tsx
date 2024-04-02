@@ -4,7 +4,6 @@ const Navbar = () => {
       <div className="">
         <img src="./logos/logo.svg" alt="" />
       </div>
-      {/* made changes */}
     </div>
   </div>;
 };
