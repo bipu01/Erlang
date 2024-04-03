@@ -1,13 +1,13 @@
-import { ProductCardProp } from "../../declare";
+import { ProductCardProp, productClusterProp } from "../../declare";
 import { AddToCartButton } from "../Buttons/Buttons";
 
 export const ProductCardRightImg = (prop: ProductCardProp) => {
   return (
-    <div className="bg-slate-500  row-span-3 mt-6 3xl:mt-10 relative shadow-md">
+    <div className="bg-slate-500 row-span-2 mt-6 3xl:mt-10 relative shadow-md">
       <div className="after:content-[''] after:absolute after:-top-6 after:z-20  after:w-100% after:h-6 after:bg-bodybg"></div>
-      <div className="absolute z-30 -top-3% flex w-100% gap-30% left-25%">
-        <div className=" w-12 h-12 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
-        <div className=" w-12 h-12 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
+      <div className="absolute z-30 -top-3% 4xl:-top-1% flex w-100% gap-30% left-25%">
+        <div className="  lg:w-10 lg:h-10 w-8 h-8 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
+        <div className="  lg:w-10 lg:h-10 w-8 h-8 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
       </div>
       <img
         className="h-100% w-100% object-cover relative z-20"
@@ -20,9 +20,9 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
 export const ProductCardLeftImg = (prop: ProductCardProp) => {
   return (
     <div className=" bg-slate-500 row-span-3 mb-6 3xl:mb-10 over relative shadow-md">
-      <div className="absolute z-30 -bottom-3% flex w-100% gap-30% left-25%">
-        <div className=" w-12 h-12 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
-        <div className=" w-12 h-12 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
+      <div className="absolute z-30 -bottom-3% 4xl:-bottom-1% flex w-100% gap-30% left-25%">
+        <div className=" lg:w-10 lg:h-10 w-8 h-8 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
+        <div className=" lg:w-10 lg:h-10 w-8 h-8 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner"></div>
       </div>
       <img
         className="w-100% h-100% object-cover relative z-20"
@@ -33,7 +33,7 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
   );
 };
 
-export const ProductCardLeftData = (prop: ProductCardProp) => {
+export const DataOfLeftImg = (prop: ProductCardProp) => {
   return (
     <div
       className={` shadow-md relative z-10 bg-bodybg p-4 rounded-tr-full rounded-br-full row-span-1 pr-20%  xl:px-0% py-2% lg:py-4% space-y-5% 
@@ -43,6 +43,7 @@ export const ProductCardLeftData = (prop: ProductCardProp) => {
         className={`space-y-1 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:bg-black after:opacity-20 after:z-40 
                     before:absolute before:content-[''] before:h-100% before:w-4 before:bg-bodybg before:-left-2 before:z-30 before:top-0`}
       >
+        <div className="absolute lg:w-10 lg:h-10 w-8 h-8 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner -top-4% 4xl:-top-3% 4xl:right-10% right-7% lg:right-10%"></div>
         <h3
           id="productName"
           className=" text-md lg:text-xl 2xl:text-2xl 3xl:text-3xl font-semibold whitespace-nowrap "
@@ -69,12 +70,13 @@ export const ProductCardLeftData = (prop: ProductCardProp) => {
     </div>
   );
 };
-export const ProductCardRightData = (prop: ProductCardProp) => {
+export const DataOfRightImg = (prop: ProductCardProp) => {
   return (
     <div className="shadow-md pr-2 relative z-20 bg-bodybg rounded-tl-full rounded-bl-full row-span-1 pl-20% py-2% lg:py-4% space-y-5% after:content-[''] after:absolute after:-top-0 after:shadow-md after:left-100% after:z-20 after:w-130% after:h-100% after:bg-bodybg">
       <div
         className={`space-y-1 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:bg-black after:opacity-20 after:z-40 before:absolute before:content-[''] before:h-100% before:w-4 before:bg-bodybg before:-right-2 before:z-30 before:top-0`}
       >
+        <div className="absolute lg:w-10 lg:h-10 w-8 h-8 bg-bgLightBlue rounded-full border-6 border-bodybg shadow-inner -top-4% 4xl:-top-3% 4xl:left-10% left-5% lg:left-10%"></div>
         <h3
           id="productName"
           className=" text-md lg:text-xl 2xl:text-2xl 3xl:text-3xl font-semibold relative z-20 "
@@ -103,29 +105,29 @@ export const ProductCardRightData = (prop: ProductCardProp) => {
 };
 
 //This includes group of two product arranged in grid
-export const ProductCluster = () => {
+export const ProductCluster = ({ product1, product2 }: productClusterProp) => {
   return (
     <div className="grid grid-cols-2 gap-10% overflow-x-clip">
       <div className="grid grid-rows-3 ">
         <div className="row-span-1 grid grid-rows-2">
-          <ProductCardRightData
-            ProductName="Draggy Hose with droppy strings"
-            rating={4.5}
-            price={4500}
+          <DataOfRightImg
+            ProductName={product1.ProductName}
+            rating={product1.rating}
+            price={product1.price}
           />
           <div className=" row-span-1"></div>
         </div>
-        <ProductCardLeftImg imgSrc="/assets/Dress/Pinterest image (6).jpeg" />
+        <ProductCardLeftImg imgSrc={product1.imgSrc} />
       </div>
 
       <div className="grid grid-rows-3 ">
-        <ProductCardRightImg imgSrc="/assets/Dress/Co Fall 2019 Fashion Show.jpeg" />
+        <ProductCardRightImg imgSrc={product2.imgSrc} />
         <div className="row-span-1 grid grid-rows-2">
           <div className=" row-span-1"></div>
-          <ProductCardLeftData
-            ProductName="Fancy Blue skirt"
-            rating={4.5}
-            price={5000}
+          <DataOfLeftImg
+            ProductName={product2.ProductName || ""}
+            rating={product2.rating || 0}
+            price={product2.price || 0}
           />
         </div>
       </div>
