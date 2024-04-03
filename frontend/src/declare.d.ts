@@ -1,4 +1,5 @@
 export type ProductCardProp ={
+    holeColor?:string,
     ProductName?:string,
     rating?: number,
     price?:number,
@@ -11,6 +12,7 @@ export type buttonProp={
 }
 
 export type productClusterProp ={
+    color:string,
     product1:{
         ProductName?:string,
         rating?: number,
