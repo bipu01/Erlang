@@ -1,3 +1,4 @@
+import PageBreakLine from "../../../../components/PageBreakLine";
 import { ProductCluster } from "../../../../components/ProductCard/ProductCard";
 import { paddingForPage } from "../../../../defineSize";
 // import SortByPanel from "../../SortByPanel";
@@ -7,7 +8,7 @@ const jewellery = () => {
   return (
     <>
       <div className="relative mt-20vh">
-        <img src="/assets/weavyArchPink.svg" alt="wave" className="" />
+        <img src="/assets/weavyArchPink.svg" alt="wave" className="w-100vw" />
         {/* <div className="absolute z-10 top-60% ">
           <SortByPanel />
         </div> */}
@@ -32,15 +33,7 @@ const jewellery = () => {
           />
         </div>
       </section>
-      <div className="space-y-2 relative">
-        <div className=" w-100% h-1 bg-lineColor"></div>
-        <div className=" w-100% h-1 bg-lineColor"></div>
-        <img
-          src="/icons/lineDesign.svg"
-          alt=""
-          className="absolute h-12 -top-6 left-40%"
-        />
-      </div>
+      <PageBreakLine />
     </>
   );
 };

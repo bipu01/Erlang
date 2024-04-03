@@ -3,9 +3,10 @@ import { paddingForPage } from "../../../defineSize";
 
 const SortByPanel = () => {
   return (
-    <section className={` mb-10vh space-y-9 w-100vw  ${paddingForPage}`}>
-      {/* px-2% xmd:px-10vw xl:px-15% 2xl:px-20% */}
-      <div className="py-4 px-4 rounded-sm bg-bodybg space-x-4">
+    <section
+      className={`mb-10vh space-y-4 sm:space-y-9 w-100vw  ${paddingForPage}`}
+    >
+      <div className="py-2 xmd:py-4 px-3 xmd:px-4 rounded-sm bg-bodybg flex justify-between sm:block sm:space-x-4 ">
         <OptionsPanelBtn active={true} text="All" />
         <OptionsPanelBtn text="Clothing" />
         <OptionsPanelBtn text="Jewellery" />

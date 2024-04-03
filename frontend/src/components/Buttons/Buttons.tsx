@@ -27,7 +27,7 @@ export const OptionsPanelBtn = (prop: buttonProp) => {
   if (prop.active) {
     return (
       <>
-        <button className="bg-primaryBlue text-bodybg py-1 px-8 rounded-sm">
+        <button className="bg-primaryBlue text-bodybg py-1 px-4 xmd:px-8  rounded-sm">
           {prop.text}
         </button>
       </>
@@ -35,7 +35,7 @@ export const OptionsPanelBtn = (prop: buttonProp) => {
   }
   return (
     <>
-      <button className=" bg-bgLightBlue text-primaryBlue py-1 px-8 rounded-sm">
+      <button className=" bg-bgLightBlue text-primaryBlue py-1 px-4 xmd:px-8 rounded-sm">
         {prop.text}
       </button>
     </>

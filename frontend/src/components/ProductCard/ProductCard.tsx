@@ -135,24 +135,24 @@ export const ProductCluster = ({
   color,
 }: productClusterProp) => {
   return (
-    <div className="grid grid-cols-2 gap-10% overflow-x-clip">
-      <div className="grid grid-rows-3 ">
-        <div className="row-span-1 grid grid-rows-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10% overflow-x-clip">
+      <div className="grid sm:grid-rows-3 ">
+        <div className="sm:row-span-1 sm:grid sm:grid-rows-2">
           <DataOfRightImg
             holeColor={color}
             ProductName={product1.ProductName}
             rating={product1.rating}
             price={product1.price}
           />
-          <div className=" row-span-1"></div>
+          <div className=" sm:row-span-1"></div>
         </div>
         <ProductCardLeftImg holeColor={color} imgSrc={product1.imgSrc} />
       </div>
 
-      <div className="grid grid-rows-3 ">
+      <div className="sm:grid sm:grid-rows-3 ">
         <ProductCardRightImg holeColor={color} imgSrc={product2.imgSrc} />
-        <div className="row-span-1 grid grid-rows-2">
-          <div className=" row-span-1"></div>
+        <div className="sm:row-span-1 sm:grid sm:grid-rows-2">
+          <div className=" sm:row-span-1"></div>
           <DataOfLeftImg
             holeColor={color}
             ProductName={product2.ProductName || ""}

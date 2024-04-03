@@ -7,7 +7,7 @@ const Footwear = () => {
   return (
     <>
       <div className="relative mt-20vh">
-        <img src="/assets/weavyArch.svg" alt="wave" className="" />
+        <img src="/assets/weavyArch.svg" alt="wave" className="w-100vw" />
         {/* <div className="absolute z-10 top-60% ">
           <SortByPanel />
         </div> */}
