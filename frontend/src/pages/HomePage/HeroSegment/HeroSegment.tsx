@@ -36,6 +36,13 @@ const HeroSegment = () => {
               <img className="w-full h-full object-cover object-top" src="./assets/image3.png" alt="" />
             </div>
           </div>
+          <div className=" text-xl text-primaryBlue opacity-80">
+            <p>
+              "Experience the ultimate in luxury and comfort with our
+              handcrafted clothing, tailored to your unique measurements and
+              preferences."
+            </p>
+          </div>
         </div>
       </div>
       <div className=" flex mx-2 sm:mx-16 mt-2 sm:mt-8 gap-10 sm:gap-12 ">
@@ -46,7 +53,6 @@ const HeroSegment = () => {
           <button>Watch Video</button>
         </div>
       </div>
-      {/* this is test */}
     </div>
   </div>;
 
