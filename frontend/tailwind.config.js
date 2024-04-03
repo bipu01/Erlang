@@ -18,6 +18,7 @@ export default {
       screens: {
         "xmd": "780px", //Window size for tablet
         "3xl": "1500px", //window size for 4k display
+        "4xl": "2400px", //window size for 4k display
       },
       spacing: {
         "1%": "1%",
