@@ -14,6 +14,7 @@ export default {
         "hoverBlue": "#4D5A96",
         "bgLightBlue": "#D9DFED",
         "bgLightPink": "#EDDAD9",
+        "lineColor": "#EDE6D9",
       },
       screens: {
         "xmd": "780px", //Window size for tablet
