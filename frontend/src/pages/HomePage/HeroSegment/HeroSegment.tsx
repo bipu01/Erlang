@@ -1,7 +1,7 @@
 import { paddingForPage } from "../../../defineSize"
 export default function HeroSegment() {
   return (
-    <div className={` bg-bodybg  ${paddingForPage}`}>
+    <div className={`  bg-bodybg  ${paddingForPage}`}>
       {/* main grid */}
       <div className=" grid sm:grid-cols-5  sm:gap-4 py-8">
         {/* left image */}
@@ -12,7 +12,7 @@ export default function HeroSegment() {
         <div className=" col-span-3 grid grid-rows-2 ">
           <div className=" grid grid-flow-col  sm:grid-rows-2 order-last sm:order-none">
             <div className="">
-              <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl xl:text-5xl text-primaryBlue font-semibold  xl:leading-loose">CRAFTED FOR THE <span className=" text-bodybg sm:text-primaryBlue">DISCERNING INDIVIDUAL</span></p>
+              <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl xl:text-5xl text-primaryBlue font-semibold  xl:leading-normal">CRAFTED FOR THE <span className=" text-bodybg sm:text-primaryBlue">DISCERNING INDIVIDUAL</span></p>
             </div>
             <div className="">
               <p className="xmd:text-xl xl:text-2xl text-primaryBlue opacity-70">"Experience the ultimate in luxury and comfort with our handcrafted clothing, tailored to your unique measurements and preferences."</p>
