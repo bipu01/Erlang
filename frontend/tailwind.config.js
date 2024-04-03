@@ -4,6 +4,9 @@ export default {
 
   theme: {
     extend: {
+      borderWidth: {
+        "6": "6px",
+      },
       colors: {
         "transparent": "transparent",
         "bodybg": "#FFF9EF",
