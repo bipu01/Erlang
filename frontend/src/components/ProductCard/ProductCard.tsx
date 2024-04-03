@@ -99,7 +99,7 @@ export const ProductCardRightData = (prop: ProductCardProp) => {
 export const ProductCluster = () => {
   return (
     <div className="grid grid-cols-2 gap-10% overflow-hidden ">
-      <div className="grid grid-rows-3 s">
+      <div className="grid grid-rows-3 ">
         <div className="row-span-1 grid grid-rows-2">
           <ProductCardRightData
             ProductName="Draggy Hose with droppy strings"
