@@ -1,62 +1,41 @@
-const HeroSegment = () => {
-  return <div>
-    <div className=" bg-bodybg h-100vh pt-10 mb-10">
-      <div className=" flex flex-col sm:flex-row gap-10 mx-4 sm:mx-16 ">
-        {/* leftSide */}
-        <div className=" flex relative">
-          <div className=" w-full h-45vh mt-1 sm:mt-0 relative sm:min-w-35vw sm:min-h-70vh xmd:h-70vh">
-            <img className=" h-full w-full  object-cover  object-top" src="../assets/image1.png" alt="" />
-          </div>
-          <div className="flex flex-col gap-44 sm:gap-80 xl:gap-96 absolute -right-4 sm:-right-6 top-20 sm:top-12">
-            <div className=" w-8 aspect-square sm:w-14 sm:h-9 bg-bgLightBlue sm:bg-white  rounded-full sm:rounded-3xl border-4 border-white sm:border-none"></div>
-            <div className=" w-8 aspect-square sm:w-14 sm:h-9 bg-bgLightBlue sm:bg-white  rounded-full sm:rounded-3xl border-4 border-white sm:border-none"></div>
-          </div>
+import { paddingForPage } from "../../../defineSize"
+export default function HeroSegment() {
+  return (
+    <div className={` bg-bodybg  ${paddingForPage}`}>
+      {/* main grid */}
+      <div className=" grid sm:grid-cols-5  sm:gap-4 py-8">
+        {/* left image */}
+        <div className="col-span-4 sm:col-span-2 mt-5 sm:mt-0">
+            <img className=" w-full h-full object-cover object-top" src="./assets/image1.png " alt="" />
         </div>
-        {/* rightSide */}
-        <div className=" xmd:pl-5 flex flex-col-reverse sm:flex sm:flex-col">
-          <div className="absolute top-11 sm:relative sm:top-0">
-            <div className="text-4xl  sm:text-3xl xmd:text-4xl xl:text-5xl space-y-3 xl:space-y-4 ">
-                <p className="font-semibold text-primaryBlue">CRAFTED FOR THE</p>
-              <div className="flex flex-col sm:flex-row gap-3 ">
-                <p className="text-white sm:text-primaryBlue sm:font-semibold">DISCERNING </p>
-                <p className="text-white sm:text-primaryBlue sm:font-semibold">INDIVIDUAL</p>
-              </div>
+        {/* right contents */}
+        <div className=" col-span-3 grid grid-rows-2 ">
+          <div className=" grid grid-flow-col  sm:grid-rows-2 order-last sm:order-none">
+            <div className="">
+              <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl xl:text-5xl text-primaryBlue font-semibold  xl:leading-loose">CRAFTED FOR THE <span className=" text-bodybg sm:text-primaryBlue">DISCERNING INDIVIDUAL</span></p>
+            </div>
+            <div className="">
+              <p className="xmd:text-xl xl:text-2xl text-primaryBlue opacity-70">"Experience the ultimate in luxury and comfort with our handcrafted clothing, tailored to your unique measurements and preferences."</p>
             </div>
           </div>
-          <div className=" text-sm sm:text-2xl text-primaryBlue opacity-80 mt-2 xl:mt-9">
-            <p>"Experience the ultimate in luxury and comfort with our handcrafted clothing, tailored to your unique measurements and preferences."</p>
-    
-          </div>
-          {/* images part */}
-          <div className=" flex gap-3 sm:gap-10  -mt-8 sm:mt-10 xl:mt-10">
-            <div className="w-1/2 aspect-square sm:max-h-40vh sm:max-w-20vw">
-              <img className=" h-full w-full  object-cover  object-top" src="../assets/image2.png" alt="" />
+          <div className=" grid grid-cols-2 gap-4 xmd:gap-6 mt-4 sm:mt-0 ">
+            <div className=" ">
+              <img className="h-full w-full object-contain" src="./assets/image2.png" alt="Image" />
             </div>
-            <div className="w-1/2 aspect-square sm:max-h-40vh sm:max-w-20vw">
-              <img className="w-full h-full object-cover object-top" src="./assets/image3.png" alt="" />
+            <div className="">
+              <img className="h-full w-full object-contain" src="./assets/image3.png" alt="Image" />
             </div>
-          </div>
-          <div className=" text-xl text-primaryBlue opacity-80">
-            <p>
-              "Experience the ultimate in luxury and comfort with our
-              handcrafted clothing, tailored to your unique measurements and
-              preferences."
-            </p>
           </div>
         </div>
       </div>
-      <div className=" flex mx-2 sm:mx-16 mt-2 sm:mt-8 gap-10 sm:gap-12 ">
-        <div className=" bg-primaryBlue text-white py-3 px-1 rounded-sm w-36 text-center">
-          <button>Browse</button>
+      <div className=" flex gap-8 -mt-36 sm:mt-0">
+        <div className="">
+          <button className="bg-primaryBlue text-white py-4 px-12  rounded-md font-semibold text-sm sm:text-xl">Browse</button>
         </div>
-        <div className=" font-bold text-primaryBlue py-3 px-1 rounded-sm w-36 text-center">
-          <button>Watch Video</button>
+        <div className="">
+          <button className="bg-bodybg text-primaryBlue py-4 px-12  rounded-md font-semibold text-sm sm:text-xl">Watch Video</button>
         </div>
       </div>
     </div>
-  </div>;
-
-  
-};
-
-export default HeroSegment;
+  )
+}
