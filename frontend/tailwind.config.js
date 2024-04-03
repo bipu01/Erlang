@@ -4,6 +4,9 @@ export default {
 
   theme: {
     extend: {
+      borderWidth: {
+        "6": "6px",
+      },
       colors: {
         "transparent": "transparent",
         "bodybg": "#FFF9EF",
@@ -52,6 +55,11 @@ export default {
         "98%": "98%",
         "99%": "99%",
         "100%": "100%",
+        "110%": "110%",
+        "120%": "120%",
+        "130%": "130%",
+        "140%": "140%",
+        "150%": "150%",
 
         "1vw": "1vw",
         "2vw": "2vw",

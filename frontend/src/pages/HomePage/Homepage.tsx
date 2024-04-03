@@ -3,7 +3,7 @@ import HeroSegment from "./HeroSegment";
 
 const Homepage = () => {
   return (
-    <section className=" text-primaryBlue">
+    <section className=" text-primaryBlue overflow-x-hidden">
       <HeroSegment />
       <CategorySegment />
     </section>

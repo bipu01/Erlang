@@ -25,6 +25,7 @@ const HeroSegment = () => {
           </div>
           <div className=" text-sm sm:text-2xl text-primaryBlue opacity-80 mt-2 xl:mt-9">
             <p>"Experience the ultimate in luxury and comfort with our handcrafted clothing, tailored to your unique measurements and preferences."</p>
+    
           </div>
           {/* images part */}
           <div className=" flex gap-3 sm:gap-10  -mt-8 sm:mt-10 xl:mt-10">
@@ -45,6 +46,7 @@ const HeroSegment = () => {
           <button>Watch Video</button>
         </div>
       </div>
+      {/* this is test */}
     </div>
   </div>;
 

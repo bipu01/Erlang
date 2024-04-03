@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import CartPage from "./pages/CartPage";
-// import HeroSegment from "./pages/HomePage/HeroSegment";
 import HomePage from "./pages/HomePage";
 // import Footer from "./Footer";
 
