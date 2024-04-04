@@ -11,7 +11,7 @@ export default function HeroSegment() {
         {/* left image */}
         <div className="col-span-4 sm:col-span-2 mt-5 sm:mt-0  max-h-90vw relative">
             <img className=" w-full h-full object-cover object-top" src="./assets/image1.png " alt="" />
-            <div className=" absolute top-16 flex flex-col gap-30vh sm:gap-40vh -right-3 sm:-right-4">
+            <div className=" absolute top-16 flex flex-col gap-44 sm:gap-96 -right-3 sm:-right-4">
               <div className={`${sideWhiteButtonStyle}`}></div>
               <div className={`${sideWhiteButtonStyle}`}></div>
             </div>
