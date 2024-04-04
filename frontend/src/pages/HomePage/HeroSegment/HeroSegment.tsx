@@ -3,13 +3,13 @@ export default function HeroSegment() {
   return (
     <div className={`  bg-bodybg  ${paddingForPage}`}>
       {/* main grid */}
-      <div className=" grid sm:grid-cols-5  sm:gap-4 py-8">
+      <div className=" grid sm:grid-cols-5  py-8 ">
         {/* left image */}
-        <div className="col-span-4 sm:col-span-2 mt-5 sm:mt-0">
+        <div className="col-span-4 sm:col-span-2 mt-5 sm:mt-0  max-h-90vw">
             <img className=" w-full h-full object-cover object-top" src="./assets/image1.png " alt="" />
         </div>
         {/* right contents */}
-        <div className=" col-span-3 grid grid-rows-2 ">
+        <div className=" col-span-3 grid grid-rows-2 sm:ml-5">
           <div className=" grid grid-flow-col  sm:grid-rows-2 order-last sm:order-none">
             <div className="">
               <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl xl:text-5xl text-primaryBlue font-semibold  xl:leading-normal">CRAFTED FOR THE <span className=" text-bodybg sm:text-primaryBlue">DISCERNING INDIVIDUAL</span></p>
@@ -18,7 +18,7 @@ export default function HeroSegment() {
               <p className="xmd:text-xl xl:text-2xl text-primaryBlue opacity-70">"Experience the ultimate in luxury and comfort with our handcrafted clothing, tailored to your unique measurements and preferences."</p>
             </div>
           </div>
-          <div className=" grid grid-cols-2 gap-4 xmd:gap-6 mt-4 sm:mt-0 ">
+          <div className=" grid grid-cols-2 gap-4 xmd:gap-6 mt-2 sm:mt-0 ">
             <div className=" ">
               <img className="h-full w-full object-contain" src="./assets/image2.png" alt="Image" />
             </div>
@@ -28,7 +28,7 @@ export default function HeroSegment() {
           </div>
         </div>
       </div>
-      <div className=" flex gap-8 -mt-36 sm:mt-0">
+      <div className=" flex gap-8 -mt-40 sm:mt-0">
         <div className="">
           <button className="bg-primaryBlue text-white py-4 px-12  rounded-md font-semibold text-sm sm:text-xl">Browse</button>
         </div>
