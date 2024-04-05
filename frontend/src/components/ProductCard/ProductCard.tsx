@@ -4,7 +4,7 @@ import { AddToCartButton } from "../Buttons/Buttons";
 
 export const ProductCardLeftImg = (prop: ProductCardProp) => {
   return (
-    <div className="row-span-2 bg-slate-500 mt-6 3xl:mt-10 relative shadow-md  ">
+    <div className="row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 3xl:mt-10 relative shadow-md  ">
       <div className="absolute z-30 -top-3% 4xl:-top-2% flex w-100% gap-30% left-25%">
         <div
           className={`${sizeOfPunchHole} ${
@@ -27,7 +27,7 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
 };
 export const ProductCardRightImg = (prop: ProductCardProp) => {
   return (
-    <div className="row-span-2 bg-slate-500 mb-6 3xl:mb-10 over relative shadow-md">
+    <div className="row-span-2 bg-slate-500 mb-6 3xl:mb-10 relative shadow-md">
       <div className="absolute z-30 -bottom-3% 4xl:-bottom-2% flex w-100% gap-30% left-25%">
         <div
           className={`${sizeOfPunchHole} ${
@@ -56,7 +56,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
                   after:content-[''] after:absolute after:shadow-md after:-bottom-0 after:left-100% after:z-0 after:w-130% after:h-100% after:bg-bodybg`}
     >
       <div
-        className={`space-y-1 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:bg-black after:opacity-20 after:z-40 
+        className={`space-y-1 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-100% after:bg-black after:opacity-20 after:z-40 
                     before:absolute before:content-[''] before:h-100% before:w-4 before:bg-bodybg before:-right-2 before:z-30 before:top-0`}
       >
         <div
@@ -93,19 +93,19 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
 export const DataOfLeftImg = (prop: ProductCardProp) => {
   return (
     <div
-      className={`row-span-1 space-y-10% shadow-md relative z-0 bg-bodybg pl-5% pr-10% py-2% lg:py-4% rounded-tr-full rounded-br-full after:content-[''] after:absolute after:-top-0 after:shadow-md after:right-100% after:h-100% after:w-150% after:bg-bodybg`}
+      className={`row-span-2 sm:row-span-1 space-y-5% lg:space-y-10% shadow-md relative z-0 bg-bodybg pl-5% pr-15% py-2% lg:py-4% rounded-tr-3xl rounded-br-3xl sm:rounded-tr-full sm:rounded-br-full after:content-[''] after:absolute after:-top-0 after:shadow-md after:right-100% after:h-100% after:w-180% after:bg-bodybg`}
     >
       <div
         className={`space-y-2 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:bg-black after:opacity-20 after:z-40 before:absolute before:content-[''] before:h-100% before:w-4 before:bg-bodybg before:-left-2 before:z-30 before:top-0`}
       >
         <div
-          className={`absolute ${sizeOfPunchHole} ${
+          className={`hidden sm:block absolute ${sizeOfPunchHole} ${
             prop.holeColor === "pink" ? "bg-bgLightPink" : "bg-bgLightBlue"
           }  rounded-full border-6 border-bodybg shadow-inner -top-4% 4xl:-top-3% 4xl:right-10% right-5% lg:right-10%`}
         ></div>
         <h3
           id="productName"
-          className=" text-md lg:text-xl 2xl:text-2xl 3xl:text-3xl font-semibold relative z-20 "
+          className=" text-md lg:text-xl 2xl:text-2xl 3xl:text-3xl font-semibold relative z-20 whitespace-normal sm:whitespace-nowrap "
         >
           {prop.ProductName}
         </h3>
@@ -120,11 +120,25 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center space-x-2 justify-between">
+      <div className=" overflow-clip max-h-96 ">
+        <p className="sm:hidden text-xs h-60">
+          Made with premium materials, this dress is not only comfortable but
+          also durable, ensuring that you'll look and feel your best for years
+          to come. Whether you're dressing up for a night out or layering it
+          with leather and chains for a more casual look, this badass brown
+          dress is a must-have for any fashion-for ward wardrobe. Experience the
+          ultimate combination of style and attitude with our latest luxury
+          piece.
+        </p>
+      </div>
+      <div className="sm:hidden bg-black opacity-20 h-0.5 w-110%"></div>
+      <div className="absolute bottom-2 left-1% sm:block flex flex-col sm:flex-row items-center space-x-2 justify-between ">
+        <div>
+          <h3 id="price" className=" text-lg font-semibold xl:text-2xl">
+            NPR.{prop.price}
+          </h3>
+        </div>
         <AddToCartButton />
-        <h3 id="price" className=" text-lg font-semibold xl:text-2xl">
-          NPR.{prop.price}
-        </h3>
       </div>
     </div>
   );
