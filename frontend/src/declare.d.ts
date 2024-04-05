@@ -13,13 +13,13 @@ export type buttonProp={
 
 export type productClusterProp ={
     color:string,
-    product1:{
+    leftRow:{
         ProductName?:string,
         rating?: number,
         price?:number,
         imgSrc?:string
     },
-    product2:{
+    rightRow:{
         ProductName?:string,
         rating?: number,
         price?:number,
@@ -27,13 +27,13 @@ export type productClusterProp ={
     }
 }
 export interface productClusterPropInterface {
-    product1:{
+    leftRow:{
         ProductName?:string,
         rating?: number,
         price?:number,
         imgSrc?:string
     },
-    product2:{
+    rightRow:{
         ProductName?:string,
         rating?: number,
         price?:number,

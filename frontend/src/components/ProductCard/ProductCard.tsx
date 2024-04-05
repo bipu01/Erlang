@@ -130,9 +130,9 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
 
 //This includes group of two product arranged in grid
 export const ProductCluster = ({
-  product1,
-  product2,
   color,
+  leftRow,
+  rightRow,
 }: productClusterProp) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-10% overflow-x-clip">
@@ -140,24 +140,24 @@ export const ProductCluster = ({
         <div className="sm:row-span-1 sm:grid sm:grid-rows-2">
           <DataOfRightImg
             holeColor={color}
-            ProductName={product1.ProductName}
-            rating={product1.rating}
-            price={product1.price}
+            ProductName={leftRow.ProductName}
+            rating={leftRow.rating}
+            price={leftRow.price}
           />
           <div className=" sm:row-span-1"></div>
         </div>
-        <ProductCardLeftImg holeColor={color} imgSrc={product1.imgSrc} />
+        <ProductCardLeftImg holeColor={color} imgSrc={rightRow.imgSrc} />
       </div>
 
       <div className="sm:grid sm:grid-rows-3 ">
-        <ProductCardRightImg holeColor={color} imgSrc={product2.imgSrc} />
+        <ProductCardRightImg holeColor={color} imgSrc={leftRow.imgSrc} />
         <div className="sm:row-span-1 sm:grid sm:grid-rows-2">
           <div className=" sm:row-span-1"></div>
           <DataOfLeftImg
             holeColor={color}
-            ProductName={product2.ProductName || ""}
-            rating={product2.rating || 0}
-            price={product2.price || 0}
+            ProductName={rightRow.ProductName || ""}
+            rating={rightRow.rating || 0}
+            price={rightRow.price || 0}
           />
         </div>
       </div>
