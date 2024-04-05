@@ -7,7 +7,7 @@ export default function ContactUsPage() {
     <div className={`bg-bodybg w-full h-screen pt-5 sm:grid sm:grid-cols-2 ${paddingForPage}`}>
       <div className=" flex flex-col gap-5 col-span-1">
         <div className="inline-block">
-          <p className="text-3xl text-primaryBlue font-semibold border-b-4 border-lineColor inline-block leading-relaxed">
+          <p className="text-3xl text-primaryBlue font-semibold border-b-2 border-lineColor inline-block leading-relaxed">
             Have any Questions?
           </p>
         </div>
@@ -18,14 +18,14 @@ export default function ContactUsPage() {
               <button type="submit" className="mt-4 bg-primaryBlue text-white py-2 px-10 rounded-md font-semibold">Send </button>
             </form>
         </div>
-        <div className="mt-5 sm:mt-2">
-          <p className="text-xl text-primaryBlue font-semibold">Connect with us through our email:</p>
+        <div className="mt-5 sm:mt-10">
+          <p className="text-xl text-primaryBlue font-bold">Connect with us through our email:</p>
           <div className="inline-block">
-            <p className="text-primaryBlue font-semibold opacity-60 border-b-4 border-lineColor">erlangcontactus@gmail.com</p>
+            <p className="text-primaryBlue font-semibold opacity-60 border-b-2 border-lineColor">erlangcontactus@gmail.com</p>
           </div>
         </div>
         <div className="">
-          <p className="text-xl text-primaryBlue font-semibold">Our social links</p>
+          <p className="text-2xl text-primaryBlue font-semibold">Our social links</p>
           <div className=" ">
             <div className="">
               <Link to=''>
