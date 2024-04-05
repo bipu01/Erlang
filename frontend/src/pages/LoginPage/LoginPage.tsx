@@ -20,7 +20,7 @@ export default function LoginPage() {
         <div className="">
             <img className="rotate-180 " src="./assets/weavyArch.svg" alt="wave" />
         </div>
-        <div className=" w-full h-full absolute top-0 px-32 xmd:px-44 pt-10 pb-20 ">
+        <div className=" w-full h-full absolute top-0  sm:px-32 xmd:px-44 pt-10 sm:pb-20 ">
             <div className="backdrop-blur-xl bg-white/30 w-full h-full rounded-lg shadow-xl">
                 <div className=" py-8 px-8">
                     <img src="./icons/back.svg" alt="" />
