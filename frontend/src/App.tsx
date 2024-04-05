@@ -4,6 +4,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 // import Footer from "./Footer";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/aboutUs" element={<AboutUsPage />} />
           <Route path="/contactUs" element={<ContactUsPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/login" element={<LoginPage/>}/>
         </Routes>
 
         {/* <Footer /> */}
