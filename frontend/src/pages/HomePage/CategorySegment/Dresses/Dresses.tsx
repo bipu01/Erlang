@@ -23,13 +23,13 @@ const Dresses = () => {
         <div id="container" className="grid space-y-16">
           <ProductCluster
             color="blue"
-            product1={Dressluster1.product1}
-            product2={Dressluster1.product2}
+            leftRow={Dressluster1.leftRow}
+            rightRow={Dressluster1.rightRow}
           />
           <ProductCluster
             color="blue"
-            product1={Dressluster2.product1}
-            product2={Dressluster2.product2}
+            leftRow={Dressluster2.leftRow}
+            rightRow={Dressluster2.rightRow}
           />
         </div>
       </section>

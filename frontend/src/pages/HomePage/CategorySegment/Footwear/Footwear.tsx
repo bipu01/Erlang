@@ -22,13 +22,13 @@ const Footwear = () => {
         <div id="container" className="grid space-y-16">
           <ProductCluster
             color="blue"
-            product1={footwearCluster1.product1}
-            product2={footwearCluster1.product2}
+            leftRow={footwearCluster1.leftRow}
+            rightRow={footwearCluster1.rightRow}
           />
           <ProductCluster
             color="blue"
-            product1={footwearCluster2.product1}
-            product2={footwearCluster2.product2}
+            leftRow={footwearCluster2.leftRow}
+            rightRow={footwearCluster2.rightRow}
           />
         </div>
       </section>
