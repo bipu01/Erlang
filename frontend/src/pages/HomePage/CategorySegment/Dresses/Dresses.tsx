@@ -1,5 +1,5 @@
 import PageBreakLine from "../../../../components/PageBreakLine";
-import { ProductCluster } from "../../../../components/ProductCard/ProductCard";
+import { ProductCluster } from "../../../../components/ProductCard/ProductCluster";
 import { paddingForPage } from "../../../../defineSize";
 import SortByPanel from "../../SortByPanel";
 import { Dressluster1, Dressluster2 } from "./dressCluster";
