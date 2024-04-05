@@ -36,7 +36,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="">
-            <Link to="">
+            <Link to="/login">
               <img
                 className="h-7 aspect-square sm:h-12"
                 src="./assets/userr.svg"
