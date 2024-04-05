@@ -20,7 +20,7 @@ export default function HeroSegment() {
         <div className=" col-span-3 grid grid-rows-2 sm:ml-5">
           <div className=" grid grid-flow-col  sm:grid-rows-2 order-last sm:order-none">
             <div className="">
-              <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl xl:text-5xl text-primaryBlue font-extrabold  xl:leading-normal">CRAFTED FOR THE <span className=" text-bodybg sm:text-primaryBlue">DISCERNING INDIVIDUAL</span></p>
+              <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl text-primaryBlue font-extrabold xl:leading-normal">CRAFTED FOR THE <span className=" text-bodybg sm:text-primaryBlue">DISCERNING INDIVIDUAL</span></p>
             </div>
             <div className="">
               <p className="xmd:text-xl xl:text-2xl text-primaryBlue opacity-70">"Experience the ultimate in luxury and comfort with our handcrafted clothing, tailored to your unique measurements and preferences."</p>

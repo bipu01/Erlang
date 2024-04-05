@@ -40,3 +40,9 @@ export interface productClusterPropInterface {
         imgSrc?:string
     }
 }
+
+ export interface testimonialsPropInterface {
+    avatar: string;
+    comment: string;
+    name: string;
+}
