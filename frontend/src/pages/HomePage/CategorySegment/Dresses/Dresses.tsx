@@ -1,5 +1,5 @@
 import PageBreakLine from "../../../../components/PageBreakLine";
-import { ProductCluster } from "../../../../components/ProductCard/ProductCard";
+import { ProductCluster } from "../../../../components/ProductCard/ProductCluster";
 import { paddingForPage } from "../../../../defineSize";
 import SortByPanel from "../../SortByPanel";
 import { Dressluster1, Dressluster2 } from "./dressCluster";
@@ -23,12 +23,12 @@ const Dresses = () => {
         <div id="container" className="grid space-y-16">
           <ProductCluster
             color="blue"
-            leftRow={Dressluster1.leftRow}
-            rightRow={Dressluster1.rightRow}
+            leftRow={Dressluster1.rightRow}
+            rightRow={Dressluster1.leftRow}
           />
           <ProductCluster
             color="blue"
-            leftRow={Dressluster2.leftRow}
+            leftRow={Dressluster2.rightRow}
             rightRow={Dressluster2.rightRow}
           />
         </div>

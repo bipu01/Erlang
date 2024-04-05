@@ -1,4 +1,4 @@
-import { ProductCluster } from "../../../../components/ProductCard/ProductCard";
+import { ProductCluster } from "../../../../components/ProductCard/ProductCluster";
 import { paddingForPage } from "../../../../defineSize";
 // import SortByPanel from "../../SortByPanel";
 import { footwearCluster1, footwearCluster2 } from "./footwearCluster";
