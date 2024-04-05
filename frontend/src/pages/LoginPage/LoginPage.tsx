@@ -31,9 +31,9 @@ export default function LoginPage() {
                     </div>
                     <div className=" flex flex-col gap-2">
                         <form className=" flex flex-col gap-5 items-center " onSubmit={handelSubmit}>
-                            <input className="text-2xl py-2 px-16 rounded-lg bg-white text-primaryBlue " type="email" required name="" id="email" placeholder="Email" onChange={handelChange} />
-                            <input className="text-2xl py-2 px-16 rounded-lg bg-white text-primaryBlue " type="password" required name="" id="password" placeholder="Password"  onChange={handelChange}/>
-                            <button className="bg-white text-xl rounded-3xl py-2 px-12 text-primaryBlue w-1/2 hover:text-white hover:bg-primaryBlue" type="submit">Login</button>
+                            <input className="text-2xl py-2 px-8 sm:px-16 rounded-lg bg-white text-primaryBlue " type="email" required name="" id="email" placeholder="Email" onChange={handelChange} />
+                            <input className="text-2xl py-2 px-8 sm:px-16  rounded-lg bg-white text-primaryBlue " type="password" required name="" id="password" placeholder="Password"  onChange={handelChange}/>
+                            <button className="bg-white text-xl rounded-3xl py-2 px-12  text-primaryBlue w-1/2 hover:text-white hover:bg-primaryBlue" type="submit">Login</button>
                         </form>
                         <div className=" flex flex-col  items-center my-2">
                             <button className="bg-primaryBlue text-xl rounded-3xl py-2 px-8 text-white w-1/2 hover:text-primaryBlue hover:bg-white">Sign up</button>
