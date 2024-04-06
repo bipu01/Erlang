@@ -46,3 +46,9 @@ export interface productClusterPropInterface {
     }
 }
 
+ export interface testimonialsPropInterface {
+    avatar: string;
+    comment: string;
+    name: string;
+}
+

@@ -25,23 +25,23 @@ export default function LoginPage() {
                 <div className=" py-8 px-8">
                     <img src="./icons/back.svg" alt="" />
                 </div>
-                <div className=" flex flex-col items-center justify-center gap-10">
+                <div className=" flex flex-col items-center justify-center gap-8">
                     <div className="">
                         <p className=" text-4xl text-primaryBlue font-bold">Login/ Sign up</p>
                     </div>
-                    <div className=" flex flex-col gap-2">
+                    <div className=" flex flex-col gap-3">
                         <form className=" flex flex-col gap-5 items-center " onSubmit={handelSubmit}>
                             <input className="text-2xl py-2 px-8 sm:px-16 rounded-lg bg-white text-primaryBlue " type="email" required name="" id="email" placeholder="Email" onChange={handelChange} />
                             <input className="text-2xl py-2 px-8 sm:px-16  rounded-lg bg-white text-primaryBlue " type="password" required name="" id="password" placeholder="Password"  onChange={handelChange}/>
-                            <button className="bg-white text-xl rounded-3xl py-2 px-12  text-primaryBlue w-1/2 hover:text-white hover:bg-primaryBlue" type="submit">Login</button>
+                            <button className="bg-white text-xl rounded-3xl py-2 px-12 mt-4  text-primaryBlue w-1/2 hover:text-white hover:bg-primaryBlue" type="submit">Login</button>
                         </form>
-                        <div className=" flex flex-col  items-center my-2">
+                        <div className=" flex flex-col  items-center ">
                             <button className="bg-primaryBlue text-xl rounded-3xl py-2 px-8 text-white w-1/2 hover:text-primaryBlue hover:bg-white">Sign up</button>
                         </div>
                         <div className=" flex flex-col items-center">
-                            <Link className=" border-b-2 opacity-50 border-primaryBlue" to=''>Forgot Password?</Link>
+                            <Link className=" border-b-2 text-bodybg opacity-50 border-bodybg" to=''>Forgot Password?</Link>
                         </div>
-                        <div className="flex flex-col items-center py-10">
+                        <div className="flex flex-col items-center py-14">
                             <div className=" flex flex-row justify-center items-center bg-white rounded-md px-4 py-2 gap-2">
                                 <img className=" w-8" src="./icons/google.svg" alt="" />
                                 <p className=" text-xl font-semibold">Continue with Google</p>
