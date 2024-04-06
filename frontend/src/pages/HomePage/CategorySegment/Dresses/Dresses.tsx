@@ -28,7 +28,7 @@ const Dresses = () => {
           />
           <ProductCluster
             color="blue"
-            leftRow={Dressluster2.rightRow}
+            leftRow={Dressluster2.leftRow}
             rightRow={Dressluster2.rightRow}
           />
         </div>
