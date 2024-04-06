@@ -3,6 +3,7 @@ export type ProductCardProp ={
     ProductName?:string,
     rating?: number,
     price?:number,
+    originalPrice?:number,
     imgSrc?:string
 }
 
@@ -17,12 +18,14 @@ export type productClusterProp ={
         ProductName?:string,
         rating?: number,
         price?:number,
+        originalPrice?:number,
         imgSrc?:string
     },
     rightRow:{
         ProductName?:string,
         rating?: number,
         price?:number,
+        originalPrice?:number,
         imgSrc?:string
     }
 }
@@ -31,12 +34,15 @@ export interface productClusterPropInterface {
         ProductName?:string,
         rating?: number,
         price?:number,
+        originalPrice?:number,
         imgSrc?:string
     },
     rightRow:{
         ProductName?:string,
         rating?: number,
         price?:number,
+        originalPrice?:number,
         imgSrc?:string
     }
 }
+

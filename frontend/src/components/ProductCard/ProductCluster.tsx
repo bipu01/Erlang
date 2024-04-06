@@ -12,7 +12,7 @@ export const ProductCluster = ({
   rightRow,
 }: productClusterProp) => {
   return (
-    <div className="grid grid-cols-5 sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-8 gap-y-16 sm:gap-y-32 sm:space-y-0 overflow-x-clip mb-5vh">
+    <div className="grid grid-cols-5 sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-8 gap-y-16 sm:gap-y-0 sm:space-y-0 overflow-x-clip mb-5vh">
       <ProductCardLeftImg holeColor={color} imgSrc={leftRow.imgSrc} />
       <div className="row-span-2 col-span-2 sm:col-span-1  sm:row-span-1 grid sm:grid-rows-2">
         <DataOfLeftImg

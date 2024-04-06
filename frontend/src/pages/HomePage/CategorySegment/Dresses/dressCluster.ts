@@ -2,16 +2,18 @@ import { productClusterPropInterface } from "../../../../declare";
 
 export const Dressluster1: productClusterPropInterface = {
     leftRow: {
-      ProductName: "Draggy hose with droppy strings",
-      rating: 4.3,
+      ProductName: "Draggy hose with droppy strings and some other things as well",
+      rating: 4.2,
       imgSrc: "/assets/Dress/Pinterest image (5).jpeg",
       price: 3300,
+      originalPrice:5400,
     },
     rightRow: {
       ProductName: "Fancy Blue Skirt",
       rating: 4.0,
       imgSrc: "/assets/Dress/Co Fall 2019 Fashion Show.jpeg",
       price: 3500,
+      originalPrice:5400,
     },
   };
   
@@ -21,11 +23,13 @@ export const Dressluster1: productClusterPropInterface = {
       rating: 4.2,
       imgSrc: "/assets/Dress/Maroon Silk.jpeg",
       price: 4300,
+      originalPrice:5400,
     },
     rightRow: {
       ProductName: "Weavy Weaver",
       rating: 4.3,
       imgSrc: "/assets/Dress/Pinterest image.jpeg",
       price: 6700,
+      originalPrice:5400,
     },
   };
