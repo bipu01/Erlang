@@ -10,6 +10,15 @@ export type ProductCardProp ={
 export type buttonProp={
     text:string,
     active?:boolean
+    primary?:boolean,
+    darkMode?:boolean,
+}
+
+export interface buttonPropInterface{
+    text:string,
+    active?:boolean,
+    primary?:boolean,
+    darkMode?:boolean,
 }
 
 export type productClusterProp ={
@@ -44,6 +53,13 @@ export interface productClusterPropInterface {
         originalPrice?:number,
         imgSrc?:string
     }
+}
+
+export type svgProp ={
+    borderColor?:string,
+    fillColor?:string,
+    borderThickness?:number,
+    custom?:string
 }
 
  export interface testimonialsPropInterface {

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { LikeBtn } from "../../SVG/LikeBtn";
 import { ProductCardProp } from "../../declare";
 import {
   sizeOfLessMajorText,
@@ -6,10 +8,15 @@ import {
   sizeOfTitleText,
 } from "../../defineSize";
 import { AddToCartButton } from "../Buttons/Buttons";
+import { openProductMenu } from "./productHardHandler";
 
 export const ProductCardLeftImg = (prop: ProductCardProp) => {
   return (
-    <div className=" row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 3xl:mt-10 relative shadow-md  ">
+    <div
+      id="product1"
+      className=" row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 3xl:mt-10 relative sm:shadow-customRight hover:cursor-pointer "
+      onClick={openProductMenu}
+    >
       <div className="absolute z-30 -top-3% 4xl:-top-2% flex w-100% gap-30% left-25%">
         <div
           className={`${sizeOfPunchHole} ${
@@ -22,17 +29,23 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
           } rounded-full border-6 border-bodybg shadow-inner`}
         ></div>
       </div>
-      <img
-        className="h-100% w-100% object-cover relative z-20 rounded-sm"
-        src={prop.imgSrc}
-        alt={prop.imgSrc}
-      />
+      <Link to="/product">
+        <img
+          className="h-100% w-100% object-cover relative z-20 rounded-sm"
+          src={prop.imgSrc}
+          alt={prop.imgSrc}
+        />
+      </Link>
     </div>
   );
 };
 export const ProductCardRightImg = (prop: ProductCardProp) => {
   return (
-    <div className="row-span-2  sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mb-6 3xl:mb-10 relative shadow-md">
+    <div
+      id="product2"
+      className="row-span-2  sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mb-6 3xl:mb-10 relative hover:cursor-pointer"
+      onClick={openProductMenu}
+    >
       <div className="absolute z-30 -bottom-3% 4xl:-bottom-2% flex w-100% gap-30% left-25%">
         <div
           className={`${sizeOfPunchHole} ${
@@ -45,11 +58,13 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
           } rounded-full border-6 border-bodybg shadow-inner`}
         ></div>
       </div>
-      <img
-        className="w-100% h-100% object-cover relative z-20 rounded-sm"
-        src={prop.imgSrc}
-        alt={prop.imgSrc}
-      />
+      <Link to="/product">
+        <img
+          className="w-100% h-100% object-cover relative z-20 rounded-sm"
+          src={prop.imgSrc}
+          alt={prop.imgSrc}
+        />
+      </Link>
     </div>
   );
 };
@@ -57,9 +72,11 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
 export const DataOfRightImg = (prop: ProductCardProp) => {
   return (
     <div
-      className={`row-span-2 sm:row-span-1 space-y-5% lg:space-y-10% shadow-md relative z-0 bg-bodybg px-7% sm:pr-3% sm:pl-20% py-10% sm:py-5% lg:py-4% flex flex-col justify-between
-      rounded-tr-3xl rounded-br-3xl sm:rounded-tl-full sm:rounded-bl-full
-      after:content-[''] after:absolute after:-bottom-0 after:shadow-md after:left-100% after:h-100% after:w-180% after:bg-bodybg`}
+      id="product2"
+      className={`row-span-2 sm:row-span-1 space-y-5% lg:space-y-10% shadow-customLeft relative z-0 bg-bodybg px-7% sm:pr-3% sm:pl-20% py-10% sm:py-5% hover:cursor-pointer
+      lg:py-4% flex flex-col justify-between rounded-tr-3xl rounded-br-3xl sm:rounded-tl-full sm:rounded-bl-full
+      after:content-[''] after:absolute after:-bottom-0 after:shadow-customLeft after:left-100% after:h-100% after:w-180% after:bg-bodybg`}
+      onClick={openProductMenu}
     >
       <div
         className={`space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:hidden sm:after:block 
@@ -123,14 +140,10 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
         </h3>
         <div className="sm:hidden bg-black opacity-20 h-0.5 w-100% mb-2"></div>
         <div className="flex justify-between items-center">
-          <div className="h-6 w-6">
-            <img
-              src="/icons/likeHollow.svg"
-              alt="likeBtn"
-              className="h-full w-full object-contain"
-            />
+          <div className="h-6 w-6 3xl:h-8 3xl:w-8">
+            <LikeBtn fillColor="#FFF9EF" />
           </div>
-          <AddToCartButton />
+          <AddToCartButton text="Add to cart" primary={true} />
         </div>
       </div>
     </div>
@@ -139,9 +152,11 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
 export const DataOfLeftImg = (prop: ProductCardProp) => {
   return (
     <div
-      className={`row-span-2 sm:row-span-1 space-y-5% lg:space-y-10% shadow-md relative z-0 bg-bodybg px-7% flex flex-col justify-between
+      id="product1"
+      className={`row-span-2 sm:row-span-1 space-y-5% lg:space-y-10% shadow-customRight relative z-0 bg-bodybg px-7% flex flex-col justify-between hover:cursor-pointer
       sm:pl-3% sm:pr-20% py-10% sm:py-5% lg:py-4% rounded-tr-3xl rounded-br-3xl rounded-md sm:rounded-tr-full sm:rounded-br-full 
-      after:content-[''] after:absolute after:-top-0 after:shadow-md after:right-100% after:h-100% after:w-180% after:bg-bodybg`}
+      after:content-[''] after:absolute after:-top-0 after:shadow-customRight after:right-100% after:h-100% after:w-180% after:bg-bodybg`}
+      onClick={openProductMenu}
     >
       <div
         className={`space-y-2 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:hidden sm:after:block
@@ -206,14 +221,10 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
         </h3>
         <div className="sm:hidden bg-black opacity-20 h-0.5 w-100% mb-2"></div>
         <div className="flex justify-between items-center">
-          <div className="h-6 w-6">
-            <img
-              src="/icons/likeHollow.svg"
-              alt="likeBtn"
-              className="h-full w-full object-contain"
-            />
+          <div className="h-6 w-6 3xl:h-8 3xl:w-8">
+            <LikeBtn fillColor="#FFF9EF" />
           </div>
-          <AddToCartButton />
+          <AddToCartButton text="Add to cart" primary={true} />
         </div>
       </div>
     </div>

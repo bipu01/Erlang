@@ -1,6 +1,6 @@
 import PageBreakLine from "../../../../components/PageBreakLine";
 import { ProductCluster } from "../../../../components/ProductCard/ProductCluster";
-import { paddingForPage } from "../../../../defineSize";
+import { paddingForProductCard } from "../../../../defineSize";
 // import SortByPanel from "../../SortByPanel";
 import { JewelleryCluster1, JewelleryCluster2 } from "./jewelleryCluster";
 
@@ -15,7 +15,7 @@ const jewellery = () => {
       </div>
       <section
         id="dresses"
-        className={` bg-bgLightPink px-10vw py-5vh relative ${paddingForPage} mb-20vh`}
+        className={` bg-bgLightPink px-10vw py-5vh relative ${paddingForProductCard} mb-20vh`}
       >
         <h1 className=" text-primaryBlue text-3xl 3xl:text-5xl font-bold w-100% sm:w-70% xmd:w-70% mb-10vh">
           DAZZLING EARRINGS FOR EVERY OCCASION
