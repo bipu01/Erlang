@@ -89,7 +89,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
             prop.holeColor === "pink" ? "bg-bgLightPink" : "bg-bgLightBlue"
           }  rounded-full border-6 border-bodybg shadow-inner -top-4% 4xl:-top-3% left-10%`}
         ></div>
-        <div className=" space-y-10% sm:space-y-2%">
+        <div className=" space-y-10% sm:space-y-0">
           <h3
             id="productName"
             className={`relative font-semibold z-20 whitespace-normal  ${sizeOfTitleText}`}
@@ -133,18 +133,28 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
         </div>
       </div>
       <div>
-        <h3
-          id="price"
-          className={`sm:hidden  text-lg font-semibold xl:text-2xl ${sizeOfLessMajorText}`}
-        >
-          NPR.{prop.price}
-        </h3>
-        <div className="sm:hidden bg-black opacity-20 h-0.5 w-100% mb-2"></div>
-        <div className="flex justify-between items-center mt-2">
-          <div className="h-6 w-6 3xl:h-8 3xl:w-8">
+        <div className="flex justify-between">
+          <h3
+            id="price"
+            className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
+          >
+            NPR.{prop.price}
+          </h3>
+          <div className="sm:hidden h-6 w-6 3xl:h-8 3xl:w-8">
             <LikeBtn fillColor="#FFF9EF" />
           </div>
-          <AddToCartButton darkBg={true} text="Add to cart" primary={true} />
+        </div>
+        <div className="sm:hidden bg-black opacity-20 h-0.5 w-100% mb-2"></div>
+        <div className="flex justify-between items-center ">
+          <div className="hidden sm:block h-6 w-6 3xl:h-8 3xl:w-8">
+            <LikeBtn fillColor="#FFF9EF" />
+          </div>
+          <AddToCartButton
+            darkBg={true}
+            text="Add to cart"
+            primary={true}
+            custom="w-100% sm:w-auto"
+          />
         </div>
       </div>
     </div>
@@ -170,7 +180,7 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
           }  rounded-full border-6 border-bodybg shadow-inner -top-4% 4xl:-top-3% right-10% `}
         ></div>
 
-        <div className=" space-y-10% sm:space-y-2%">
+        <div className=" space-y-10% sm:space-y-1%">
           <h3
             id="productName"
             className={`relative font-semibold z-20 whitespace-normal ${sizeOfTitleText}`}
@@ -214,18 +224,28 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
         </div>
       </div>
       <div>
-        <h3
-          id="price"
-          className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
-        >
-          NPR.{prop.price}
-        </h3>
-        <div className="sm:hidden bg-black opacity-20 h-0.5 w-100% mb-2"></div>
-        <div className="flex justify-between items-center">
-          <div className="h-6 w-6 3xl:h-8 3xl:w-8">
+        <div className="flex justify-between">
+          <h3
+            id="price"
+            className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
+          >
+            NPR.{prop.price}
+          </h3>
+          <div className="sm:hidden h-6 w-6 3xl:h-8 3xl:w-8">
             <LikeBtn fillColor="#FFF9EF" />
           </div>
-          <AddToCartButton darkBg={true} text="Add to cart" primary={true} />
+        </div>
+        <div className="sm:hidden bg-black opacity-20 h-0.5 w-100% mb-2"></div>
+        <div className="flex justify-between items-center ">
+          <div className="hidden sm:block h-6 w-6 3xl:h-8 3xl:w-8">
+            <LikeBtn fillColor="#FFF9EF" />
+          </div>
+          <AddToCartButton
+            darkBg={true}
+            text="Add to cart"
+            primary={true}
+            custom="w-100% sm:w-auto"
+          />
         </div>
       </div>
     </div>
