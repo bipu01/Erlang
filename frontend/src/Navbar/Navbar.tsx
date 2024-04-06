@@ -37,19 +37,19 @@ const Navbar = () => {
           </div>
           <div className="">
             <Link to="/login">
-              <img
-                className="h-7 aspect-square sm:h-12"
-                src="./assets/userr.svg"
-                alt=""
-              />
-            </Link>
+                  <img
+                    className="h-7 aspect-square sm:h-12"
+                    src="./assets/userr.svg"
+                    alt=""
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
+            <div className=" flex justify-center">
+              <div className=" bg-black opacity-60 w-[95%] h-[1px] sm:h-[2px] "></div>
+            </div>
         </div>
-      </div>
-      <div className=" flex justify-center">
-        <div className=" bg-black opacity-60 w-[95%] h-[1px] sm:h-[2px] "></div>
-      </div>
-    </div>
   );
 };
 
