@@ -6,7 +6,9 @@ export const sizeOfMajorText = `text-sm lg:text-xl 2xl:text-2xl 3xl:text-3xl`;
 export const sizeOfLessMajorText = `text-sm lg:text-lg 2xl:text-xl 3xl:text-2xl`;
 
 export const priceTextSizeInPreviewPage = `font-semibold text-lg lg:text-lg xl:text-2xl 3xl:text-2xl`;
-export const sizeOfTitleText = `text-sm sm:text-lg lg:text-xl 2xl:text-2xl 3xl:text-3xl line-clamp-[2]`;
+
+export const sizeOfTitleText = `text-sm sm:text-lg  line-clamp-[1]`;
+export const productCardNumSize = `text-sm sm:text-lg  line-clamp-[1]`;
 export const selectedColor = `border-4 border-[#FFF9EF] sm:h-8 sm:w-8`;
 
 // export const descriptionText = `font-semibold opacity-70`;

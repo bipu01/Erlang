@@ -18,7 +18,7 @@ export interface buttonPropInterface{
     text:string,
     active?:boolean,
     primary?:boolean,
-    darkMode?:boolean,
+    darkBg:boolean,
 }
 
 export type productClusterProp ={

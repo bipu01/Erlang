@@ -83,8 +83,12 @@ const ProductPage = () => {
 
             {/* <div className=" bg-black opacity-20 h-0.5 w-100% mb-2"></div> */}
             <div className="flex justify-between  items-center">
-              <BuyNowBtn text="Buy now" primary={true} />
-              <AddToCartButton text="Add to cart" primary={false} />
+              <BuyNowBtn darkBg={true} text="Buy now" primary={true} />
+              <AddToCartButton
+                darkBg={false}
+                text="Add to cart"
+                primary={false}
+              />
             </div>
           </div>
         </div>
