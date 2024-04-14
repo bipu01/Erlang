@@ -15,6 +15,7 @@ export default {
         "bgLightBlue": "#D9DFED",
         "bgLightPink": "#EDDAD9",
         "lineColor": "#EDE6D9",
+        "bluebg":"#D0D5E3"
       },
       screens: {
         "xmd": "780px", //Window size for tablet

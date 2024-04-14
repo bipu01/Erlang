@@ -45,10 +45,18 @@ export interface productClusterPropInterface {
         imgSrc?:string
     }
 }
-
- export interface testimonialsPropInterface {
+export interface testimonialsPropInterface {
     avatar: string;
     comment: string;
     name: string;
+}
+export interface cartPropInterface {
+    image?:string,
+    quantity?:number,
+    color?:string,
+    name?:string,
+    rating?:number,
+    orgPrice?:number,
+    disPrice?:number
 }
 
