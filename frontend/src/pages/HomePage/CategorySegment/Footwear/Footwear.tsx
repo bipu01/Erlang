@@ -1,5 +1,5 @@
 import { ProductCluster } from "../../../../components/ProductCard/ProductCluster";
-import { paddingForPage } from "../../../../defineSize";
+import { paddingForProductCard } from "../../../../defineSize";
 // import SortByPanel from "../../SortByPanel";
 import { footwearCluster1, footwearCluster2 } from "./footwearCluster";
 
@@ -14,7 +14,7 @@ const Footwear = () => {
       </div>
       <section
         id="dresses"
-        className={` bg-bgLightBlue px-10vw py-5vh relative ${paddingForPage} mb-20vh`}
+        className={` bg-bgLightBlue px-10vw py-5vh relative ${paddingForProductCard} mb-20vh`}
       >
         <p className=" text-primaryBlue text-3xl 3xl:text-5xl font-bold w-100% sm:w-70% xmd:w-70% mb-10vh leading-loose ">
           STYLISH AND STRONG: OUR WOMEN'S BOOT COLLECTION
