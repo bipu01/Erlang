@@ -11,7 +11,7 @@ export default function Testimonials() {
             </div>
             <div className="">
               {/* connecting comment and the user name  */}
-              <p className=" sm:font-medium text-xs sm:text-sm xmd:text-xl">{`"${testimonial.comment}" - ${testimonial.name}`}</p>
+              <p className=" sm:font-medium text-xs sm:text-sm xmd:text-">{`"${testimonial.comment}"-`} <span className="font-bold">{`${testimonial.name}`}</span></p>
             </div>
           </div>
             <div className=" bg-black opacity-50 w-full h-[1px]  mt-2"></div>
