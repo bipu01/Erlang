@@ -3,7 +3,6 @@ import { LikeBtn } from "../../SVG/LikeBtn";
 import { ProductCardProp } from "../../declare";
 import {
   productCardNumSize,
-  sizeOfLessMajorText,
   sizeOfMajorText,
   sizeOfPunchHole,
   sizeOfTitleText,
@@ -160,6 +159,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
     </div>
   );
 };
+
 export const DataOfLeftImg = (prop: ProductCardProp) => {
   return (
     <div
