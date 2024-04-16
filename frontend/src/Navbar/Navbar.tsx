@@ -28,7 +28,7 @@ const Navbar = () => {
                 <p>Cart</p>
                 <div className=" relative">
                   <img className="h-3 sm:h-6" src="./assets/cart.svg" alt="" />
-                  <span className="absolute bg-red-500 rounded-full h-3 aspect-square text-[10px]  flex items-center justify-center -top-3 -right-1 sm:text-lg sm:h-5 sm:-top-3 sm:-right-3 ">
+                  <span className="absolute bg-red-500 rounded-full h-3 aspect-square text-[10px]  flex items-center justify-center -top-2  -right-2 sm:text-lg sm:h-5 sm:-top-3 sm:-right-3 ">
                     2
                   </span>
                 </div>
