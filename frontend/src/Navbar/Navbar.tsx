@@ -44,12 +44,12 @@ const Navbar = () => {
               />
             </Link>
           </div>
-
-          </div>
-            <div className=" flex justify-center">
-              <div className=" bg-black opacity-60 w-[95%] h-[1px] sm:h-[2px] "></div>
-            </div>
         </div>
+      </div>
+      <div className=" flex justify-center">
+        <div className=" bg-black opacity-60 w-[95%] h-[1px] sm:h-[2px] "></div>
+      </div>
+    </div>
   );
 };
 
