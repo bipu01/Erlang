@@ -10,8 +10,8 @@ import {
 const ProductPage = () => {
   return (
     <div className={`bg-bgLightBlue py-4 sm:py-16 ${paddingForPage}`}>
-      <div className="grid rrid-rows-2 sm:grid-cols-5">
-        <div className="relative sm:col-span-2 h-70vh sm:h-60vh lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
+      <div className="grid grid-rows-2 sm:grid-cols-5">
+        <div className="relative sm:col-span-2 h-60vh lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
           <img
             src="/assets/Dress/Co Fall 2019 Fashion Show.jpeg"
             alt="productImage"
