@@ -20,7 +20,7 @@ const Dresses = () => {
         <h1 className=" text-primaryBlue text-3xl 3xl:text-5xl font-bold w-100% sm:w-70% xmd:w-70% mb-10vh">
           WE HAVE SOMETHING FOR EVERYONE
         </h1>
-        <div id="container" className="grid space-y-16">
+        <div id="container" className="grid space-y-16 ">
           <ProductCluster
             color="blue"
             leftRow={Dressluster1.rightRow}
@@ -33,7 +33,6 @@ const Dresses = () => {
           />
         </div>
       </section>
-
       <PageBreakLine />
     </>
   );
