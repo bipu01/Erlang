@@ -34,7 +34,9 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
           prop.primary
             ? "bg-primaryBlue text-bodybg rounded-md px-3vw sm:px-4 lg:px-5"
             : "bg-bodybg text-primaryBlue rounded-full py-2 sm:py-3 px-3vw sm:px-4vw "
-        } ${sizeOfLessMajorText}  py-2 items-center flex gap-1 sm:gap-2 font-normal sm:font-medium
+        } ${sizeOfLessMajorText} ${
+          prop.custom
+        } py-2 items-center flex gap-1 sm:gap-2 font-normal sm:font-medium
         whitespace-nowrap`}
       >
         {prop.text}
