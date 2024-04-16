@@ -15,7 +15,7 @@ export default function HeroSegment() {
             src="./assets/image1.png "
             alt=""
           />
-          <div className=" absolute top-16 flex flex-col gap-44 sm:gap-96 -right-3 sm:-right-4">
+          <div className=" absolute top-16 flex flex-col gap-44 sm:gap-64 xl:gap-96 -right-3 sm:-right-4">
             <div className={`${sideWhiteButtonStyle}`}></div>
             <div className={`${sideWhiteButtonStyle}`}></div>
           </div>
@@ -24,7 +24,7 @@ export default function HeroSegment() {
         <div className=" col-span-3 grid grid-rows-2 sm:ml-5">
           <div className=" grid grid-flow-col  sm:grid-rows-2 order-last sm:order-none">
             <div className="">
-              <p className="text-4xl absolute top-14 sm:relative sm:top-0 sm:text-4xl text-primaryBlue font-extrabold xl:leading-normal">
+              <p className="text-4xl absolute  top-12 sm:relative sm:top-0 :text-4xl text-primaryBlue font-bold  leading-normal tracking-wider ">
                 CRAFTED FOR THE{" "}
                 <span className=" text-bodybg sm:text-primaryBlue">
                   DISCERNING INDIVIDUAL
