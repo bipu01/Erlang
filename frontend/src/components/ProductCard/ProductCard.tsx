@@ -14,7 +14,7 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
   return (
     <div
       id="product1"
-      className=" row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 3xl:mt-6 relative sm:shadow-customRight hover:cursor-pointer "
+      className=" row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 relative sm:shadow-customRight hover:cursor-pointer "
       onClick={openProductMenu}
     >
       <div className="absolute z-30 -top-3% 4xl:-top-2% flex w-100% gap-30% left-25%">
@@ -43,10 +43,10 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
   return (
     <div
       id="product2"
-      className="row-span-2  sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mb-6 3xl:mb-6 relative hover:cursor-pointer"
+      className="row-span-2  sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 relative mb-6 hover:cursor-pointer"
       onClick={openProductMenu}
     >
-      <div className="absolute z-30 -bottom-3% 4xl:-bottom-2% flex w-100% gap-30% left-25%">
+      <div className="absolute z-30 -bottom-3% sm:bottom-1% flex w-100% gap-30% left-25%">
         <div
           className={`${sizeOfPunchHole} ${
             prop.holeColor === "pink" ? "bg-bgLightPink" : "bg-bgLightBlue"
@@ -60,7 +60,7 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
       </div>
       <Link to="/product">
         <img
-          className="w-100% h-100% object-cover relative z-20 rounded-sm"
+          className="h-100% sm:h-96%  w-100% object-cover relative z-20 rounded-sm "
           src={prop.imgSrc}
           alt={prop.imgSrc}
         />
@@ -81,7 +81,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
       <div
         className={`space-y-2 xl:space-y-2 after:absolute after:content-[''] after:h-0.5 after:w-90% after:hidden sm:after:block 
         after:bg-black after:opacity-20 after:z-40 before:absolute before:content-[''] before:h-100% before:w-4 
-        before:bg-bodybg before:-left-3% sm:before:left-98% before:z-30 before:top-0`}
+        before:bg-bodybg before:-left-3% sm:before:left-98% 4xl:before:left-99% before:z-30 before:top-0`}
       >
         <div
           className={`hidden sm:block absolute ${sizeOfPunchHole} ${
