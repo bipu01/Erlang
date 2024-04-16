@@ -7,10 +7,10 @@ export const BuyNowBtn = (prop: buttonPropInterface) => {
     <button
       className={`${
         prop.primary
-          ? "bg-primaryBlue text-bodybg rounded-full"
-          : "bg-bodybg text-primaryBlue rounded-full"
+          ? "bg-primaryBlue text-bodybg rounded-md"
+          : "bg-bodybg text-primaryBlue rounded-md"
       } px-3vw sm:px-5vw py-2 sm:py-3 ${sizeOfLessMajorText}  
-  items-center flex gap-1 sm:gap-2 font-normal sm:font-medium
+  items-center flex gap-1 sm:gap-2 font-normal sm:font-medium tracking-wider
   whitespace-nowrap`}
     >
       {prop.text}
@@ -33,10 +33,10 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
         className={`${
           prop.primary
             ? "bg-primaryBlue text-bodybg rounded-md px-3vw sm:px-4 lg:px-5"
-            : "bg-bodybg text-primaryBlue rounded-full py-2 sm:py-3 px-3vw sm:px-4vw "
+            : "bg-bodybg text-primaryBlue rounded-md py-2 sm:py-3 px-3vw sm:px-4vw "
         } ${sizeOfLessMajorText} ${
           prop.custom
-        } py-2 items-center flex gap-1 sm:gap-2 font-normal sm:font-medium
+        } py-1 items-center flex gap-1 sm:gap-2 font-medium tracking-wider 
         whitespace-nowrap`}
       >
         {prop.text}
@@ -44,13 +44,13 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
           <CartIcon
             borderColor="#FFF9EF"
             custom="h-6 w-6"
-            borderThickness={2}
+            borderThickness={1.5}
           />
         ) : (
           <CartIcon
             borderColor="#1C244B"
             custom="h-6 w-6"
-            borderThickness={2}
+            borderThickness={1.5}
           />
         )}
       </button>

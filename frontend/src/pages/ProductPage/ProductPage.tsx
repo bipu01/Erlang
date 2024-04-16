@@ -34,7 +34,7 @@ const ProductPage = () => {
               </h3>
             </div>
             <div className=" text-xs sm:text-base">
-              <p className={` font-medium opacity-70 `}>
+              <p className={` font-medium opacity-70 line-clamp-5`}>
                 Made with premium materials, this dress is not only comfortable
                 but also durable, ensuring that you'll look and feel your best
                 for years to come. Whether you're dressing up for a night out or
@@ -68,13 +68,6 @@ const ProductPage = () => {
                 <div className="h-6 w-6 sm:h-8 sm:w-8  rounded-full bg-[#487431]"></div>
                 <div className="h-6 w-6 sm:h-8 sm:w-8  rounded-full bg-[#2E467D]"></div>
                 <div className="h-6 w-6 sm:h-8 sm:w-8  rounded-full bg-[#537782]"></div>
-
-                <div className=" ml-10% items-center gap-2 hidden sm:flex">
-                  <div className="h-6 w-6 3xl:h-8 3xl:w-8 ">
-                    <LikeBtn fillColor="#D9DFED" />
-                  </div>
-                  <div className={`${priceTextSizeInPreviewPage}`}>Like </div>
-                </div>
               </div>
             </div>
           </div>
@@ -88,6 +81,9 @@ const ProductPage = () => {
 
             {/* <div className=" bg-black opacity-20 h-0.5 w-100% mb-2"></div> */}
             <div className="flex justify-between  items-center">
+              <div className="items-center gap-2 hidden sm:block h-10 w-10 3xl:h-12 3xl:w-12 hover:cursor-pointer">
+                <LikeBtn fillColor="#D9DFED" borderThickness={1} />
+              </div>
               <BuyNowBtn darkBg={true} text="Buy now" primary={true} />
               <AddToCartButton
                 darkBg={false}
