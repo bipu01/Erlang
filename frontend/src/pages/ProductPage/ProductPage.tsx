@@ -1,3 +1,4 @@
+import ScrollToTop from "../../Frunctions/ScrollToTop";
 import { LikeBtn } from "../../SVG/LikeBtn";
 import Star from "../../SVG/Star";
 import { AddToCartButton, BuyNowBtn } from "../../components/Buttons/Buttons";
@@ -10,6 +11,7 @@ import {
 const ProductPage = () => {
   return (
     <div className={`bg-bgLightBlue py-4 sm:py-16 ${paddingForPage}`}>
+      <ScrollToTop />
       <div className="grid grid-rows-2 sm:grid-cols-5">
         <div className="relative sm:col-span-2 h-60vh lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
           <img
