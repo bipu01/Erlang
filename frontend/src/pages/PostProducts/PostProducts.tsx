@@ -45,6 +45,7 @@ const PostProducts = () => {
       });
       setPostStatus(1);
       console.log(postStatus);
+      console.log(response);
     } else {
       setPostStatus(0);
       console.log(postStatus);
