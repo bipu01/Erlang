@@ -131,7 +131,7 @@ const PostProducts = () => {
             name="title"
             id="title"
             placeholder="Title here"
-            className="w-35vw h-12 p-2 rounded-md border-solid border-gray-600 border-2 "
+            className="w-95vw sm:w-35vw h-12 p-2 rounded-md border-solid border-gray-600 border-2 "
             onChange={handleTitleChange}
           ></textarea>
         </label>
@@ -143,7 +143,7 @@ const PostProducts = () => {
             name="desc"
             id="desc"
             placeholder="Description here"
-            className="w-35vw h-32 p-2 rounded-md border-solid border-gray-600 border-2 "
+            className="w-95vw sm:w-35vw h-32 p-2 rounded-md border-solid border-gray-600 border-2 "
             onChange={handleDescChange}
           ></textarea>
         </label>
@@ -155,7 +155,7 @@ const PostProducts = () => {
             type="number"
             id="price"
             placeholder="Price here"
-            className="w-35vw h-12 p-2 rounded-md border-solid border-gray-600 border-2 "
+            className="w-95vw sm:w-35vw h-12 p-2 rounded-md border-solid border-gray-600 border-2 "
             onChange={handlePriceChange}
           />
         </label>
@@ -175,7 +175,7 @@ const PostProducts = () => {
           />
           <div
             id="img-preview"
-            className=" bg-cover w-35vw h-32 p-2 rounded-md border-solid border-gray-600 border-2 hover:cursor-pointer"
+            className=" bg-cover w-95vw sm:w-35vw h-32 p-2 rounded-md border-solid border-gray-600 border-2 hover:cursor-pointer"
           >
             Click here to add image
           </div>
