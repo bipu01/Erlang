@@ -6,6 +6,7 @@ import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ProductPage from "./pages/ProductPage";
+import PostProducts from "./pages/PostProducts";
 // import Footer from "./Footer";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contactUs" element={<ContactUsPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/postProducts" element={<PostProducts />} />
         </Routes>
 
         {/* <Footer /> */}

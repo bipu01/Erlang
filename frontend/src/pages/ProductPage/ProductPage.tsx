@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import ScrollToTop from "../../Frunctions/ScrollToTop";
 import { LikeBtn } from "../../SVG/LikeBtn";
 import Star from "../../SVG/Star";
@@ -7,15 +8,38 @@ import {
   priceTextSizeInPreviewPage,
   selectedColor,
 } from "../../defineSize";
+import axios from "axios";
+import { productProp } from "../../declare";
 
 const ProductPage = () => {
+  const [data, setData] = useState<productProp | null>();
+
+  const getData = async () => {
+    try {
+      const res = await axios.get("https://fakestoreapi.com/products/1");
+      setData(res.data);
+    } catch (err) {
+      console.table({ error: err });
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {
+    if (data) {
+      console.log(data);
+    }
+  }, [data]);
+
   return (
     <div className={`bg-bgLightBlue py-4 sm:py-16 ${paddingForPage}`}>
       <ScrollToTop />
       <div className="grid grid-rows-2 sm:grid-cols-5">
         <div className="relative sm:col-span-2 h-60vh lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
           <img
-            src="/assets/Dress/Co Fall 2019 Fashion Show.jpeg"
+            src={data?.image}
             alt="productImage"
             className="w-100% h-100% object-cover rounded-sm"
           />
@@ -32,18 +56,12 @@ const ProductPage = () => {
               <h3
                 className={`relative font-medium sm:font-semibold z-20 whitespace-normal text-lg sm:text-2xl lg:text-2xl 2xl:text-4xl `}
               >
-                Dragy Hose with droppy strings and other stuffs too
+                {data?.title || `Heading Loading...`}
               </h3>
             </div>
             <div className=" text-xs sm:text-base">
               <p className={` font-medium opacity-70 line-clamp-5`}>
-                Made with premium materials, this dress is not only comfortable
-                but also durable, ensuring that you'll look and feel your best
-                for years to come. Whether you're dressing up for a night out or
-                layering it with leather and chains for a more casual look, this
-                badass brown dress is a must-have for any fashion-forward
-                wardrobe. Experience the ultimate combination of style and
-                attitude with our latest luxury piece.
+                {data?.description || `Description loading....`}
               </p>
             </div>
             <div id="rating" className="hidden sm:flex gap-4 items-baseline ">
@@ -57,7 +75,9 @@ const ProductPage = () => {
                   fillColor="#D9DFED"
                 />
               </div>
-              <h3 className={` text-sm sm:text-2xl 2xl:text-2xl`}>4.0</h3>
+              <h3 className={` text-sm sm:text-2xl 2xl:text-2xl`}>
+                {data?.rating.rate}
+              </h3>
             </div>
             <div>
               <p className="hidden sm:inline-block font-semibold">
@@ -77,7 +97,7 @@ const ProductPage = () => {
           <div className="w-100%  space-y-6 sm:space-y-8">
             <div className="flex items-center justify-between">
               <h3 id="price" className={`${priceTextSizeInPreviewPage}`}>
-                NPR.3500
+                Rs.{data?.price || `Price Loading...`}
               </h3>
             </div>
 

@@ -36,7 +36,14 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="">
-            <Link to="/login">
+            {/* <Link to="/login">
+              <img
+                className="h-7 aspect-square sm:h-9"
+                src="./assets/userr.svg"
+                alt=""
+              />
+            </Link> */}
+            <Link to="/postProducts">
               <img
                 className="h-7 aspect-square sm:h-9"
                 src="./assets/userr.svg"
