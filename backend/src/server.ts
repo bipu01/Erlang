@@ -14,7 +14,7 @@ app.use(cors({
 }))
 // app.use(cookieParser())
 
-const mongoURL = `mongodb+srv://biplovegautam123:eN1ozcZ1wvZRpCOH@test-db.jlb0gub.mongodb.net/?retryWrites=true&w=majority&appName=test-db`
+const mongoURL = `mongodb+srv://biplovegautam123:eN1ozcZ1wvZRpCOH@test-db.jlb0gub.mongodb.net/`
 
 app.post("/postProduct",async(req,res)=>{
     const mongoClient = new MongoClient(mongoURL)

@@ -30,8 +30,7 @@ const PostProducts = () => {
     }
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     if (title != "" && desc != "" && price != null && image != "") {
       const response = await axios.post("http://localhost:3000/postProduct", {
         title: title,
