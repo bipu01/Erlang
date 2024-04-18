@@ -13,27 +13,30 @@ app.use(cors({
     optionsSuccessStatus: 200 
 }))
 // app.use(cookieParser())
+app.get("/",(req,res)=>{
+    res.send("Hello from Erlang backend")
+})
 
 const mongoURL = `mongodb+srv://biplovegautam123:eN1ozcZ1wvZRpCOH@test-db.jlb0gub.mongodb.net/`
 
-app.post("/postProduct",async(req,res)=>{
+app.post("/postProduct", async(req,res)=>{
     const mongoClient = new MongoClient(mongoURL)
     try {
         const response= await mongoClient.db("Erlang").collection("dress").insertOne({
-            title:req.body.title,
-            price:req.body.price,
-            desc:req.body.desc,
-            image:req.body.image,
+            title:req.body?.title,
+            price:req.body?.price,
+            desc:req.body?.desc,
+            image:req.body?.image,
             rating:{
-                rate:req.body.rate,
-                count:req.body.count
+                rate:req.body?.rate,
+                count:req.body?.count
             }
         })
         res.json(response)
     } catch (error) {
         res.json({message:error})
-    }
-})
+    }})
+
 
 
 app.listen(3000,()=>{
