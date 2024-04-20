@@ -64,6 +64,7 @@ const PostProducts = () => {
         category: category,
         featured: isFeatured,
       });
+      console.log("upload all data is fired ");
     } else {
       setPostStatus(0);
     }
@@ -72,6 +73,7 @@ const PostProducts = () => {
   // It checks if the form is filled and help to throw dialouge box
   const handleSubmit = async () => {
     await Promise.all([uploadAndGetImgURL()]);
+    console.log("handle submit is fired");
     await uploadAllData();
   };
 
@@ -92,6 +94,7 @@ const PostProducts = () => {
       }
     }
   }, [postStatus]);
+
   useEffect(() => {
     makeFailedDialougeBoxInvisible();
     makeSuccessDialougeBoxInvisible();
@@ -125,9 +128,10 @@ const PostProducts = () => {
           >
             <div
               //   id="postSuccessCard"
-              className=" fixed top-8vh left-25vw rounded-md text-center py-4 text-xl font-medium text-bodybg w-50vw h-16 bg-primaryBlue"
+              className=" fixed top-8vh left-25vw rounded-md text-center py-4 text-xl font-medium text-bodybg w-50vw  bg-primaryBlue"
             >
-              Product Successfully Posted
+              Product Successfully Posted <br />
+              <span className=" text-base font-base">"Click anywhere "</span>
             </div>
           </div>
         ) : (
@@ -138,9 +142,12 @@ const PostProducts = () => {
           >
             <div
               //   id="postFailedCard"
-              className=" fixed top-8vh left-25vw rounded-md text-center py-4 text-xl font-medium text-bodybg w-50vw h-16 bg-primaryBlue"
+              className=" fixed top-8vh left-25vw rounded-md text-center py-4 text-xl font-medium text-bodybg w-50vw  bg-red-950"
             >
-              Product post failed
+              Product post failed <br />
+              <span className=" text-base font-base">
+                "Fill the form completely"
+              </span>
             </div>
           </div>
         )}

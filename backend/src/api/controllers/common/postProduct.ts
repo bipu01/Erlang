@@ -4,6 +4,7 @@ import config from "../../../config/config";
 
 const postProduct  = async(req:Request,res:Response) => {
     const mongoClient = new MongoClient(config.mongoURI)
+    await mongoClient.connect()
     try {
         const response= await mongoClient.db("Erlang").collection(`${req.body.category}`).insertOne({
             title:req.body.title,
@@ -14,7 +15,7 @@ const postProduct  = async(req:Request,res:Response) => {
                 rate:req.body.rate,
                 count:req.body.count
             },
-            isFeatured: req.body.isFeatured
+            isFeatured: req.body.isFeatured,
         })
         res.json(response)
     } catch (error) {
