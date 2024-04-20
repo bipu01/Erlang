@@ -1,4 +1,4 @@
-import ScrollToTop from "../../Frunctions/ScrollToTop";
+import ScrollToTop from "../../Functions/ScrollToTop";
 import { cartItems } from "./cartCluster";
 
 export default function Cart() {

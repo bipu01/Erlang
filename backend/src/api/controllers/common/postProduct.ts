@@ -2,10 +2,10 @@ import { Request, Response } from "express";
 import { MongoClient } from "mongodb";
 import config from "../../../config/config";
 
-const postDress  = async(req:Request,res:Response) => {
+const postProduct  = async(req:Request,res:Response) => {
     const mongoClient = new MongoClient(config.mongoURI)
     try {
-        const response= await mongoClient.db("Erlang").collection("dress").insertOne({
+        const response= await mongoClient.db("Erlang").collection(`${req.body.category}`).insertOne({
             title:req.body.title,
             price:req.body.price,
             desc:req.body.desc,
@@ -14,7 +14,7 @@ const postDress  = async(req:Request,res:Response) => {
                 rate:req.body.rate,
                 count:req.body.count
             },
-            category:req.body.category
+            isFeatured: req.body.isFeatured
         })
         res.json(response)
     } catch (error) {
@@ -22,4 +22,4 @@ const postDress  = async(req:Request,res:Response) => {
     }
 };
 
-export default postDress
+export default postProduct

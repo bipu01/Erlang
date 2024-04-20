@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { paddingForPage } from "../../defineSize";
 import axios from "axios";
 import { storage } from "../../firebase";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 
 const PostProducts = () => {
@@ -10,6 +10,7 @@ const PostProducts = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState(Number);
+  const [isFeatured, setIsFeatured] = useState(false);
   const [category, setCategory] = useState("dress");
   const [postStatus, setPostStatus] = useState(99);
 
@@ -33,9 +34,6 @@ const PostProducts = () => {
       }
     }
   };
-  const handleCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategory(e.currentTarget.value);
-  };
 
   let imgURL: string;
   const uploadAndGetImgURL = async () => {
@@ -54,7 +52,7 @@ const PostProducts = () => {
   const uploadAllData = async () => {
     if (title != "" && desc != "" && price != null && image != null) {
       setPostStatus(1); //Uploads the image selected by the user
-      await axios.post("http://localhost:3000/postProduct", {
+      await axios.post(`http://localhost:3000/api/postProduct`, {
         title: title,
         price: price,
         desc: desc,
@@ -64,6 +62,7 @@ const PostProducts = () => {
           count: 0,
         },
         category: category,
+        featured: isFeatured,
       });
     } else {
       setPostStatus(0);
@@ -192,7 +191,7 @@ const PostProducts = () => {
           />
         </label>
 
-        <label htmlFor="imgUpload">
+        <label htmlFor="imgUpload" className="w-95vw sm:w-35vw  ">
           <h1 className="mt-8 font-semibold mb-2 text-primaryBlue">
             Drag and drop or click for the image:
           </h1>
@@ -201,7 +200,7 @@ const PostProducts = () => {
             type="file"
             id="imgUpload"
             placeholder="Drag and drop or click for the image"
-            className="hidden"
+            className="hidden w-95vw sm:w-35vw h-32 "
             accept="image"
             onChange={handleImgChange}
           />
@@ -217,15 +216,30 @@ const PostProducts = () => {
           <select
             name="categoy"
             id="category"
-            className="h-8 w-95vw sm:w-35vw border-solid border-black border-2 rounded-md "
-            onChange={handleCategory}
+            className="h-8 w-95vw sm:w-35vw border-solid border-black border-2 rounded-md mb-8"
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+              setCategory(e.currentTarget.value);
+            }}
           >
             <option value="dress">Dress</option>
             <option value="jewellery">Jewellery</option>
             <option value="footwear">Footwear</option>
           </select>
         </div>
-
+        <div>
+          <h1 className=" font-semibold mb-4 text-primaryBlue">Is Featured:</h1>
+          <select
+            name="isFeatured"
+            id="isFeatured"
+            className="h-8 w-95vw sm:w-35vw border-solid border-black border-2 rounded-md "
+            onChange={() => {
+              setIsFeatured(!isFeatured);
+            }}
+          >
+            <option value={0}>False</option>
+            <option value={1}>true</option>
+          </select>
+        </div>
         <button
           type="submit"
           onClick={handleSubmit}
@@ -233,8 +247,15 @@ const PostProducts = () => {
         >
           Submit
         </button>
+        {/* <button
+          className="mt-12 bg-primaryBlue rounded-md p-4 w-95vw sm:w-35vw  text-white font-bold absolute right-0 top-80vh"
+          onClick={() => {
+            console.log(featured);
+          }}
+        >
+          status
+        </button> */}
       </div>
-      <div></div>
     </>
   );
 };

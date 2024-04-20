@@ -2,6 +2,9 @@ import express from "express"
 import config from "./config/config";
 import cors from "cors"
 import dressRoute from "./api/routes/dress"
+import postProductRouter from "./api/routes/postProduct"
+import jewelleryRouter from "./api/routes/jewellery";
+import footwearRouter from "./api/routes/footwear";
 
 const app = express();
 app.use(express.json())
@@ -13,8 +16,11 @@ app.use(cors({
 app.get("/",(req,res)=>{
     res.json({message:"Hello from Erlang backend"})
 })
+app.use("/api/postProduct",postProductRouter)
 
 app.use("/api/dress",dressRoute)
+app.use("/api/jewellery",jewelleryRouter)
+app.use("/api/footwear",footwearRouter)
 
 
 app.listen(config.port,()=>{
