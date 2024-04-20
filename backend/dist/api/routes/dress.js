@@ -4,10 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const getFeaturedDress_1 = __importDefault(require("../controllers/dress/getFeaturedDress"));
-const getAllDress_1 = __importDefault(require("../controllers/dress/getAllDress"));
+const getFeaturedProducts_1 = __importDefault(require("../controllers/common/getFeaturedProducts"));
+const getAllProducts_1 = __importDefault(require("../controllers/common/getAllProducts"));
 const dressRouter = express_1.default.Router();
-dressRouter.route("/getFeaturedDresses").get(getFeaturedDress_1.default);
-dressRouter.route("/getAllDresses").get(getAllDress_1.default);
-dressRouter.route("/postProduct").post();
+dressRouter.route("/getFeatured").get(getFeaturedProducts_1.default);
+dressRouter.route("/getAll").get(getAllProducts_1.default);
 exports.default = dressRouter;
