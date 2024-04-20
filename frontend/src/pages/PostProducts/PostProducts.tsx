@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { paddingForPage } from "../../defineSize";
 import axios from "axios";
+import { storage } from "../../firebase";
+import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
 
 const PostProducts = () => {
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState<File>();
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState(Number);
+  const [category, setCategory] = useState("dress");
   const [postStatus, setPostStatus] = useState(99);
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -21,35 +25,55 @@ const PostProducts = () => {
 
   const handleImgChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const imgPreview = document.getElementById("img-preview");
-    if (e.currentTarget.files?.[0]) {
-      setImage(e.currentTarget.files?.[0].name || "");
-      const imgURL = URL.createObjectURL(e.currentTarget.files?.[0]);
+    if (e.currentTarget.files) {
+      setImage(e.currentTarget.files[0]);
+      const imgURL = URL.createObjectURL(e.currentTarget.files[0]);
       if (imgPreview) {
         imgPreview.style.backgroundImage = `url(${imgURL})`;
       }
     }
   };
+  const handleCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCategory(e.currentTarget.value);
+  };
 
-  const handleSubmit = async () => {
-    if (title != "" && desc != "" && price != null && image != "") {
-      const response = await axios.post("http://localhost:3000/postProduct", {
+  let imgURL: string;
+  const uploadAndGetImgURL = async () => {
+    if (image == null) return;
+
+    const imgRef = ref(storage, `/products/dress/${image.name + v4()}`);
+    try {
+      await uploadBytes(imgRef, image);
+      const productImgUrl = await getDownloadURL(imgRef);
+      imgURL = productImgUrl;
+      // setUploadedImgUrl(productImgUrl);
+    } catch (error) {
+      alert(error);
+    }
+  };
+  const uploadAllData = async () => {
+    if (title != "" && desc != "" && price != null && image != null) {
+      setPostStatus(1); //Uploads the image selected by the user
+      await axios.post("http://localhost:3000/postProduct", {
         title: title,
         price: price,
         desc: desc,
-        image: image,
+        image: imgURL,
         rating: {
           rate: 0,
           count: 0,
         },
+        category: category,
       });
-      setPostStatus(1);
-      console.log(postStatus);
-      console.log(response);
     } else {
       setPostStatus(0);
-      console.log(postStatus);
-      console.log("not posted");
     }
+  };
+
+  // It checks if the form is filled and help to throw dialouge box
+  const handleSubmit = async () => {
+    await Promise.all([uploadAndGetImgURL()]);
+    await uploadAllData();
   };
 
   useEffect(() => {
@@ -69,7 +93,6 @@ const PostProducts = () => {
       }
     }
   }, [postStatus]);
-
   useEffect(() => {
     makeFailedDialougeBoxInvisible();
     makeSuccessDialougeBoxInvisible();
@@ -83,6 +106,7 @@ const PostProducts = () => {
       setPostStatus(99);
     }
   };
+
   const makeSuccessDialougeBoxInvisible = () => {
     const postSuccessCard = document.getElementById("postSuccessCardContainer");
     if (postSuccessCard) {
@@ -90,9 +114,10 @@ const PostProducts = () => {
       setPostStatus(99);
     }
   };
+
   return (
     <>
-      <div className={` ${paddingForPage} mt-5vh pb-24`}>
+      <div className={` ${paddingForPage} mt-5vh pb-24 `}>
         {postStatus ? (
           <div
             id="postSuccessCardContainer"
@@ -121,10 +146,14 @@ const PostProducts = () => {
           </div>
         )}
 
-        <h1 className=" text-xl font-bold ">Enter products to upload</h1>
+        <h1 className=" text-2xl font-bold text-primaryBlue ">
+          Upload Products
+        </h1>
 
         <label htmlFor="title">
-          <h1 className="mt-8 font-semibold mb-2">Name of the product</h1>
+          <h1 className="mt-8 font-semibold mb-2 text-primaryBlue">
+            Name of the product:
+          </h1>
           <textarea
             required
             name="title"
@@ -136,7 +165,9 @@ const PostProducts = () => {
         </label>
 
         <label htmlFor="des">
-          <h1 className="mt-8 font-semibold mb-2">Description the post</h1>
+          <h1 className="mt-8 font-semibold mb-2 text-primaryBlue">
+            Description the post:
+          </h1>
           <textarea
             required
             name="desc"
@@ -148,7 +179,9 @@ const PostProducts = () => {
         </label>
 
         <label htmlFor="price">
-          <h1 className="mt-8 font-semibold mb-2">Price of the product</h1>
+          <h1 className="mt-8 font-semibold mb-2 text-primaryBlue">
+            Price of the product:
+          </h1>
           <input
             required
             type="number"
@@ -160,8 +193,8 @@ const PostProducts = () => {
         </label>
 
         <label htmlFor="imgUpload">
-          <h1 className="mt-8 font-semibold mb-2">
-            Drag and drop or click for the image
+          <h1 className="mt-8 font-semibold mb-2 text-primaryBlue">
+            Drag and drop or click for the image:
           </h1>
           <input
             required
@@ -174,19 +207,34 @@ const PostProducts = () => {
           />
           <div
             id="img-preview"
-            className=" bg-cover w-95vw sm:w-35vw h-32 p-2 rounded-md border-solid border-gray-600 border-2 hover:cursor-pointer"
+            className=" bg-cover w-95vw sm:w-35vw h-32 p-2 rounded-md border-solid border-gray-600 border-2 hover:cursor-pointer text-primaryBlue"
           >
             Click here to add image
           </div>
         </label>
+        <div className="mt-8 gap-4 items-center">
+          <h1 className=" font-semibold mb-4 text-primaryBlue">Category:</h1>
+          <select
+            name="categoy"
+            id="category"
+            className="h-8 w-95vw sm:w-35vw border-solid border-black border-2 rounded-md "
+            onChange={handleCategory}
+          >
+            <option value="dress">Dress</option>
+            <option value="jewellery">Jewellery</option>
+            <option value="footwear">Footwear</option>
+          </select>
+        </div>
+
         <button
           type="submit"
           onClick={handleSubmit}
-          className=" bg-red-400 rounded-md p-4 px-6 mt-4 text-white font-bold"
+          className="mt-12 bg-primaryBlue rounded-md p-4 w-95vw sm:w-35vw  text-white font-bold"
         >
           Submit
         </button>
       </div>
+      <div></div>
     </>
   );
 };
