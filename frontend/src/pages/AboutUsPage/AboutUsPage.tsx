@@ -1,4 +1,4 @@
-import ScrollToTop from "../../Frunctions/ScrollToTop";
+import ScrollToTop from "../../Functions/ScrollToTop";
 import { paddingForPage } from "../../defineSize";
 import Testimonials from "./Testimonials";
 

@@ -1,4 +1,4 @@
-import ScrollToPreviousPosition from "../../../Frunctions/ScrollToPreviousPosition";
+import ScrollToPreviousPosition from "../../../Functions/ScrollToPreviousPosition";
 import Dresses from "./Dresses";
 import Footwear from "./Footwear";
 import Jewellery from "./Jewellery";
