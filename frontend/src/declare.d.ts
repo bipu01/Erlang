@@ -44,7 +44,7 @@ export type productClusterProp ={
 }
 export interface productClusterPropInterface {
     leftRow:{
-        id:string,
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
