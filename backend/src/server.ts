@@ -7,6 +7,8 @@ import jewelleryRouter from "./api/routes/jewellery";
 import footwearRouter from "./api/routes/footwear";
 import contactUsRouter from "./api/routes/contactUs";
 import userRouter from "./api/routes/user";
+import featuredProductRouter from "./api/routes/featuredProductRouter";
+import mongoose from "mongoose";
 
 const app = express();
 app.use(express.json())
@@ -23,6 +25,7 @@ app.get("/",(req,res)=>{
 
 app.use("/api/postProduct",postProductRouter)
 app.use("/api/user",userRouter)
+app.use("/api/getEveryFeatured",featuredProductRouter)
 app.use("/api/dress",dressRoute)
 app.use("/api/jewellery",jewelleryRouter)
 app.use("/api/footwear",footwearRouter)
@@ -30,9 +33,9 @@ app.use("/api/footwear",footwearRouter)
 app.use("/api/message",contactUsRouter)
 
 
-
-const start  = () => {
+export const start  = async() => {
     try {
+        await mongoose.connect(config.mongoURI)
         app.listen(PORT,()=>{
             console.log(`server running in port ${PORT}`)
         })

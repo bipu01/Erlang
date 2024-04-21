@@ -7,7 +7,7 @@ import { JewelleryCluster1, JewelleryCluster2 } from "./jewelleryCluster";
 const jewellery = () => {
   return (
     <>
-      <div className="relative mt-7vh">
+      <div className="relative mt-15vh">
         <img src="/assets/weavyArchPink.svg" alt="wave" className="w-100vw" />
         {/* <div className="absolute z-10 top-60% ">
           <SortByPanel />

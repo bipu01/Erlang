@@ -18,21 +18,22 @@ export const ProductCluster = ({
       <div className="row-span-2 col-span-2 sm:col-span-1 sm:row-span-1 grid sm:grid-rows-2">
         <DataOfLeftImg
           holeColor={color}
-          ProductName={rightRow.ProductName || ""}
-          rating={rightRow.rating || 0}
-          price={rightRow.price || 0}
+          ProductName={leftRow.ProductName || ""}
+          rating={leftRow.rating || 0}
+          price={leftRow.price || 0}
         />
         <div className="hidden sm:block sm:row-span-1"></div>
       </div>
 
       <ProductCardRightImg holeColor={color} imgSrc={rightRow.imgSrc} />
+
       <div className="row-span-2 col-span-2 sm:col-span-1 sm:row-span-1 grid sm:grid-rows-2">
         <div className="hidden sm:block sm:row-span-1"></div>
         <DataOfRightImg
           holeColor={color}
-          ProductName={leftRow.ProductName}
-          rating={leftRow.rating}
-          price={leftRow.price}
+          ProductName={rightRow.ProductName}
+          rating={rightRow.rating}
+          price={rightRow.price}
         />
       </div>
     </div>
