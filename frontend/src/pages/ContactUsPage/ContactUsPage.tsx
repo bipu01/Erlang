@@ -1,12 +1,38 @@
+import React, { useState } from "react";
 import ScrollToTop from "../../Functions/ScrollToTop";
 import { paddingForPage } from "../../defineSize";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function ContactUsPage() {
+  const [message, setMessage] = useState<string>("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData();
+      formData.append("message", message);
+      formData.append("access_key", "c135e344-d3ee-433d-8429-dbcc0dfbb3f9");
+
+      const res = await axios.post("https://api.web3forms.com/submit", formData);
+
+      if (res.data.success) {
+        console.log("Success", res.data);
+        // Optionally, you can reset the message state after successful submission
+        setMessage("");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
-    <div
-      className={`bg-bodybg w-full h-screen pt-5 sm:grid sm:grid-cols-2 ${paddingForPage}`}
-    >
+    <div className={`bg-bodybg w-full h-screen pt-5 sm:grid sm:grid-cols-2 ${paddingForPage}`}>
       <ScrollToTop />
       <div className=" flex flex-col gap-5 col-span-1">
         <div className="inline-block">
@@ -18,18 +44,20 @@ export default function ContactUsPage() {
           <p className="text-base sm:text-xl text-primaryBlue font-semibold">
             Send us a message here:
           </p>
-          <form className="mt-4">
+          <form className="mt-4" onSubmit={handleSubmit}>
             <textarea
               className="w-full bg-bodybg rounded-md border-2 border-primaryBlue p-2 h-40"
               name="message"
               id="message"
               placeholder="Type your message here..."
+              value={message}
+              onChange={handleChange}
             ></textarea>
             <button
               type="submit"
               className="mt-4 bg-primaryBlue text-white py-2 px-10 rounded-md font-semibold"
             >
-              Send{" "}
+              Send
             </button>
           </form>
         </div>
@@ -44,7 +72,7 @@ export default function ContactUsPage() {
           </div>
         </div>
         <div className="">
-          <p className=" text-base sm:text-xl text-primaryBlue font-semibold py-2">
+          <p className="text-base sm:text-xl text-primaryBlue font-semibold py-2">
             Our social links
           </p>
           <div className=" ">
