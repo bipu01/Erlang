@@ -1,6 +1,6 @@
 import express from "express"
-import getFeaturedDress from "../controllers/common/getFeaturedProducts"
-import getAllDresses  from "../controllers/common/getAllProducts";
+import getFeaturedDress from "../controllers/common/getEveryFeatured"
+import getAllDresses  from "../controllers/common/getAllProductCategory";
 
 const dressRouter = express.Router()
 

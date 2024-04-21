@@ -1,6 +1,6 @@
 import express from "express"
-import getFeaturedProducts from "../controllers/common/getFeaturedProducts";
-import getAllProducts from "../controllers/common/getAllProducts";
+import getFeaturedProducts from "../controllers/common/getEveryFeatured";
+import getAllProducts from "../controllers/common/getAllProductCategory";
 // import getAllJewellery from "../controllers/jewellery/getAllJewellery";
 // import getFeaturedJewellery from "../controllers/jewellery/getFeaturedJewellery";
 

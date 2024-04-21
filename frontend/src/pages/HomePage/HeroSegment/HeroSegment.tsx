@@ -58,14 +58,14 @@ export default function HeroSegment() {
           </div>
         </div>
       </div>
-      <div className=" flex gap-8  sm:mt-0">
+      <div className=" flex gap-4 sm:gap-8  sm:mt-0">
         <div className="">
-          <button className="bg-primaryBlue text-white py-4 w-40vw sm:w-48 sm:px-6 shadow-lg rounded-md font-semibold text-sm sm:text-lg">
+          <button className="bg-primaryBlue text-white py-4 w-45vw sm:w-48 sm:px-6 shadow-lg rounded-md font-semibold text-sm sm:text-lg">
             Browse
           </button>
         </div>
         <div className="">
-          <button className="bg-bodybg text-primaryBlue py-4 w-40vw sm:w-48 sm:px-6 shadow-lg  rounded-md font-semibold text-sm sm:text-lg">
+          <button className="bg-bodybg text-primaryBlue py-4 w-45vw sm:w-48 sm:px-6 shadow-lg  rounded-md font-semibold text-sm sm:text-lg">
             Watch Video
           </button>
         </div>

@@ -73,7 +73,7 @@ export const OptionsPanelBtn = (prop: buttonProp) => {
   }
   return (
     <>
-      <button className=" bg-bgLightBlue text-primaryBlue py-1 px-4 xmd:px-8 rounded-sm">
+      <button className=" bg-bgLightBlue text-primaryBlue py-1 px-2 xmd:px-8 rounded-sm">
         {prop.text}
       </button>
     </>
