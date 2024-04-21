@@ -1,23 +1,30 @@
 import { Request, Response } from "express";
-import { MongoClient } from "mongodb";
-import config from "../../../config/config";
+import Product from "../../../db/productSchema";
+
 
 const postProduct  = async(req:Request,res:Response) => {
-    const mongoClient = new MongoClient(config.mongoURI)
-    await mongoClient.connect()
     try {
-        const response= await mongoClient.db("Erlang").collection(`${req.body.category}`).insertOne({
-            title:req.body.title,
-            price:req.body.price,
-            desc:req.body.desc,
-            image:req.body.image,
-            rating:{
-                rate:req.body.rate,
-                count:req.body.count
+        const product= new Product({
+            name:req.body.name,
+            price:{
+                current:req.body.currentPrice,
+                original:req.body.originalPrice
             },
-            isFeatured: req.body.isFeatured,
-        })
-        res.json(response)
+            description:req.body.description,
+            image:{
+                image1:req.body.image1,
+                image2:req.body.image2,
+                image3:req.body.image3
+            },
+            isFeatured:req.body.isFeatured,
+            rating:{
+                rate:0,
+                count:0
+            },
+            category:req.body.category
+        }) 
+            product.save()
+            res.status(201).json({product})
     } catch (error) {
         res.json({message:error})
     }

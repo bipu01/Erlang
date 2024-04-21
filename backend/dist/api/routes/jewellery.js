@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const getFeaturedProducts_1 = __importDefault(require("../controllers/common/getFeaturedProducts"));
-const getAllProducts_1 = __importDefault(require("../controllers/common/getAllProducts"));
+const getEveryFeatured_1 = __importDefault(require("../controllers/common/getEveryFeatured"));
+const getAllProductCategory_1 = __importDefault(require("../controllers/common/getAllProductCategory"));
 // import getAllJewellery from "../controllers/jewellery/getAllJewellery";
 // import getFeaturedJewellery from "../controllers/jewellery/getFeaturedJewellery";
 const jewelleryRouter = express_1.default.Router();
-jewelleryRouter.route("/getAll").get(getAllProducts_1.default);
-jewelleryRouter.route("/getFeatured").get(getFeaturedProducts_1.default);
+jewelleryRouter.route("/getAll").get(getAllProductCategory_1.default);
+jewelleryRouter.route("/getFeatured").get(getEveryFeatured_1.default);
 exports.default = jewelleryRouter;

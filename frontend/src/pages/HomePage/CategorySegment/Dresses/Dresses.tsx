@@ -23,8 +23,8 @@ const Dresses = () => {
         <div id="container" className="grid space-y-16 ">
           <ProductCluster
             color="blue"
-            leftRow={Dressluster1.rightRow}
-            rightRow={Dressluster1.leftRow}
+            leftRow={Dressluster1.leftRow}
+            rightRow={Dressluster1.rightRow}
           />
           <ProductCluster
             color="blue"

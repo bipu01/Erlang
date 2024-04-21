@@ -12,33 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const productSchema_1 = __importDefault(require("db/productSchema"));
-const postProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const config_1 = __importDefault(require("../../../config/config"));
+const mongodb_1 = require("mongodb");
+const getUserInfo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const product = new productSchema_1.default({
-            name: req.body.name,
-            price: {
-                current: req.body.currentPrice,
-                original: req.body.originalPrice
-            },
-            description: req.body.description,
-            image: {
-                image1: req.body.image1,
-                image2: req.body.image2,
-                image3: req.body.image3
-            },
-            isFeatured: req.body.isFeatured,
-            rating: {
-                rate: 0,
-                count: 0
-            },
-            category: req.body.category
-        });
-        product.save();
-        res.status(201).json({ product });
+        const mongoClient = new mongodb_1.MongoClient(config_1.default.mongoURI);
+        const user = yield mongoClient.db(config_1.default.database).collection(req.body.category).find({ _id: req.body.id });
+        res.send(user);
     }
     catch (error) {
-        res.json({ message: error });
+        res.json({ message: "something went wrong fetching user", error: error });
     }
 });
-exports.default = postProduct;
+exports.default = getUserInfo;
