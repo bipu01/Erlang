@@ -7,7 +7,7 @@ import { Dressluster1, Dressluster2 } from "./dressCluster";
 const Dresses = () => {
   return (
     <>
-      <div className="relative mt-20vh">
+      <div className="relative mt-7vh">
         <img src="/assets/weavyArch.svg" alt="wave" className="w-100vw" />
         <div className="absolute z-10 top-60% ">
           <SortByPanel />

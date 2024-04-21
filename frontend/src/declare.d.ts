@@ -19,12 +19,14 @@ export interface buttonPropInterface{
     active?:boolean,
     primary?:boolean,
     darkBg:boolean,
-    custom?:string
+    custom?:string,
+    parentId?:string
 }
 
 export type productClusterProp ={
     color:string,
     leftRow:{
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
@@ -32,6 +34,7 @@ export type productClusterProp ={
         imgSrc?:string
     },
     rightRow:{
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
@@ -41,6 +44,7 @@ export type productClusterProp ={
 }
 export interface productClusterPropInterface {
     leftRow:{
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
@@ -48,6 +52,7 @@ export interface productClusterPropInterface {
         imgSrc?:string
     },
     rightRow:{
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
