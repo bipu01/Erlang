@@ -26,7 +26,7 @@ export interface buttonPropInterface{
 export type productClusterProp ={
     color:string,
     leftRow:{
-        id:string,
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
@@ -34,7 +34,7 @@ export type productClusterProp ={
         imgSrc?:string
     },
     rightRow:{
-        id:string,
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
@@ -52,7 +52,7 @@ export interface productClusterPropInterface {
         imgSrc?:string
     },
     rightRow:{
-        id:string,
+        id?:string,
         ProductName?:string,
         rating?: number,
         price?:number,
