@@ -5,6 +5,7 @@ import dressRoute from "./api/routes/dress"
 import postProductRouter from "./api/routes/postProduct"
 import jewelleryRouter from "./api/routes/jewellery";
 import footwearRouter from "./api/routes/footwear";
+import contactUsRouter from "./api/routes/contactUs";
 import userRouter from "./api/routes/user";
 import featuredProductRouter from "./api/routes/featuredProductRouter";
 import mongoose from "mongoose";
@@ -28,6 +29,8 @@ app.use("/api/getEveryFeatured",featuredProductRouter)
 app.use("/api/dress",dressRoute)
 app.use("/api/jewellery",jewelleryRouter)
 app.use("/api/footwear",footwearRouter)
+
+app.use("/api/message",contactUsRouter)
 
 
 export const start  = async() => {
