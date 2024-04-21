@@ -7,8 +7,8 @@ const postProduct  = async(req:Request,res:Response) => {
         const product= new Product({
             name:req.body.name,
             price:{
-                current:req.body.currentPrice,
-                original:req.body.originalPrice
+                currentPrice:req.body.currentPrice,
+                originalPrice:req.body.originalPrice
             },
             description:req.body.description,
             image:{

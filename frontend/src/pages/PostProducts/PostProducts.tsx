@@ -6,64 +6,108 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 
 const PostProducts = () => {
-  const [image, setImage] = useState<File>();
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [price, setPrice] = useState(Number);
+  const [image1, setImage1] = useState<File>();
+  const [image2, setImage2] = useState<File>();
+  const [image3, setImage3] = useState<File>();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState({ currentPrice: 0, originalPrice: 0 });
   const [isFeatured, setIsFeatured] = useState(false);
   const [category, setCategory] = useState("dress");
   const [postStatus, setPostStatus] = useState(99);
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setTitle(e.currentTarget.value);
+    setName(e.currentTarget.value);
   };
   const handleDescChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setDesc(e.currentTarget.value);
+    setDescription(e.currentTarget.value);
   };
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPrice(parseInt(e.currentTarget.value));
+    setPrice({
+      currentPrice: parseInt(e.currentTarget.value),
+      originalPrice: parseInt(e.currentTarget.value),
+    });
   };
 
   const handleImgChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const imgPreview = document.getElementById("img-preview");
     if (e.currentTarget.files) {
-      setImage(e.currentTarget.files[0]);
+      setImage1(e.currentTarget.files[0]);
       const imgURL = URL.createObjectURL(e.currentTarget.files[0]);
+
+      if (e.currentTarget.files[1]) {
+        setImage2(e.currentTarget.files?.[1]);
+        // const img2URL = URL.createObjectURL(e.currentTarget.files[3]);
+      }
+      if (e.currentTarget.files[2]) {
+        setImage3(e.currentTarget.files?.[2]);
+        // const img3URL = URL.createObjectURL(e.currentTarget.files[2]);
+      }
       if (imgPreview) {
         imgPreview.style.backgroundImage = `url(${imgURL})`;
       }
+      console.log({
+        "currentPrice": price.currentPrice,
+        "originalPrice": price.originalPrice,
+      });
     }
   };
 
-  let imgURL: string;
-  const uploadAndGetImgURL = async () => {
-    if (image == null) return;
+  let imgURL1: string;
+  let imgURL2: string;
+  let imgURL3: string;
 
-    const imgRef = ref(storage, `/products/dress/${image.name + v4()}`);
+  const uploadAndGetImgURL = async () => {
+    if (image1 == null) return;
+
+    const img1Ref = ref(storage, `/products/dress/${image1.name + v4()}`);
+    const img2Ref = ref(storage, `/products/dress/${image2?.name + v4()}`);
+    const img3Ref = ref(storage, `/products/dress/${image3?.name + v4()}`);
     try {
-      await uploadBytes(imgRef, image);
-      const productImgUrl = await getDownloadURL(imgRef);
-      imgURL = productImgUrl;
+      if (image1) {
+        await uploadBytes(img1Ref, image1);
+        const product1ImgUrl = await getDownloadURL(img1Ref);
+        imgURL1 = product1ImgUrl;
+      }
+      if (image2) {
+        await uploadBytes(img2Ref, image2);
+        const product2ImgUrl = await getDownloadURL(img2Ref);
+        imgURL2 = product2ImgUrl;
+      }
+      if (image3) {
+        await uploadBytes(img3Ref, image3);
+        const product3ImgUrl = await getDownloadURL(img3Ref);
+        imgURL3 = product3ImgUrl;
+      }
       // setUploadedImgUrl(productImgUrl);
     } catch (error) {
       alert(error);
     }
   };
+
   const uploadAllData = async () => {
-    if (title != "" && desc != "" && price != null && image != null) {
+    if (name != "" && description != "" && price != null && image1 != null) {
       setPostStatus(1); //Uploads the image selected by the user
-      await axios.post(`http://localhost:3000/api/postProduct`, {
-        title: title,
-        price: price,
-        desc: desc,
-        image: imgURL,
+      const res = await axios.post(`http://localhost:3000/api/postProduct`, {
+        name: name,
+
+        currentPrice: price.currentPrice,
+        originalPrice: price.originalPrice,
+
+        description: description,
+
+        image1: imgURL1,
+        image2: imgURL2,
+        image3: imgURL3,
+
         rating: {
           rate: 0,
           count: 0,
         },
         category: category,
-        featured: isFeatured,
+        isFeatured: isFeatured,
       });
+      console.log(res.data);
       console.log("upload all data is fired ");
     } else {
       setPostStatus(0);
@@ -119,7 +163,7 @@ const PostProducts = () => {
 
   return (
     <>
-      <div className={` ${paddingForPage} mt-5vh pb-24 `}>
+      <div className={` ${paddingForPage} mt-5vh mb-24 `}>
         {postStatus ? (
           <div
             id="postSuccessCardContainer"

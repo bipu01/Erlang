@@ -13,11 +13,12 @@ const CategorySegment = () => {
       config.backendURL + "getEveryFeatured/"
     );
 
-    console.log({
-      "featuredDress": allFeaturedProducts.data.featuredDressList,
-      "featuredJewellery": allFeaturedProducts.data.featuredJewelleryList,
-      "featuredFootwear": allFeaturedProducts.data.featuredFootwearList,
-    });
+    console.log(allFeaturedProducts.data.featuredDressCluster);
+    // console.log({
+    //   "featuredDress": allFeaturedProducts.data.featuredDressList,
+    //   "featuredJewellery": allFeaturedProducts.data.featuredJewelleryList,
+    //   "featuredFootwear": allFeaturedProducts.data.featuredFootwearList,
+    // });
   };
 
   useEffect(() => {

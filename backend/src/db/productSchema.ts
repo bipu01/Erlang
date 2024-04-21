@@ -6,10 +6,10 @@ const productSchema = new mongoose.Schema({
         required:true
     },
     price:{
-        original:{
+        originalPrice:{
             type:Number,
         },
-        current:{
+        currentPrice:{
             type:Number,
             required:true
         },
