@@ -1,6 +1,7 @@
 import CartIcon from "../../SVG/CartIcon";
 import { buttonProp, buttonPropInterface } from "../../declare";
 import { sizeOfLessMajorText } from "../../defineSize";
+import { handleAddToCart } from "./ButtonFunctions/addToCart";
 
 export const BuyNowBtn = (prop: buttonPropInterface) => {
   return (
@@ -30,6 +31,7 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
   return (
     <>
       <button
+        id={`addToCart` + prop.parentId}
         className={`${
           prop.primary
             ? "bg-primaryBlue text-bodybg rounded-md px-3vw sm:px-4 lg:px-5"
@@ -38,6 +40,7 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
           prop.custom
         } py-1 items-center flex gap-1 sm:gap-2 font-medium tracking-wider 
         whitespace-nowrap`}
+        onClick={handleAddToCart}
       >
         {prop.text}
         {prop.darkBg ? (
