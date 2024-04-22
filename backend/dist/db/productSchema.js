@@ -10,10 +10,10 @@ const productSchema = new mongoose_1.default.Schema({
         required: true
     },
     price: {
-        original: {
+        originalPrice: {
             type: Number,
         },
-        current: {
+        currentPrice: {
             type: Number,
             required: true
         },

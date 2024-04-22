@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // import { MongoClient } from "mongodb";
-const productSchema_1 = __importDefault(require("db/productSchema"));
+const productSchema_1 = __importDefault(require("../../../db/productSchema"));
 const getEveryFeatured = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5;
     // const mongoClient = new MongoClient(config.mongoURI);

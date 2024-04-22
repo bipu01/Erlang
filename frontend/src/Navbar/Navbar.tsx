@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Search from "../components/Search";
 
 const Navbar = () => {
   return (
@@ -10,6 +11,9 @@ const Navbar = () => {
             src="./assets/logo.svg"
             alt=""
           />
+        </div>
+        <div className="">
+          <Search/>
         </div>
         {/* navlinks */}
         <div className="flex gap-4 text-sm font-medium sm:text-xl sm:gap-10 sm:font-normal items-center">

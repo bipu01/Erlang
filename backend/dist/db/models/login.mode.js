@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const loginSchema = new mongoose_1.default.Schema({
     email: {
-        type: String
+        type: String,
+        required: true
     },
     password: {
-        type: String
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 const Login = mongoose_1.default.model("Login", loginSchema);

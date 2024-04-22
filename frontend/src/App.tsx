@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import ProductPage from "./pages/ProductPage";
 import PostProducts from "./pages/PostProducts";
 import RootLayout from "./RootLayout";
+import SearchedProduct from "./components/searchedProduct";
 // import Footer from "./Footer";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/postProducts" element={<PostProducts />} />
+        <Route path="/searchedProducts" element={<SearchedProduct />} />
       </Route>
     )
   );

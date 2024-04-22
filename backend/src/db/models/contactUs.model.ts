@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const contactUsSchema = new mongoose.Schema(
     {
         message: {
-            type: String
+            type: String,
+            required:true
         }
     },
     { timestamps: true }
