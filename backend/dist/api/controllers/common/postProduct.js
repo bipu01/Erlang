@@ -12,14 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const productSchema_1 = __importDefault(require("db/productSchema"));
+const productSchema_1 = __importDefault(require("../../../db/productSchema"));
 const postProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const product = new productSchema_1.default({
             name: req.body.name,
             price: {
-                current: req.body.currentPrice,
-                original: req.body.originalPrice
+                currentPrice: req.body.currentPrice,
+                originalPrice: req.body.originalPrice
             },
             description: req.body.description,
             image: {

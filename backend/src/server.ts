@@ -9,6 +9,7 @@ import contactUsRouter from "./api/routes/contactUs";
 import userRouter from "./api/routes/user";
 import featuredProductRouter from "./api/routes/featuredProductRouter";
 import mongoose from "mongoose";
+import searchRouter from "./api/routes/searchRouter";
 
 const app = express();
 app.use(express.json())
@@ -31,6 +32,7 @@ app.use("/api/jewellery",jewelleryRouter)
 app.use("/api/footwear",footwearRouter)
 
 app.use("/api/message",contactUsRouter)
+app.use("/api/search",searchRouter)
 
 
 export const start  = async() => {
