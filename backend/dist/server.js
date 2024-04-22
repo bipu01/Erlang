@@ -24,6 +24,7 @@ const contactUs_1 = __importDefault(require("./api/routes/contactUs"));
 const user_1 = __importDefault(require("./api/routes/user"));
 const featuredProductRouter_1 = __importDefault(require("./api/routes/featuredProductRouter"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const searchRouter_1 = __importDefault(require("./api/routes/searchRouter"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
@@ -41,6 +42,7 @@ app.use("/api/dress", dress_1.default);
 app.use("/api/jewellery", jewellery_1.default);
 app.use("/api/footwear", footwear_1.default);
 app.use("/api/message", contactUs_1.default);
+app.use("/api/search", searchRouter_1.default);
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoose_1.default.connect(config_1.default.mongoURI);

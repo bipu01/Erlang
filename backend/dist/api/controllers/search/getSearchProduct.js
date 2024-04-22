@@ -12,27 +12,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const contactUs_1 = __importDefault(require("../../../db/models/contactUs"));
-const postContactUsMessage = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { message, email } = req.body;
-    if (message) { // Check if contactUsMessage is present
-        try {
-            const newContactUsMessage = new contactUs_1.default({
-                message: message,
-                email: email
-            });
-            console.log(message);
-            yield newContactUsMessage.save();
-            res.status(200).json(newContactUsMessage);
+const productSchema_1 = __importDefault(require("../../../db/productSchema"));
+const getSearchProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const searchTerm = req.query.q;
+    try {
+        const result = yield productSchema_1.default.find({
+            $or: [
+                { name: { $regex: searchTerm, $options: 'i' } },
+                { description: { $regex: searchTerm, $options: 'i' } },
+                { category: { $regex: searchTerm, $options: 'i' } }
+            ]
+        });
+        if (result.length > 0) {
+            res.status(200).json(result);
         }
-        catch (error) {
-            // Sending error message
-            res.status(500).json({ error: "Internal server error" });
+        else {
+            res.status(404).send("NO such product");
         }
     }
-    else {
-        // Sending error if message is not present
-        res.status(400).json({ error: "Message is required" });
+    catch (error) {
+        res.status(500).json({ error: "Internal server error" });
     }
 });
-exports.default = postContactUsMessage;
+exports.default = getSearchProduct;
