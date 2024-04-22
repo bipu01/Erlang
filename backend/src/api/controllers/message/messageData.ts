@@ -1,13 +1,14 @@
-import ContactUs from "../../../db/models/contactUs.model";
+import ContactUs from "../../../db/models/contactUs";
 import { Response, Request } from "express";
 
 const postContactUsMessage = async (req: Request, res: Response) => {
-    const { message } = req.body;
+    const { message, email } = req.body;
 
     if (message) { // Check if contactUsMessage is present
         try {
             const newContactUsMessage = new ContactUs({
-                message,
+                message:message ,
+                email:email
             })
             console.log(message)
             await newContactUsMessage.save()

@@ -4,6 +4,9 @@ const contactUsSchema = new mongoose.Schema(
     {
         message: {
             type: String
+        },
+        email:{
+            type:String
         }
     },
     { timestamps: true }
