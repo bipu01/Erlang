@@ -26,8 +26,8 @@ export default function ContactUsPage() {
   const sendEmail = async () => {
     try {
       const formData = new FormData();
-      const entireMessage: string = "email: " + email;
-      +" \n" + "message: " + message;
+      const entireMessage: string =
+        "email: " + email + " \n" + "message: " + message;
 
       formData.append("message", entireMessage);
       formData.append("access_key", "c135e344-d3ee-433d-8429-dbcc0dfbb3f9");
