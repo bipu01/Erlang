@@ -32,8 +32,8 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
       <Link to="/product">
         <img
           className="h-100% w-100% object-cover relative z-20 rounded-sm"
-          src={prop.imgSrc}
-          alt={prop.imgSrc}
+          src={prop.img1}
+          alt={prop.img1}
         />
       </Link>
     </div>
@@ -61,8 +61,8 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
       <Link to="/product">
         <img
           className="h-100% sm:h-96%  w-100% object-cover relative z-20 rounded-sm "
-          src={prop.imgSrc}
-          alt={prop.imgSrc}
+          src={prop.img1}
+          alt={prop.img1}
         />
       </Link>
     </div>
@@ -93,7 +93,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
             id="productName"
             className={`relative font-medium z-20 whitespace-normal  ${sizeOfTitleText}`}
           >
-            {prop.ProductName}
+            {prop.name}
           </h3>
           <div
             id="rating"
@@ -107,27 +107,19 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
                 <img src="/icons/filledStar.svg" alt="" className=" sm:h-4" />
                 <img src="/icons/unfilledStar.svg" alt="" className=" sm:h-4" />
               </div>
-              {prop.rating}
+              {prop.ratingRate}
             </div>
             <div>
               <h3
                 id="price"
                 className={`hidden sm:block font-semibold ${productCardNumSize}`}
               >
-                NPR.{prop.price}
+                NPR.{prop.currentPrice}
               </h3>
             </div>
           </div>
           <div className=" overflow-clip h-20vh sm:h-0">
-            <p className="sm:hidden text-xs line-clamp-[8]">
-              Made with premium materials, this dress is not only comfortable
-              but also durable, ensuring that you'll look and feel your best for
-              years to come. Whether you're dressing up for a night out or
-              layering it with leather and chains for a more casual look, this
-              badass brown dress is a must-have for any fashion-for ward
-              wardrobe. Experience the ultimate combination of style and
-              attitude with our latest luxury piece.
-            </p>
+            <p className="sm:hidden text-xs line-clamp-[8]">{prop.desc}</p>
           </div>
         </div>
       </div>
@@ -137,7 +129,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
             id="price"
             className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
           >
-            NPR.{prop.price}
+            NPR.{prop.currentPrice}
           </h3>
           <div className="sm:hidden h-6 w-6 3xl:h-8 3xl:w-8">
             <LikeBtn fillColor="#FFF9EF" />
@@ -161,6 +153,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
 };
 
 export const DataOfLeftImg = (prop: ProductCardProp) => {
+  // console.log({ "From DataOfLeftImg": "", ProductCardProp: prop });
   return (
     <div
       id="product1"
@@ -185,7 +178,7 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
             id="productName"
             className={`relative font-medium z-20 whitespace-normal ${sizeOfTitleText}`}
           >
-            {prop.ProductName}
+            {prop.name}
           </h3>
           <div
             id="rating"
@@ -199,27 +192,19 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
                 <img src="/icons/filledStar.svg" alt="" className=" sm:h-4" />
                 <img src="/icons/unfilledStar.svg" alt="" className=" sm:h-4" />
               </div>
-              {prop.rating}
+              {prop.ratingRate}
             </div>
             <div>
               <h3
                 id="price"
                 className={`hidden sm:block font-semibold ${productCardNumSize}`}
               >
-                NPR.{prop.price}
+                NPR.{prop.currentPrice}
               </h3>
             </div>
           </div>
           <div className=" overflow-clip h-20vh sm:h-0">
-            <p className="sm:hidden text-xs line-clamp-[8]">
-              Made with premium materials, this dress is not only comfortable
-              but also durable, ensuring that you'll look and feel your best for
-              years to come. Whether you're dressing up for a night out or
-              layering it with leather and chains for a more casual look, this
-              badass brown dress is a must-have for any fashion-for ward
-              wardrobe. Experience the ultimate combination of style and
-              attitude with our latest luxury piece.
-            </p>
+            <p className="sm:hidden text-xs line-clamp-[8]">{prop.desc}</p>
           </div>
         </div>
       </div>
@@ -229,7 +214,7 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
             id="price"
             className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
           >
-            NPR.{prop.price}
+            NPR.{prop.currentPrice}
           </h3>
           <div className="sm:hidden h-6 w-6 3xl:h-8 3xl:w-8">
             <LikeBtn fillColor="#FFF9EF" />

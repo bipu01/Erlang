@@ -1,10 +1,16 @@
 export type ProductCardProp ={
     holeColor?:string,
-    ProductName?:string,
-    rating?: number,
-    price?:number,
+    name?:string,
+    desc?:string,
+    priceCurrent?:string,
+    priceOriginal?:string,
+    ratingRate?:number,
+    ratingCount?:number,
     originalPrice?:number,
-    imgSrc?:string
+    currentPrice?:number,
+    img1?:string,
+    img2?:string,
+    img3?:string,
 }
 
 export type buttonProp={
@@ -24,22 +30,30 @@ export interface buttonPropInterface{
 }
 
 export type productClusterProp ={
-    color:string,
+    color?:string,
     leftRow:{
-        id?:string,
-        ProductName?:string,
-        rating?: number,
-        price?:number,
-        originalPrice?:number,
-        imgSrc?:string
+        _id?:string,
+        name?:string,
+        desc?:string,
+        ratingRate:?number,
+        ratingCount?:number,
+        priceOriginal?:number,
+        priceCurrent?:number,
+        img1?:string,
+        img2?:string,
+        img3?:string
     },
     rightRow:{
-        id?:string,
-        ProductName?:string,
-        rating?: number,
-        price?:number,
-        originalPrice?:number,
-        imgSrc?:string
+        _id?:string,
+        name?:string,
+        desc?:string,
+        ratingRate:?number,
+        ratingCount?:number,
+        priceOriginal?:number,
+        priceCurrent?:number,
+        img1?:string,
+        img2?:string,
+        img3?:string
     }
 }
 export interface productClusterPropInterface {
@@ -93,4 +107,50 @@ export interface productProp {
         rate:number,
         count:number
     }
+}
+
+export type productCluster ={
+    leftRow:{
+        _id:string,
+        name:string,
+        price: {original:number, current:number},
+        description: string,
+        image: {
+            image1:string,
+            image2:string,
+            image3:string
+        },
+        rating: { rate: number, count: number },
+        isFeatured: boolean,
+        category:string
+    },
+    rightRow:{
+        _id:string,
+        name:string,
+        price: {original:number, current:number},
+        description: string,
+        image: {
+            image1:string,
+            image2:string,
+            image3:string
+        },
+        rating: { rate: number, count: number },
+        isFeatured: boolean,
+        category:string
+    }
+}
+
+export type individualProduct ={
+    _id:string,
+        name:string,
+        price: {original:number, current:number},
+        description: string,
+        image: {
+            image1:string,
+            image2:string,
+            image3:string
+        },
+        rating: { rate: number, count: number },
+        isFeatured: boolean,
+        category:string
 }
