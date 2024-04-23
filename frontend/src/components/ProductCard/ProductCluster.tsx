@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { productClusterProp } from "../../declare";
 import {
   DataOfLeftImg,

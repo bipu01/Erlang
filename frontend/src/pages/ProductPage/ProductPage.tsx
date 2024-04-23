@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ScrollToTop from "../../Functions/ScrollToTop";
 import { LikeBtn } from "../../SVG/LikeBtn";
 import Star from "../../SVG/Star";
 import { AddToCartButton, BuyNowBtn } from "../../components/Buttons/Buttons";
 import { paddingForPage, priceTextSizeInPreviewPage } from "../../defineSize";
-import { individualProduct } from "../../declare";
+// import { individualProduct } from "../../declare";
 import { product, rootStore } from "../../store/type";
 import { useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
