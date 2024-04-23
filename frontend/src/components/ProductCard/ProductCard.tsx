@@ -8,14 +8,24 @@ import {
   sizeOfTitleText,
 } from "../../defineSize";
 import { AddToCartButton } from "../Buttons/Buttons";
-import { openProductMenu } from "./productHardHandler";
+import { useDispatch } from "react-redux";
+import { addOpenedProduct } from "../../store/openedPostSlice";
+
+// import { openProductMenu } from "./productHardHandler";
 
 export const ProductCardLeftImg = (prop: ProductCardProp) => {
+  const dispatchOpened = useDispatch();
+
+  const dispatchOpenedProduct = () => {
+    dispatchOpened(addOpenedProduct(prop));
+    console.log(prop);
+  };
+
   return (
     <div
-      id="product1"
+      id={"img" + prop._id}
       className=" row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 relative sm:shadow-customRight hover:cursor-pointer "
-      onClick={openProductMenu}
+      onClick={dispatchOpenedProduct}
     >
       <div className="absolute z-30 -top-3% 4xl:-top-2% flex w-100% gap-30% left-25%">
         <div
@@ -40,11 +50,16 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
   );
 };
 export const ProductCardRightImg = (prop: ProductCardProp) => {
+  const dispatchOpened = useDispatch();
+  const dispatchOpenedProduct = () => {
+    dispatchOpened(addOpenedProduct(prop));
+    console.log(prop);
+  };
   return (
     <div
-      id="product2"
+      id={"img" + prop._id}
       className="row-span-2  sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 relative mb-6 hover:cursor-pointer"
-      onClick={openProductMenu}
+      onClick={dispatchOpenedProduct}
     >
       <div className="absolute z-30 -bottom-3% sm:bottom-1% flex w-100% gap-30% left-25%">
         <div
@@ -72,11 +87,11 @@ export const ProductCardRightImg = (prop: ProductCardProp) => {
 export const DataOfRightImg = (prop: ProductCardProp) => {
   return (
     <div
-      id="product2"
+      id={prop._id}
       className={`row-span-2 sm:row-span-1 shadow-customLeft relative z-0 bg-bodybg px-7% sm:pr-3% sm:pl-20% py-10% sm:py-4%  hover:cursor-pointer
         flex flex-col justify-between rounded-tr-3xl rounded-br-3xl sm:rounded-tl-full sm:rounded-bl-full
       after:content-[''] after:absolute after:-bottom-0 after:shadow-customLeft after:right-100% sm:after:left-100% after:h-100% after:w-180% after:bg-bodybg`}
-      onClick={openProductMenu}
+      // onClick={}
     >
       <div
         className={`space-y-2 xl:space-y-0 after:absolute after:content-[''] after:h-0.5 after:w-90% after:hidden sm:after:block 
@@ -156,11 +171,11 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
   // console.log({ "From DataOfLeftImg": "", ProductCardProp: prop });
   return (
     <div
-      id="product1"
+      id={prop._id}
       className={`row-span-2 sm:row-span-1  shadow-customRight relative z-0 bg-bodybg px-7% sm:py-4% flex flex-col justify-between hover:cursor-pointer
       sm:pl-3% sm:pr-20% py-10% rounded-tr-3xl rounded-br-3xl rounded-md sm:rounded-tr-full sm:rounded-br-full 
       after:content-[''] after:absolute after:-top-0 after:shadow-customRight after:right-100% after:h-100% after:w-180% after:bg-bodybg`}
-      onClick={openProductMenu}
+      // onClick={openProductMenu}
     >
       <div
         className={`space-y-2 xl:space-y-0 after:absolute after:content-[''] after:h-0.5 after:w-90% after:hidden sm:after:block

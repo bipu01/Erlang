@@ -88,26 +88,19 @@ const PostProducts = () => {
   const uploadAllData = async () => {
     if (name != "" && description != "" && price != null && image1 != null) {
       setPostStatus(1); //Uploads the image selected by the user
-      const res = await axios.post(`http://localhost:3000/api/postProduct`, {
+      await axios.post(`http://localhost:3000/api/postProduct`, {
         name: name,
-
+        description: description,
         currentPrice: price.currentPrice,
         originalPrice: price.originalPrice,
-
-        description: description,
-
-        image1: imgURL1 ?? "img1",
-        image2: imgURL2 ?? "img2",
-        image3: imgURL3 ?? "img3",
-
-        rating: {
-          rate: 0,
-          count: 0,
-        },
+        img1: imgURL1 ?? "img1",
+        img2: imgURL2 ?? "img2",
+        img3: imgURL3 ?? "img3",
+        ratingRate: 0,
+        ratingCount: 0,
         category: category,
         isFeatured: isFeatured,
       });
-      console.log(res.data);
       console.log("upload all data is fired ");
     } else {
       setPostStatus(0);
@@ -117,7 +110,6 @@ const PostProducts = () => {
   // It checks if the form is filled and help to throw dialouge box
   const handleSubmit = async () => {
     await Promise.all([uploadAndGetImgURL()]);
-    console.log("handle submit is fired");
     await uploadAllData();
     setPrice({ originalPrice: 0, currentPrice: 0 });
     setName("");
