@@ -96,9 +96,9 @@ const PostProducts = () => {
 
         description: description,
 
-        image1: imgURL1,
-        image2: imgURL2,
-        image3: imgURL3,
+        image1: imgURL1 ?? "img1",
+        image2: imgURL2 ?? "img2",
+        image3: imgURL3 ?? "img3",
 
         rating: {
           rate: 0,
@@ -119,6 +119,13 @@ const PostProducts = () => {
     await Promise.all([uploadAndGetImgURL()]);
     console.log("handle submit is fired");
     await uploadAllData();
+    setPrice({ originalPrice: 0, currentPrice: 0 });
+    setName("");
+    setDescription("");
+    // setImage1(undefined);
+    // setImage2(undefined);
+    // setImage3(undefined);
+    setIsFeatured(false);
   };
 
   useEffect(() => {

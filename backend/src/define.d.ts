@@ -28,6 +28,7 @@ export type productCluster ={
         category:String
     }
 }
+
 export type productList ={
     _id:String,
     name:String,

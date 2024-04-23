@@ -1,17 +1,38 @@
-import { useEffect } from "react";
 import Dresses from "./Dresses";
 import Footwear from "./Footwear";
 import Jewellery from "./Jewellery";
 import axios from "axios";
 import config from "../../../config/config";
+import { useDispatch } from "react-redux";
+import { addDress } from "../../../store/dressFeaturedSlice";
+import { addJewellery } from "../../../store/jewelleryFeaturedSlice";
+import { addFootwear } from "../../../store/footwearFeaturedSlice";
+import { useEffect } from "react";
 
 const CategorySegment = () => {
+  const dispatchDress = useDispatch();
+  const dispatchJewellery = useDispatch();
+  const dispatchFootwear = useDispatch();
+
   const getAllFeaturedProducts = async () => {
-    const allFeaturedProducts = await axios.get(
+    const alFeaturedlDress = await axios.get(
+      config.backendURL + "getEveryFeatured/"
+    );
+    const allFeaturedJewellery = await axios.get(
+      config.backendURL + "getEveryFeatured/"
+    );
+    const allFeaturedFootwear = await axios.get(
       config.backendURL + "getEveryFeatured/"
     );
 
-    console.log(allFeaturedProducts.data.featuredDressCluster);
+    dispatchDress(addDress(alFeaturedlDress.data.featuredDressCluster));
+
+    dispatchJewellery(
+      addJewellery(allFeaturedJewellery.data.featuredJewelleryCluster)
+    );
+    dispatchFootwear(
+      addFootwear(allFeaturedFootwear.data.featuredFootwearCluster)
+    );
   };
 
   useEffect(() => {
