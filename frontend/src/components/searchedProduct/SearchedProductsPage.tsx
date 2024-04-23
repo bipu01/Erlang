@@ -5,6 +5,7 @@ import { paddingForPage } from "../../defineSize";
 export default function SearchedProductsPage() {
     const location = useLocation();
     const [searchTerm, setSearchTerm] = useState<string>("");
+    const searchedProducts: any[] = location.state?.searchedProducts || [];
 
     useEffect(() => {
         const params = new URLSearchParams(location.search);
@@ -14,9 +15,6 @@ export default function SearchedProductsPage() {
         }
     }, [location.search]);
 
-    const searchedProducts: any[] = location.state?.searchedProducts || [];
-    console.log(searchedProducts)
-
     return (
         <div className={`${paddingForPage}`}>
             <div className="mt-5">
@@ -25,13 +23,13 @@ export default function SearchedProductsPage() {
             <div className=" my-4">
                 <p className="text-xl text-black">{searchedProducts.length} items found for " {searchTerm} "</p>
             </div>
-            <div className="">
+            <div className="" >
                 {searchedProducts.length > 0 ? (
-                    <div className="flex flex-wrap justify-between rounded-lg">
+                    <div className="flex flex-wrap justify-between rounded-lg" >
                         {searchedProducts.map((product, index) => (
                             <div className="bg-gray-200 rounded-lg" key={index}>
                                 <div className="flex flex-col">
-                                    <div className="">
+                                    <div className="" >
                                         <img className='w-60 h-80 object-cover rounded-md' src={product.image.image1} alt="" />
                                     </div>
                                     <div className=" w-60">
