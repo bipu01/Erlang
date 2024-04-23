@@ -27,21 +27,15 @@ const getEveryFeatured = async (req: Request, res: Response) => {
       featuredDressCluster[i] = {
         _id: element._id.toString(),
         "name": element.name || "",
-        "description": element.description || "",
-        "price": {
-          "current": element.price?.currentPrice,
-          "original": element.price?.originalPrice,
-        },
-        "image":{
-            "image1": element.image?.image1 || "",
-            "image2": element.image?.image2 || "",
-            "image3": element.image?.image3 || "",
-        },
+        "desc": element.description || "",
+        "priceCurrent":element.priceCurrent||0,
+        "priceOriginal":element.priceOriginal||0,
+        "img1":element.img1||"",
+        "img2":element.img2||"",
+        "img3":element.img3||"",
         "isFeatured": element.isFeatured || false,
-        "rating": {
-          "count": element.rating?.count || 0,
-          "rate": element.rating?.rate || 0,
-        },
+        "ratingCount":element.ratingCount||0,
+        "ratingRate":element.ratingRate||0,
         "category": element.category,
       };
       i++;
@@ -52,21 +46,15 @@ const getEveryFeatured = async (req: Request, res: Response) => {
       featuredJewelleryCluster[j] = {
         _id: element._id.toString(),
         "name": element.name || "",
-        "description": element.description || "",
-        "price": {
-          "current": element.price?.currentPrice,
-          "original": element.price?.originalPrice,
-        },
-        "image":{
-            "image1": element.image?.image1 || "",
-            "image2": element.image?.image2 || "",
-            "image3": element.image?.image3 || "",
-        },
+        "desc": element.description || "",
+        "priceCurrent":element.priceCurrent,
+        "priceOriginal":element.priceOriginal,
+        "img1":element.img1,
+        "img2":element.img2||"",
+        "img3":element.img3||"",
         "isFeatured": element.isFeatured || false,
-        "rating": {
-            "count": element.rating?.count || 0,
-            "rate": element.rating?.rate || 0,
-          },
+        "ratingCount":element.ratingCount||0,
+        "ratingRate":element.ratingRate||0,
         "category": element.category,
       };
       j++;
@@ -77,21 +65,15 @@ const getEveryFeatured = async (req: Request, res: Response) => {
       featuredFootwearCluster[j] = {
         _id: element._id.toString(),
         "name": element.name || "",
-        "description": element.description || "",
-        "price": {
-          "current": element.price?.currentPrice,
-          "original": element.price?.originalPrice,
-        },
-        "image":{
-            "image1": element.image?.image1 || "",
-            "image2": element.image?.image2 || "",
-            "image3": element.image?.image3 || "",
-        },
+        "desc": element.description || "",
+        "priceCurrent":element.priceCurrent||0,
+        "priceOriginal":element.priceOriginal||0,
+        "img1":element.img1||"",
+        "img2":element.img2||"",
+        "img3":element.img3||"",
         "isFeatured": element.isFeatured || false,
-        "rating": {
-            "count": element.rating?.count || 0,
-            "rate": element.rating?.rate || 0,
-          },
+        "ratingCount":element.ratingCount||0,
+        "ratingRate":element.ratingRate||0,
         "category": element.category,
       };
       k++;

@@ -31,7 +31,7 @@ export default function Search() {
 
   return (
     <div className=" relative">
-      <div className=" bg-bgLightBlue rounded-2xl overflow-hidden">
+      <div className=" bg-bgLightBlue rounded-md overflow-hidden">
         <form onSubmit={handelSubmit} className=" flex items-center gap-2">
           <input
             type="text"
