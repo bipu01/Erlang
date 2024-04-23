@@ -21,26 +21,26 @@ const Dresses = () => {
           leftRow: {
             _id: allFeaturedDress[i]._id,
             name: allFeaturedDress[i].name,
-            desc: allFeaturedDress[i].description,
-            ratingRate: allFeaturedDress[i].rating.rate,
-            ratingCount: allFeaturedDress[i].rating.count,
-            priceOriginal: allFeaturedDress[i].price.original,
-            priceCurrent: allFeaturedDress[i].price.current,
-            img1: allFeaturedDress[i].image.image1,
-            img2: allFeaturedDress[i].image.image2,
-            img3: allFeaturedDress[i].image.image3,
+            desc: allFeaturedDress[i].desc,
+            ratingRate: allFeaturedDress[i].ratingRate,
+            ratingCount: allFeaturedDress[i].ratingCount,
+            priceOriginal: allFeaturedDress[i].priceOriginal,
+            priceCurrent: allFeaturedDress[i].priceCurrent,
+            img1: allFeaturedDress[i].img1,
+            img2: allFeaturedDress[i].img2,
+            img3: allFeaturedDress[i].img3,
           },
           rightRow: {
             _id: allFeaturedDress[i + 1]._id,
             name: allFeaturedDress[i + 1].name,
-            desc: allFeaturedDress[i + 1].description,
-            ratingRate: allFeaturedDress[i + 1].rating.rate,
-            ratingCount: allFeaturedDress[i + 1].rating.count,
-            priceOriginal: allFeaturedDress[i + 1].price.original,
-            priceCurrent: allFeaturedDress[i + 1].price.current,
-            img1: allFeaturedDress[i + 1].image.image1,
-            img2: allFeaturedDress[i + 1].image.image2,
-            img3: allFeaturedDress[i + 1].image.image3,
+            desc: allFeaturedDress[i + 1].desc,
+            ratingRate: allFeaturedDress[i + 1].ratingRate,
+            ratingCount: allFeaturedDress[i + 1].ratingCount,
+            priceOriginal: allFeaturedDress[i + 1].priceOriginal,
+            priceCurrent: allFeaturedDress[i + 1].priceCurrent,
+            img1: allFeaturedDress[i + 1].img1,
+            img2: allFeaturedDress[i + 1].img2,
+            img3: allFeaturedDress[i + 1].img3,
           },
         };
 
@@ -75,11 +75,6 @@ const Dresses = () => {
         </h1>
         <div id="container" className="grid space-y-16 ">
           {printProductCluster()}
-          {/* <ProductCluster
-            color="blue"
-            leftRow={Dressluster2.leftRow}
-            rightRow={Dressluster2.rightRow}
-          /> */}
         </div>
       </section>
       <PageBreakLine />

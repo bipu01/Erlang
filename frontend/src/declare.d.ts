@@ -1,4 +1,5 @@
 export type ProductCardProp ={
+    _id?:string,
     holeColor?:string,
     name?:string,
     desc?:string,
@@ -35,7 +36,7 @@ export type productClusterProp ={
         _id?:string,
         name?:string,
         desc?:string,
-        ratingRate:?number,
+        ratingRate?:number,
         ratingCount?:number,
         priceOriginal?:number,
         priceCurrent?:number,
@@ -47,7 +48,7 @@ export type productClusterProp ={
         _id?:string,
         name?:string,
         desc?:string,
-        ratingRate:?number,
+        ratingRate?:number,
         ratingCount?:number,
         priceOriginal?:number,
         priceCurrent?:number,
@@ -143,14 +144,14 @@ export type productCluster ={
 export type individualProduct ={
     _id:string,
         name:string,
-        price: {original:number, current:number},
+        priceOriginal:number,
+        priceCurrent:number,
         description: string,
-        image: {
-            image1:string,
-            image2:string,
-            image3:string
-        },
-        rating: { rate: number, count: number },
+        img1:string,
+        img2:string,
+        img3:string,
+        ratingRate:number,
+        ratingCount:number,
         isFeatured: boolean,
         category:string
 }
