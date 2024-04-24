@@ -1,4 +1,6 @@
+// import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+// import { addOpenedProduct } from "../../store/openedPostSlice";
 
 export default function SearchedProductsPage() {
   const location = useLocation();
@@ -22,6 +24,16 @@ export default function SearchedProductsPage() {
     return stars;
   };
 
+  //   const dispatchOpened = useDispatch();
+
+  //   const dispatchOpenedProduct = () => {
+  //     dispatchOpened(addOpenedProduct({}));
+  //     // console.log();
+  //   };
+  const handleClick = () => {
+    console.log(sessionStorage.getItem("searchedProducts"));
+  };
+
   return (
     <div className=" bg-bodybg h-screen ">
       <div className="px-2 sm:px-5 md:px-10 ">
@@ -35,8 +47,9 @@ export default function SearchedProductsPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  gap-10 ">
               {searchedProducts.map((product, index) => (
                 <div
-                  className="bg-bodybg shadow-customSearchProduct rounded-lg  p-2 pb-6 "
+                  className="bg-bodybg shadow-customSearchProduct rounded-lg  p-2 pb-6 hover:cursor-pointer"
                   key={index}
+                  onClick={handleClick}
                 >
                   <div className="rounded-lg w-full ">
                     <div className="h-25rem">
@@ -49,7 +62,7 @@ export default function SearchedProductsPage() {
                   </div>
                   <div className="">
                     <div className="">
-                      <p className=" text-base font-medium pt-4 px-2 text-primaryBlue">
+                      <p className=" text-lg font-semibold pt-4 px-2 text-primaryBlue line-clamp-2">
                         {product.name}
                       </p>
                     </div>
