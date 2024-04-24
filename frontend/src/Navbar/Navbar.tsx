@@ -4,18 +4,20 @@ import Hamburger from "../components/Hamburger";
 
 const Navbar = () => {
   return (
-    <div className=" sticky top-0 z-50">
-      <div className="  flex justify-around sm:justify-between items-center pt-1 px-2 sm:px-5 md:px-10 bg-bodybg">
+    <div className=" sticky top-0 z-50 ">
+      <div className="  flex justify-around sm:justify-between items-center pt-1 px-2 sm:px-5 md:px-10 bg-bodybg ">
         <div className=" flex gap-2 xmd:gap-10 items-center">
+          <Link to={"/"}>
+            <div className=" h-12 sm:h-16 aspect-square">
+              <img
+                className=" h-full w-full object-cover"
+                src="./assets/logo.svg"
+                alt=""
+              />
+            </div>
+          </Link>
           <div className="">
-            <img
-              className=" h-9 aspect-square sm:h-12"
-              src="./assets/logo.svg"
-              alt=""
-            />
-          </div>
-          <div className="">
-            <Search/>
+            <Search />
           </div>
         </div>
         {/* navlinks */}
@@ -35,7 +37,11 @@ const Navbar = () => {
                 <div className="flex gap-1 items-center">
                   <p>Cart</p>
                   <div className=" relative">
-                    <img className=" sm:h-4 xmd:h-6" src="./assets/cart.svg" alt="" />
+                    <img
+                      className=" sm:h-4 xmd:h-6"
+                      src="./assets/cart.svg"
+                      alt=""
+                    />
                     <span className="absolute bg-red-500 rounded-full h-3 aspect-square xmd:text-[10px]  flex items-center justify-center -top-2  -right-2 text-xs xmd:text-lg xmd:h-5 sm:-top-3 sm:-right-2 xmd:-right-3 ">
                       2
                     </span>
@@ -62,31 +68,40 @@ const Navbar = () => {
           </div>
           {/* icons of links to show in mobile screen */}
           <div className=" pl-2">
-              <Link to="/">
-                <div className=" block sm:hidden">
-                  <img className="w-5 aspect-auto" src="/icons/home1.svg" alt="" />
-                </div>
-              </Link>
+            <Link to="/">
+              <div className=" block sm:hidden">
+                <img
+                  className="w-5 aspect-auto"
+                  src="/icons/home1.svg"
+                  alt=""
+                />
+              </div>
+            </Link>
           </div>
           <div className="block sm:hidden relative">
-             <Link to="/cart">
+            <Link to="/cart">
               <img className="w-5 aspect-auto" src="./assets/cart.svg" alt="" />
-                  <span className="absolute bg-red-500 rounded-full h-3 aspect-square text-[10px]  flex items-center  justify-center -top-2  -right-2 sm:text-lg sm:h-5 sm:-top-3 sm:-right-3 ">2
-                  </span>
-             </Link>
+              <span className="absolute bg-red-500 rounded-full h-3 aspect-square text-[10px]  flex items-center  justify-center -top-2  -right-2 sm:text-lg sm:h-5 sm:-top-3 sm:-right-3 ">
+                2
+              </span>
+            </Link>
           </div>
           <div className="block sm:hidden ">
             <Link to="/postProducts">
-              <img className=" w-7 aspect-auto" src="./assets/userr.svg" alt="" />
+              <img
+                className=" w-7 aspect-auto"
+                src="./assets/userr.svg"
+                alt=""
+              />
             </Link>
           </div>
           <div className=" ">
-              <Hamburger/>
-            </div>
+            <Hamburger />
+          </div>
         </div>
       </div>
       <div className=" flex justify-center">
-        <div className=" bg-black opacity-60 w-[95%] h-[1px] sm:h-[2px] "></div>
+        <div className=" bg-black opacity-15 w-[95%] h-[1px] sm:h-[2px] rounded-md "></div>
       </div>
     </div>
   );

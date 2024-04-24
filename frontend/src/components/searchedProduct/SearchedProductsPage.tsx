@@ -1,42 +1,60 @@
 // import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { product } from "../../store/type";
+import Star from "../../SVG/Star";
 // import { addOpenedProduct } from "../../store/openedPostSlice";
 
 export default function SearchedProductsPage() {
-  const location = useLocation();
-  const searchedProducts: any[] = location.state?.searchedProducts || [];
+  // const location = useLocation();
+  // const searchedProducts: any[] = location.state?.searchedProducts || [];
+  const searchedProducts = JSON.parse(
+    sessionStorage.getItem("searchedProducts") || ""
+  );
 
   // showing rating based on the rate
-  const renderStarRating = (starCount: number) => {
+  type Rating = {
+    ratingRate: number;
+    ratingCount: number;
+  };
+  const renderStarRating = (prop: Rating) => {
     const stars = [];
-    const filledStarUrl = "/icons/filledStar.svg";
-    const emptyStarUrl = "/icons/unfilledStar.svg";
-    for (let i = 0; i < 5; i++) {
-      stars.push(
-        <img
-          key={i}
-          src={i < starCount ? filledStarUrl : emptyStarUrl}
-          alt={i < starCount ? "filled star" : "empty star"}
-          className="w-4 h-4"
-        />
-      );
+    for (let i = 0; i < Math.ceil(prop.ratingRate); i++) {
+      stars.push(<Star key={i + 900} />);
     }
+    const emptyStars = 5 - Math.ceil(prop.ratingRate);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<Star key={i} fillColor="transparent" />);
+    }
+    // let int = 123;
     return stars;
   };
 
-  //   const dispatchOpened = useDispatch();
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // console.log(sessionStorage.getItem("searchedProducts"));
+    const sessionSearchedProducts = JSON.parse(
+      sessionStorage.getItem("searchedProducts") || ""
+    );
+    console.log(window.location.href);
+    sessionStorage.setItem(
+      "lastVisitedPage",
+      JSON.stringify(window.location.href)
+    );
 
-  //   const dispatchOpenedProduct = () => {
-  //     dispatchOpened(addOpenedProduct({}));
-  //     // console.log();
-  //   };
-  const handleClick = () => {
-    console.log(sessionStorage.getItem("searchedProducts"));
+    const findClickedProduct = sessionSearchedProducts.filter(
+      (currentValue: product) => {
+        return currentValue._id === e.currentTarget.id;
+      }
+    );
+
+    sessionStorage.setItem(
+      "openedProduct",
+      JSON.stringify(findClickedProduct[0])
+    );
   };
 
   return (
     <div className=" bg-bodybg h-screen ">
-      <div className="px-2 sm:px-5 md:px-10 ">
+      <div className="px-2 sm:px-5 md:px-10 pb-15vh">
         <div className="py-12 pt-16">
           <h1 className="text-2xl font-semibold text-primaryBlue">
             Similar results:
@@ -45,57 +63,61 @@ export default function SearchedProductsPage() {
         <div>
           {searchedProducts.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  gap-10 ">
-              {searchedProducts.map((product, index) => (
-                <div
-                  className="bg-bodybg shadow-customSearchProduct rounded-lg  p-2 pb-6 hover:cursor-pointer"
-                  key={index}
-                  onClick={handleClick}
-                >
-                  <div className="rounded-lg w-full ">
-                    <div className="h-25rem">
-                      <img
-                        className=" w-100% h-100% aspect-square object-cover object-top rounded-lg "
-                        src={product.img1}
-                        alt={product.img1}
-                      />
+              {searchedProducts.map((product: product) => (
+                <Link to={"/product"} key={product._id}>
+                  <div
+                    id={product._id}
+                    className="bg-bodybg shadow-customSearchProduct rounded-lg  p-2 pb-6 hover:cursor-pointer"
+                    onClick={handleClick}
+                  >
+                    <div className="rounded-lg w-full ">
+                      <div className="h-25rem">
+                        <img
+                          className=" w-100% h-100% aspect-square object-cover object-top rounded-lg "
+                          src={product.img1}
+                          alt={product.img1}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="">
                     <div className="">
-                      <p className=" text-lg font-semibold pt-4 px-2 text-primaryBlue line-clamp-2">
-                        {product.name}
-                      </p>
-                    </div>
-                    <div className=" flex justify-between pt-4 px-2">
-                      <div className=" flex gap-4 opacity-70 items-center ">
-                        <div className=" flex gap-1">
-                          {renderStarRating(product.ratingRate)}
-                        </div>
-                        <p className=" text-base font-bold opacity-100 text-primaryBlue">
-                          {product.ratingCount}
+                      <div className="">
+                        <p className=" text-lg font-semibold pt-4 px-2 text-primaryBlue line-clamp-2">
+                          {product.name}
                         </p>
                       </div>
-                      <div className="text-base font-medium opacity-70">
-                        <p className=" "> NPR {product.priceCurrent}</p>
+                      <div className=" flex justify-between pt-4 px-2">
+                        <div className=" flex gap-4 opacity-70 items-center ">
+                          <div className=" flex gap-1">
+                            {renderStarRating({
+                              ratingRate: product.ratingRate,
+                              ratingCount: product.ratingCount,
+                            } as Rating)}
+                          </div>
+                          <p className=" text-base font-bold opacity-100 text-primaryBlue">
+                            {product.ratingCount}
+                          </p>
+                        </div>
+                        <div className="text-base font-medium opacity-70">
+                          <p className=" "> NPR {product.priceCurrent}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (
-            <div className="flex mt-52 ml-96">
-              <div className="flex flex-col items-center">
-                <h1 className="text-6xl font-bold text-center mx-16">
-                  Sorry!!
-                </h1>
-                <h1 className="text-6xl font-bold text-center mx-16">
-                  No such product...
-                </h1>
-              </div>
+            <div className="mt-16">
+              <h1 className="text-2xl font-medium text-center text-primaryBlue opacity-40">
+                Sorry!! <br />
+                No such product
+              </h1>
             </div>
           )}
         </div>
+      </div>
+      <div>
+        <div className="w-100vw h-2 bg-black opacity-15 z-20"></div>
       </div>
     </div>
   );

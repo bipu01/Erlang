@@ -37,6 +37,10 @@ const CategorySegment = () => {
 
   useEffect(() => {
     getAllFeaturedProducts();
+    sessionStorage.setItem(
+      "lastVisitedPage",
+      JSON.stringify(window.location.href)
+    );
   }, []);
 
   return (

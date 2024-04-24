@@ -4,27 +4,36 @@ import { LikeBtn } from "../../SVG/LikeBtn";
 import Star from "../../SVG/Star";
 import { AddToCartButton, BuyNowBtn } from "../../components/Buttons/Buttons";
 import { paddingForPage, priceTextSizeInPreviewPage } from "../../defineSize";
-// import { individualProduct } from "../../declare";
-import { product, rootStore } from "../../store/type";
-import { useSelector } from "react-redux";
-// import { useSelector } from "react-redux";
+import { product } from "../../store/type";
+import BackArrow from "../../SVG/BackArrow";
+import { Link } from "react-router-dom";
 
 const ProductPage = () => {
   // const [img, setImg] = useState("");
-
-  const openedPost: product = useSelector(
-    (state: rootStore) => state.openedPost[0]
+  const openedProduct: product = JSON.parse(
+    sessionStorage.getItem("openedProduct") || ""
   );
 
   const printPreviewPage = () => {
-    if (openedPost) {
+    const lastVisitedPage = JSON.parse(
+      sessionStorage.getItem("lastVisitedPage") || ""
+    );
+    if (openedProduct) {
       return (
-        <div className={`bg-bgLightBlue py-4 sm:py-16 ${paddingForPage}`}>
+        <div
+          className={`relative bg-bgLightBlue py-4 sm:py-16 sm:pt-16 ${paddingForPage}`}
+        >
           <ScrollToTop />
-          <div className="grid grid-rows-2 sm:grid-cols-5">
-            <div className="relative sm:col-span-2 h-60vh lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
+
+          <Link to={`${lastVisitedPage}`}>
+            <div className="absolute left-6 top-8 sm:left-8 sm:top-4 z-30">
+              <BackArrow height={32} width={32} borderThickness={3} />
+            </div>
+          </Link>
+          <div className=" grid grid-rows-2 sm:grid-cols-5">
+            <div className="relative sm:col-span-2 h-60vh min-w-15rem lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
               <img
-                src={openedPost.img1}
+                src={openedProduct.img1}
                 alt="productImage"
                 className="w-100% h-100% object-cover rounded-sm"
               />
@@ -41,12 +50,12 @@ const ProductPage = () => {
                   <h3
                     className={`relative font-medium sm:font-semibold z-20 whitespace-normal text-lg sm:text-2xl lg:text-2xl 2xl:text-4xl `}
                   >
-                    {openedPost.name || `Heading Loading...`}
+                    {openedProduct.name || `Heading Loading...`}
                   </h3>
                 </div>
                 <div className=" text-xs sm:text-base">
                   <p className={` font-medium opacity-70 line-clamp-5`}>
-                    {openedPost.desc || `Description loading....`}
+                    {openedProduct.desc || `Description loading....`}
                   </p>
                 </div>
                 <div
@@ -64,15 +73,20 @@ const ProductPage = () => {
                     />
                   </div>
                   <h3 className={` text-sm sm:text-2xl 2xl:text-2xl`}>
-                    {openedPost.ratingRate}
+                    {openedProduct.ratingRate}
                   </h3>
                 </div>
               </div>
 
               <div className="w-100%  space-y-6 sm:space-y-8">
-                <div className="flex items-center justify-between">
-                  <h3 id="price" className={`${priceTextSizeInPreviewPage}`}>
-                    NPR.{openedPost.priceCurrent || `Price Loading...`}
+                <div className="flex items-center gap-2">
+                  <h3
+                    className={`${priceTextSizeInPreviewPage} line-through opacity-70`}
+                  >
+                    {"NPR. " + openedProduct.priceOriginal}
+                  </h3>
+                  <h3 className={`${priceTextSizeInPreviewPage}`}>
+                    NPR. {openedProduct.priceCurrent || `Price Loading...`}
                   </h3>
                 </div>
 
@@ -101,7 +115,6 @@ const ProductPage = () => {
   useEffect(() => {
     printPreviewPage();
   }, []);
-
   return printPreviewPage();
 };
 

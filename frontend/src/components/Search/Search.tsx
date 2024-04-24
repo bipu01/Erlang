@@ -15,19 +15,13 @@ export default function Search() {
 
   const handelSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const res = await axios.get(
-        `http://localhost:3000/api/search/searchProduct?q=${searchTerm}`
-      );
-      if (res.status === 200) {
-        navigate(`/searchedProducts?searchTerm=${searchTerm}`, {
-          state: { searchedProducts: res.data },
-        }); //sending searcheddata to the next page in the url as state
-        sessionStorage.setItem("searchedProducts", JSON.stringify(res.data));
-      }
-    } catch (error) {
-      console.log("error finding product:", error);
-    }
+    const res = await axios.get(
+      `http://localhost:3000/api/search/searchProduct?q=${searchTerm}`
+    );
+    navigate(`/searchedProducts?searchTerm=${searchTerm}`, {
+      state: { searchedProducts: res.data },
+    }); //sending searcheddata to the next page in the url as state
+    sessionStorage.setItem("searchedProducts", JSON.stringify(res.data));
   };
 
   return (

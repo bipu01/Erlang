@@ -8,24 +8,19 @@ import {
   sizeOfTitleText,
 } from "../../defineSize";
 import { AddToCartButton } from "../Buttons/Buttons";
-import { useDispatch } from "react-redux";
-import { addOpenedProduct } from "../../store/openedPostSlice";
 
 // import { openProductMenu } from "./productHardHandler";
 
 export const ProductCardLeftImg = (prop: ProductCardProp) => {
-  const dispatchOpened = useDispatch();
-
-  const dispatchOpenedProduct = () => {
-    dispatchOpened(addOpenedProduct(prop));
-    console.log(prop);
+  const sendToSessionToken = () => {
+    sessionStorage.setItem("openedProduct", JSON.stringify(prop));
   };
 
   return (
     <div
       id={"img" + prop._id}
       className=" row-span-2 sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 mt-6 relative sm:shadow-customRight hover:cursor-pointer "
-      onClick={dispatchOpenedProduct}
+      onClick={sendToSessionToken}
     >
       <div className="absolute z-30 -top-3% 4xl:-top-2% flex w-100% gap-30% left-25%">
         <div
@@ -50,16 +45,14 @@ export const ProductCardLeftImg = (prop: ProductCardProp) => {
   );
 };
 export const ProductCardRightImg = (prop: ProductCardProp) => {
-  const dispatchOpened = useDispatch();
-  const dispatchOpenedProduct = () => {
-    dispatchOpened(addOpenedProduct(prop));
-    console.log(prop);
+  const sendToSessionToken = () => {
+    sessionStorage.setItem("openedProduct", JSON.stringify(prop));
   };
   return (
     <div
       id={"img" + prop._id}
       className="row-span-2  sm:row-span-2 col-span-3 sm:col-span-1 bg-slate-500 relative mb-6 hover:cursor-pointer"
-      onClick={dispatchOpenedProduct}
+      onClick={sendToSessionToken}
     >
       <div className="absolute z-30 -bottom-3% sm:bottom-1% flex w-100% gap-30% left-25%">
         <div
