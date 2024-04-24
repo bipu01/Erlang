@@ -3,18 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function Hamburger() {
     const [show, setShow] = useState<boolean>(false);
-    // const displayRef = useRef<HTMLDivElement>(null);
 
-    // const checkoutsideBox = (e: MouseEvent) => {
-    //     if (show && displayRef.current && !displayRef.current.contains(e.target as Node)) {
-    //         setShow(false);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     document.addEventListener('mousedown', checkoutsideBox);
-    // });
-
+    const handelHamClick=()=>{
+        setShow(!show)
+    }
     // Define an array of menu items
     const menuItems = [
         { link: "/", icon: "/icons/back.png", text: "" },
@@ -23,31 +15,36 @@ export default function Hamburger() {
         { link: "/aboutUs", icon: "/icons/about2.png", text: "About us" },
         { link: "/", icon: "/icons/profile.png", text: "Profile" },
         { link: "/cart", icon: "/icons/tick.png", text: "My orders" },
-        { link: "/login", icon: "/icons/logout.png", text: "Logout" },
+        { link: "/login", icon: "/icons/exit.png", text: "Logout"  },
     ];
 
     return (
         <>
             {/* Hamburger */}
-            <div className="flex flex-col gap-1 xmd:gap-2 cursor-pointer relative" onClick={() => setShow(!show)}>
+            <div className="flex flex-col gap-1 xmd:gap-2 cursor-pointer relative" onClick={handelHamClick}>
                 <div className="bg-black w-8 h-1 rounded-xl"></div>
                 <div className="bg-black w-8 h-1 rounded-xl"></div>
                 <div className="bg-black w-8 h-1 rounded-xl"></div>
             </div>
+            
             {/* lists */}
-            <div className={`text-sm flex flex-col gap-4 font-semibold sm:text-xl w-64 p-5 absolute right-0 top-14 shadow-2xl bg-bodybg ${show ? "block":"hidden"}`} >
+            <div className={`w-full h-screen backdrop-brightness-75 absolute left-0
+            top-14 ${show ? "block":"hidden"}`} onClick={handelHamClick}>
+                <div className={`text-sm flex flex-col gap-4 font-semibold sm:text-xl w-64 p-5 absolute right-0 top-0 shadow-customSearchProduct bg-bodybg `} >
                     {menuItems.map((item , index)=>(
                         <div className="" key={index}>
                             <Link to={item.link}>
-                                <div className=" flex gap-3 pb-2">
+                                <div className=" flex gap-3 pb-2 items-center">
                                     <img className=" h-5 w-5" src={item.icon} alt="" />
-                                    <p>{item.text}</p>
+                                    <p className={`${index === menuItems.length -1 ? "text-red-600":""}`}>{item.text}</p>
                                 </div>
                             </Link>
-                            {index !==menuItems.length -1 && <div className="bg-lineColor w-90% h-[1.5px] rounded-xl"></div>}
+                            {index !== 0 && index !== menuItems.length - 1 && <div className="bg-lineColor w-90% h-[1.5px] rounded-xl"></div>}
                         </div>
                     ))}
                 </div>
+
+            </div>
         </>
     );
 }
