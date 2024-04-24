@@ -72,7 +72,7 @@ const ProductPage = () => {
               <div className="w-100%  space-y-6 sm:space-y-8">
                 <div className="flex items-center justify-between">
                   <h3 id="price" className={`${priceTextSizeInPreviewPage}`}>
-                    Rs.{openedPost.priceCurrent || `Price Loading...`}
+                    NPR.{openedPost.priceCurrent || `Price Loading...`}
                   </h3>
                 </div>
 

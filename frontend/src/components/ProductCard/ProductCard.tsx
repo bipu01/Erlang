@@ -129,7 +129,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
                 id="price"
                 className={`hidden sm:block font-semibold ${productCardNumSize}`}
               >
-                NPR.{prop.currentPrice}
+                NPR.{prop.priceCurrent}
               </h3>
             </div>
           </div>
@@ -144,7 +144,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
             id="price"
             className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
           >
-            NPR.{prop.currentPrice}
+            NPR.{prop.priceCurrent}
           </h3>
           <div className="sm:hidden h-6 w-6 3xl:h-8 3xl:w-8">
             <LikeBtn fillColor="#FFF9EF" />
@@ -214,7 +214,7 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
                 id="price"
                 className={`hidden sm:block font-semibold ${productCardNumSize}`}
               >
-                NPR.{prop.currentPrice}
+                NPR.{prop.priceCurrent}
               </h3>
             </div>
           </div>
@@ -229,7 +229,7 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
             id="price"
             className={`sm:hidden text-lg font-semibold xl:text-2xl ${sizeOfMajorText}`}
           >
-            NPR.{prop.currentPrice}
+            NPR.{prop.priceCurrent}
           </h3>
           <div className="sm:hidden h-6 w-6 3xl:h-8 3xl:w-8">
             <LikeBtn fillColor="#FFF9EF" />
