@@ -21,7 +21,7 @@ export default function Hamburger() {
     return (
         <>
             {/* Hamburger */}
-            <div className="flex flex-col gap-1 xmd:gap-2 cursor-pointer relative" onClick={handelHamClick}>
+            <div className="flex flex-col gap-1 cursor-pointer relative" onClick={handelHamClick}>
                 <div className="bg-black w-8 h-1 rounded-xl"></div>
                 <div className="bg-black w-8 h-1 rounded-xl"></div>
                 <div className="bg-black w-8 h-1 rounded-xl"></div>
