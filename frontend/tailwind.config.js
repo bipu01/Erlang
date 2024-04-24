@@ -6,6 +6,7 @@ export default {
     extend: {
       boxShadow: {
         "customDown": "0px 4px 10px -4px rgba(0, 0, 0, 0.3)",
+        "customSearchProduct": "-2px 2px 8px 1px rgba(0, 0, 0, 0.15)",
         "customLeft": "0px 4px 10px -4px rgba(0, 0, 0, 0.3)",
         "customRight": "0px 4px 10px -4px rgba(0, 0, 0, 0.3)",
       },
