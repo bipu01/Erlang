@@ -75,12 +75,12 @@ export interface productClusterPropInterface {
 }
 
 export type svgProp ={
-    borderColor?:string,
-    fillColor?:string,
-    borderThickness?:number,
-    custom?:string
-    height?:number,
-    width?:number
+    borderColor?:string|"",
+    fillColor?:string|"",
+    borderThickness?:number|1.5,
+    custom?:string|""
+    height?:number|8,
+    width?:number|8
 }
 
 export interface testimonialsPropInterface {
