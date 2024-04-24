@@ -1,66 +1,69 @@
-import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { paddingForPage } from "../../defineSize";
 
 export default function SearchedProductsPage() {
     const location = useLocation();
-    const [searchTerm, setSearchTerm] = useState<string>("");
     const searchedProducts: any[] = location.state?.searchedProducts || [];
 
-    useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        const searchTermParam = params.get("searchTerm");
-        if (searchTermParam) {
-            setSearchTerm(searchTermParam);
-        }
-    }, [location.search]);
-
+    // showing rating based on the rate 
     const renderStarRating = (starCount: number) => {
         const stars = [];
+        const filledStarUrl = '/icons/filledStar.svg';
+        const emptyStarUrl = '/icons/unfilledStar.svg';
         for (let i = 0; i < 5; i++) {
             stars.push(
-                <span key={i} className={i < starCount ? 'text-yellow-500 text-2xl' : 'text-2xl'}>&#9733;</span>
+                <img
+                    key={i}
+                    src={i < starCount ? filledStarUrl : emptyStarUrl}
+                    alt={i < starCount ? 'filled star' : 'empty star'}
+                    className="w-4 h-4"
+                />
             );
         }
         return stars;
     };
     
-
     return (
-        <div className={`${paddingForPage}`}>
-            <div className="mt-5">
-                <h1 className='text-4xl text-center font-medium font-serif'>Searched Items</h1>
-            </div>
-            <div className="my-4">
-                <p className="text-xl text-black">{searchedProducts.length} items found for "{searchTerm}"</p>
-            </div>
-            <div>
-                {searchedProducts.length > 0 ? (
-                    <div className="flex flex-wrap justify-between rounded-lg">
-                        {searchedProducts.map((product, index) => (
-                            <div className="bg-gray-200 rounded-lg" key={index}>
-                                <div className="flex flex-col">
-                                    <div>
-                                        <img className='w-60 h-80 object-cover rounded-md' src={product.image.image1} alt="" />
+        <div className=" bg-bodybg h-screen ">
+            <div  className="px-2 sm:px-5 md:px-10 ">
+                <div className="py-8">
+                    <h1 className='text-2xl font-semibold'>Similar results:</h1>
+                </div>
+                <div >
+                    {searchedProducts.length > 0 ? (
+                        <div className="grid sm:grid-cols-2 xmd:grid-cols-3 xl:grid-cols-4  gap-10 ">
+                            {searchedProducts.map((product, index) => (
+                                <div className="bg-bodybg w-full aspect-auto shadow-2xl rounded-2xl " key={index}>
+                                    <div className=" p-2 rounded-lg w-full ">
+                                        <img className=" w-full aspect-square object-cover object-top rounded-2xl" src={product.img1} alt="" />
                                     </div>
-                                    <div className="w-60">
-                                        <p className='text-lg font-medium text-center py-2'>{product.name}</p>
-                                        <div className="text-center">
-                                        {renderStarRating(product.rating.rate) }
+                                    <div className="">
+                                        <div className="">
+                                            <p className=" text-base font-semibold py-2 px-4">{product.name}</p>
+                                        </div>
+                                        <div className=" flex justify-between py-2 px-4">
+                                            <div className=" flex gap-4 opacity-75 items-center ">
+                                                <div className=" flex gap-1">
+                                                    {renderStarRating(product.ratingRate)}
+                                                </div>
+                                                <p className=" text-base font-bold">{product.ratingCount}</p>
+                                            </div>
+                                            <div className="text-base font-bold opacity-75">
+                                                <p className=" "> NPR {product.priceCurrent}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="flex mt-52 ml-96">
-                        <div className="flex flex-col items-center">
-                            <h1 className='text-6xl font-bold text-center mx-16'>Sorry!!</h1>
-                            <h1 className='text-6xl font-bold text-center mx-16'>No such product...</h1>
+                            ))}
                         </div>
-                    </div>
-                )}
+                    ) : (
+                        <div className="flex mt-52 ml-96">
+                            <div className="flex flex-col items-center">
+                                <h1 className='text-6xl font-bold text-center mx-16'>Sorry!!</h1>
+                                <h1 className='text-6xl font-bold text-center mx-16'>No such product...</h1>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

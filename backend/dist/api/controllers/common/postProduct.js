@@ -17,21 +17,15 @@ const postProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         const product = new productSchema_1.default({
             name: req.body.name,
-            price: {
-                currentPrice: req.body.currentPrice,
-                originalPrice: req.body.originalPrice
-            },
+            priceCurrent: req.body.currentPrice,
+            priceOriginal: req.body.originalPrice,
             description: req.body.description,
-            image: {
-                image1: req.body.image1,
-                image2: req.body.image2,
-                image3: req.body.image3
-            },
+            img1: req.body.img1,
+            img2: req.body.img2,
+            img3: req.body.img3,
             isFeatured: req.body.isFeatured,
-            rating: {
-                rate: 0,
-                count: 0
-            },
+            ratingCount: req.body.ratingCount,
+            ratingRate: req.body.ratingRate,
             category: req.body.category
         });
         product.save();
