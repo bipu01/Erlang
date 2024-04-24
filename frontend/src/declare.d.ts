@@ -79,6 +79,8 @@ export type svgProp ={
     fillColor?:string,
     borderThickness?:number,
     custom?:string
+    height?:number,
+    width?:number
 }
 
 export interface testimonialsPropInterface {
