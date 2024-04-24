@@ -9,40 +9,34 @@ const productSchema = new mongoose_1.default.Schema({
         type: String,
         required: true
     },
-    price: {
-        originalPrice: {
-            type: Number,
-        },
-        currentPrice: {
-            type: Number,
-            required: true
-        },
+    priceOriginal: {
+        type: Number,
+    },
+    priceCurrent: {
+        type: Number,
+        required: true
     },
     description: {
         type: String,
     },
-    image: {
-        image1: {
-            type: String,
-            required: true
-        },
-        image2: {
-            type: String
-        },
-        image3: {
-            type: String
-        },
+    img1: {
+        type: String,
+        required: true
+    },
+    img2: {
+        type: String,
+    },
+    img3: {
+        type: String,
     },
     isFeatured: {
         type: Boolean
     },
-    rating: {
-        rate: {
-            type: Number,
-        },
-        count: {
-            type: Number
-        }
+    ratingRate: {
+        type: Number,
+    },
+    ratingCount: {
+        type: Number
     },
     category: {
         type: String,

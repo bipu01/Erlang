@@ -32,75 +32,54 @@ const getEveryFeatured = (req, res) => __awaiter(void 0, void 0, void 0, functio
         let featuredFootwearCluster = [];
         let i = 0;
         featuredDressList.forEach((element) => {
-            var _a, _b, _c, _d, _e, _f, _g;
             featuredDressCluster[i] = {
                 _id: element._id.toString(),
                 "name": element.name || "",
-                "description": element.description || "",
-                "price": {
-                    "current": (_a = element.price) === null || _a === void 0 ? void 0 : _a.currentPrice,
-                    "original": (_b = element.price) === null || _b === void 0 ? void 0 : _b.originalPrice,
-                },
-                "image": {
-                    "image1": ((_c = element.image) === null || _c === void 0 ? void 0 : _c.image1) || "",
-                    "image2": ((_d = element.image) === null || _d === void 0 ? void 0 : _d.image2) || "",
-                    "image3": ((_e = element.image) === null || _e === void 0 ? void 0 : _e.image3) || "",
-                },
+                "desc": element.description || "",
+                "priceCurrent": element.priceCurrent || 0,
+                "priceOriginal": element.priceOriginal || 0,
+                "img1": element.img1 || "",
+                "img2": element.img2 || "",
+                "img3": element.img3 || "",
                 "isFeatured": element.isFeatured || false,
-                "rating": {
-                    "count": ((_f = element.rating) === null || _f === void 0 ? void 0 : _f.count) || 0,
-                    "rate": ((_g = element.rating) === null || _g === void 0 ? void 0 : _g.rate) || 0,
-                },
+                "ratingCount": element.ratingCount || 0,
+                "ratingRate": element.ratingRate || 0,
                 "category": element.category,
             };
             i++;
         });
         let j = 0;
         featuredJewelleryList.forEach((element) => {
-            var _a, _b, _c, _d, _e, _f, _g;
             featuredJewelleryCluster[j] = {
                 _id: element._id.toString(),
                 "name": element.name || "",
-                "description": element.description || "",
-                "price": {
-                    "current": (_a = element.price) === null || _a === void 0 ? void 0 : _a.currentPrice,
-                    "original": (_b = element.price) === null || _b === void 0 ? void 0 : _b.originalPrice,
-                },
-                "image": {
-                    "image1": ((_c = element.image) === null || _c === void 0 ? void 0 : _c.image1) || "",
-                    "image2": ((_d = element.image) === null || _d === void 0 ? void 0 : _d.image2) || "",
-                    "image3": ((_e = element.image) === null || _e === void 0 ? void 0 : _e.image3) || "",
-                },
+                "desc": element.description || "",
+                "priceCurrent": element.priceCurrent,
+                "priceOriginal": element.priceOriginal,
+                "img1": element.img1,
+                "img2": element.img2 || "",
+                "img3": element.img3 || "",
                 "isFeatured": element.isFeatured || false,
-                "rating": {
-                    "count": ((_f = element.rating) === null || _f === void 0 ? void 0 : _f.count) || 0,
-                    "rate": ((_g = element.rating) === null || _g === void 0 ? void 0 : _g.rate) || 0,
-                },
+                "ratingCount": element.ratingCount || 0,
+                "ratingRate": element.ratingRate || 0,
                 "category": element.category,
             };
             j++;
         });
         let k = 0;
         featuredFootwearList.forEach((element) => {
-            var _a, _b, _c, _d, _e, _f, _g;
             featuredFootwearCluster[j] = {
                 _id: element._id.toString(),
                 "name": element.name || "",
-                "description": element.description || "",
-                "price": {
-                    "current": (_a = element.price) === null || _a === void 0 ? void 0 : _a.currentPrice,
-                    "original": (_b = element.price) === null || _b === void 0 ? void 0 : _b.originalPrice,
-                },
-                "image": {
-                    "image1": ((_c = element.image) === null || _c === void 0 ? void 0 : _c.image1) || "",
-                    "image2": ((_d = element.image) === null || _d === void 0 ? void 0 : _d.image2) || "",
-                    "image3": ((_e = element.image) === null || _e === void 0 ? void 0 : _e.image3) || "",
-                },
+                "desc": element.description || "",
+                "priceCurrent": element.priceCurrent || 0,
+                "priceOriginal": element.priceOriginal || 0,
+                "img1": element.img1 || "",
+                "img2": element.img2 || "",
+                "img3": element.img3 || "",
                 "isFeatured": element.isFeatured || false,
-                "rating": {
-                    "count": ((_f = element.rating) === null || _f === void 0 ? void 0 : _f.count) || 0,
-                    "rate": ((_g = element.rating) === null || _g === void 0 ? void 0 : _g.rate) || 0,
-                },
+                "ratingCount": element.ratingCount || 0,
+                "ratingRate": element.ratingRate || 0,
                 "category": element.category,
             };
             k++;
