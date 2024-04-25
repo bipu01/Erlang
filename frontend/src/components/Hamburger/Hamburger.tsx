@@ -2,19 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Hamburger() {
-  // const displayRef = useRef<HTMLDivElement>(null);
-
-  // const checkoutsideBox = (e: MouseEvent) => {
-  //     if (show && displayRef.current && !displayRef.current.contains(e.target as Node)) {
-  //         setShow(false);
-  //     }
-  // };
-
-  // useEffect(() => {
-  //     document.addEventListener('mousedown', checkoutsideBox);
-  // });
-
-  // Define an array of menu items
 
   const [show, setShow] = useState<boolean>(false);
 
@@ -60,10 +47,8 @@ export default function Hamburger() {
                   <img className=" h-5 w-5" src={item.icon} alt="" />
                   <p
                     className={`${
-                      index === menuItems.length - 1 ? "text-red-600" : ""
-                    }`}
-                  >
-                    {item.text}
+                      index === menuItems.length - 1 ? "text-red-600" : ""}`}>
+                        {item.text}
                   </p>
                 </div>
               </Link>
