@@ -31,7 +31,7 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
   return (
     <>
       <button
-        id={`addToCart` + prop.parentId}
+        id={`addToCart` + prop._id}
         className={`${
           prop.primary
             ? "bg-primaryBlue text-bodybg rounded-md px-3vw sm:px-4 lg:px-5"

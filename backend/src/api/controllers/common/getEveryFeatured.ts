@@ -62,7 +62,7 @@ const getEveryFeatured = async (req: Request, res: Response) => {
 
     let k = 0;
     featuredFootwearList.forEach((element) => {
-      featuredFootwearCluster[j] = {
+      featuredFootwearCluster[k] = {
         _id: element._id.toString(),
         "name": element.name || "",
         "desc": element.description || "",

@@ -101,7 +101,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" flex justify-center">
-        <div className=" bg-black opacity-15 w-[95%] h-[1px] sm:h-[2px] rounded-md "></div>
+        <div className=" bg-black opacity-15 w-[95%] h-[1px] sm:h-[2px] rounded-md -z-10 "></div>
       </div>
     </div>
   );

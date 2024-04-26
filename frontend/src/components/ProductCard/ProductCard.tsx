@@ -149,6 +149,7 @@ export const DataOfRightImg = (prop: ProductCardProp) => {
             <LikeBtn custom="h-6 w-6 " fillColor="#FFF9EF" />
           </div>
           <AddToCartButton
+            _id={prop._id}
             darkBg={true}
             text="Add to cart"
             primary={true}
@@ -234,6 +235,7 @@ export const DataOfLeftImg = (prop: ProductCardProp) => {
             <LikeBtn custom="h-6 w-6 " fillColor="#FFF9EF" />
           </div>
           <AddToCartButton
+            _id={prop._id}
             darkBg={true}
             text="Add to cart"
             primary={true}

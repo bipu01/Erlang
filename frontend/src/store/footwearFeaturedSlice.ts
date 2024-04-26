@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { individualProduct } from "../declare";
 
+
 const initialState:Array<individualProduct>=[]
 
 const footwearFeaturedSlice =createSlice({
-    name:"footwearSlice",
+    name:"footwearFeaturedSlice",
     initialState,
     reducers:{
         addFootwear(state, action){

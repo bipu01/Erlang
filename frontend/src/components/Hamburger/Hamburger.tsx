@@ -47,11 +47,11 @@ export default function Hamburger() {
       {/* lists */}
       <div
         className={`w-full h-screen backdrop-brightness-75 absolute left-0
-            top-14 ${show ? "block" : "hidden"}`}
+            top-12 sm:top-16 ${show ? "block" : "hidden"}`}
         onClick={handelHamClick}
       >
         <div
-          className={`text-sm flex flex-col gap-4 font-semibold sm:text-xl w-64 p-5 absolute right-0 top-0 shadow-customSearchProduct bg-bodybg `}
+          className={` text-sm flex flex-col gap-4 font-semibold sm:text-xl w-64 p-5 absolute right-1vw z-30 top-0 shadow-customSearchProduct bg-bodybg `}
         >
           {menuItems.map((item, index) => (
             <div className="" key={index}>
