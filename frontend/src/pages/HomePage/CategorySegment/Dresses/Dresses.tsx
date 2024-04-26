@@ -14,7 +14,7 @@ const Dresses = () => {
   const printProductCluster = () => {
     //It just consoles log the allFeaturedDress from GlobalState in redux toolkit
     if (allFeaturedDress) {
-      console.log({ "allFeaturedDress": allFeaturedDress });
+      // console.log({ "allFeaturedDress": allFeaturedDress });
 
       for (let i = 0; i < allFeaturedDress.length; i += 2) {
         const pairs: productClusterProp = {
@@ -44,7 +44,7 @@ const Dresses = () => {
           },
         };
 
-        console.log({ "pairs": pairs });
+        // console.log({ "pairs": pairs });
         return (
           <ProductCluster
             key={pairs.leftRow._id}

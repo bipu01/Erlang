@@ -9,15 +9,14 @@ import BackArrow from "../../SVG/BackArrow";
 import { Link } from "react-router-dom";
 
 const ProductPage = () => {
-  // const [img, setImg] = useState("");
   const openedProduct: product = JSON.parse(
     sessionStorage.getItem("openedProduct") || ""
   );
+  const lastVisitedPage = JSON.parse(
+    sessionStorage.getItem("lastVisitedPage") || ""
+  );
 
   const printPreviewPage = () => {
-    const lastVisitedPage = JSON.parse(
-      sessionStorage.getItem("lastVisitedPage") || ""
-    );
     if (openedProduct) {
       return (
         <div
@@ -26,7 +25,7 @@ const ProductPage = () => {
           <ScrollToTop />
 
           <Link to={`${lastVisitedPage}`}>
-            <div className="absolute left-6 top-8 sm:left-8 sm:top-4 z-30">
+            <div className="absolute left-6 top-8 sm:left-8 sm:top-4 z-30 hover:cursor-pointer">
               <BackArrow height={32} width={32} borderThickness={3} />
             </div>
           </Link>

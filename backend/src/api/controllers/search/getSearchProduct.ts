@@ -7,7 +7,7 @@ const getSearchProduct=async(req:Request,res:Response)=>{
         const result = await Product.find({
             $or: [
                 { name: { $regex: searchTerm, $options: 'i' } },
-                { description: { $regex: searchTerm, $options: 'i' } },
+                { desc: { $regex: searchTerm, $options: 'i' } },
                 { category: { $regex: searchTerm, $options: 'i' } }
               ]
         })

@@ -27,7 +27,7 @@ const getEveryFeatured = async (req: Request, res: Response) => {
       featuredDressCluster[i] = {
         _id: element._id.toString(),
         "name": element.name || "",
-        "desc": element.description || "",
+        "desc": element.desc || "",
         "priceCurrent":element.priceCurrent||0,
         "priceOriginal":element.priceOriginal||0,
         "img1":element.img1||"",
@@ -46,7 +46,7 @@ const getEveryFeatured = async (req: Request, res: Response) => {
       featuredJewelleryCluster[j] = {
         _id: element._id.toString(),
         "name": element.name || "",
-        "desc": element.description || "",
+        "desc": element.desc || "",
         "priceCurrent":element.priceCurrent,
         "priceOriginal":element.priceOriginal,
         "img1":element.img1,
@@ -65,7 +65,7 @@ const getEveryFeatured = async (req: Request, res: Response) => {
       featuredFootwearCluster[k] = {
         _id: element._id.toString(),
         "name": element.name || "",
-        "desc": element.description || "",
+        "desc": element.desc || "",
         "priceCurrent":element.priceCurrent||0,
         "priceOriginal":element.priceOriginal||0,
         "img1":element.img1||"",
