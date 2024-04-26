@@ -1,16 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addSearchedProducts } from "../../store/searchedProductSlice";
 
 export default function Search() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState<string>("");
-  //   const [searchedProducts, setSearchedProducts] = useState<Array<any>>([]);
-  //   console.log(searchedProducts);
+  const dispatchSearchedProducts = useDispatch();
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    // setSearchedProducts([]);
   };
 
   const handelSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,10 +18,11 @@ export default function Search() {
     const res = await axios.get(
       `http://localhost:3000/api/search/searchProduct?q=${searchTerm}`
     );
+    dispatchSearchedProducts(addSearchedProducts("Searched again"));
+    sessionStorage.setItem("searchedProducts", JSON.stringify(res.data));
     navigate(`/searchedProducts?searchTerm=${searchTerm}`, {
       state: { searchedProducts: res.data },
-    }); //sending searcheddata to the next page in the url as state
-    sessionStorage.setItem("searchedProducts", JSON.stringify(res.data));
+    });
   };
 
   return (

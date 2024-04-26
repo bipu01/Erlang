@@ -117,7 +117,6 @@ const PostProducts = () => {
     // setImage1(undefined);
     // setImage2(undefined);
     // setImage3(undefined);
-    setIsFeatured(false);
   };
 
   useEffect(() => {

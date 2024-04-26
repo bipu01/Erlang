@@ -4,13 +4,13 @@ import favourateSlice from "./favourateSlice";
 import dressFeaturedSlice from "./dressFeaturedSlice";
 import jewelleryFeaturedSlice from "./jewelleryFeaturedSlice";
 import footwearFeaturedSlice from "./footwearFeaturedSlice";
-import openedPostSlice from "./openedPostSlice";
+import searchedProductSlice from "./searchedProductSlice";
 
 const store = configureStore({
     reducer:{
-        openedPost:openedPostSlice,
         cart:cartSlice,
         favourate: favourateSlice,
+        searchedProducts:searchedProductSlice,
         allFeaturedDress:dressFeaturedSlice,
         allFeaturedJewellery:jewelleryFeaturedSlice,
         allFeaturedFootwear:footwearFeaturedSlice

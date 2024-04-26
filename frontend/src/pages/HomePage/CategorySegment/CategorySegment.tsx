@@ -15,23 +15,26 @@ const CategorySegment = () => {
   const dispatchFootwear = useDispatch();
 
   const getAllFeaturedProducts = async () => {
-    const alFeaturedlDress = await axios.get(
-      config.backendURL + "getEveryFeatured/"
-    );
-    const allFeaturedJewellery = await axios.get(
-      config.backendURL + "getEveryFeatured/"
-    );
-    const allFeaturedFootwear = await axios.get(
+    const allFeaturedlProducts = await axios.get(
       config.backendURL + "getEveryFeatured/"
     );
 
-    dispatchDress(addDress(alFeaturedlDress.data.featuredDressCluster));
+    dispatchDress(addDress(allFeaturedlProducts.data.featuredDressCluster));
 
     dispatchJewellery(
-      addJewellery(allFeaturedJewellery.data.featuredJewelleryCluster)
+      addJewellery(allFeaturedlProducts.data.featuredJewelleryCluster)
     );
     dispatchFootwear(
-      addFootwear(allFeaturedFootwear.data.featuredFootwearCluster)
+      addFootwear(allFeaturedlProducts.data.featuredFootwearCluster)
+    );
+    console.log({
+      "allFeaturedFootwear": allFeaturedlProducts.data.featuredFootwearCluster,
+    });
+    const allFeaturedProducts = [allFeaturedlProducts.data];
+
+    sessionStorage.setItem(
+      "allFeaturedProducts",
+      JSON.stringify(allFeaturedProducts)
     );
   };
 

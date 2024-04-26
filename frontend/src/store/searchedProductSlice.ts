@@ -3,18 +3,18 @@ import { individualProduct } from "../declare";
 
 
 const initialState:Array<individualProduct>=[]
-const openedPoductSlice =createSlice({
+const searchedProductSlice =createSlice({
     name:"openedPostSlice",
     initialState,
     reducers:{
-        addOpenedProduct(state, action){
+        addSearchedProducts(state, action){
             state.push(action.payload)
         },
-        removeOpenedProduct(state){
+        removeSearchedProducts(state){
             state.pop()
         }
     }
 })
 
-export const {addOpenedProduct,removeOpenedProduct}= openedPoductSlice.actions
-export default openedPoductSlice.reducer
+export const {addSearchedProducts,removeSearchedProducts}= searchedProductSlice.actions
+export default searchedProductSlice.reducer

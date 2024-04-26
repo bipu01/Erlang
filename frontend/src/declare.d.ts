@@ -20,12 +20,12 @@ export type buttonProp={
 }
 
 export interface buttonPropInterface{
+    _id?:string
     text:string,
     active?:boolean,
     primary?:boolean,
     darkBg:boolean,
     custom?:string,
-    parentId?:string
 }
 
 export type productClusterProp ={
@@ -102,7 +102,7 @@ export interface productProp {
     id:number,
     title:string,
     price:number,
-    description:string,
+    desc:string,
     image:string,
     rating:{
         rate:number,
@@ -110,36 +110,36 @@ export interface productProp {
     }
 }
 
-export type productCluster ={
-    leftRow:{
-        _id:string,
-        name:string,
-        price: {original:number, current:number},
-        description: string,
-        image: {
-            image1:string,
-            image2:string,
-            image3:string
-        },
-        rating: { rate: number, count: number },
-        isFeatured: boolean,
-        category:string
-    },
-    rightRow:{
-        _id:string,
-        name:string,
-        price: {original:number, current:number},
-        description: string,
-        image: {
-            image1:string,
-            image2:string,
-            image3:string
-        },
-        rating: { rate: number, count: number },
-        isFeatured: boolean,
-        category:string
-    }
-}
+// export type productCluster ={
+//     leftRow:{
+//         _id:string,
+//         name:string,
+//         price: {original:number, current:number},
+//         description: string,
+//         image: {
+//             image1:string,
+//             image2:string,
+//             image3:string
+//         },
+//         rating: { rate: number, count: number },
+//         isFeatured: boolean,
+//         category:string
+//     },
+//     rightRow:{
+//         _id:string,
+//         name:string,
+//         price: {original:number, current:number},
+//         description: string,
+//         image: {
+//             image1:string,
+//             image2:string,
+//             image3:string
+//         },
+//         rating: { rate: number, count: number },
+//         isFeatured: boolean,
+//         category:string
+//     }
+// }
 
 export type individualProduct ={
     _id:string,

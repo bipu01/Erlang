@@ -2,14 +2,12 @@
 import { Link } from "react-router-dom";
 import { product } from "../../store/type";
 import Star from "../../SVG/Star";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 // import { addOpenedProduct } from "../../store/openedPostSlice";
 
 export default function SearchedProductsPage() {
-  // const location = useLocation();
-  // const searchedProducts: any[] = location.state?.searchedProducts || [];
-  const searchedProducts = JSON.parse(
-    sessionStorage.getItem("searchedProducts") || ""
-  );
+  const [searchedProducts, setSearchedProducts] = useState([]);
 
   // showing rating based on the rate
   type Rating = {
@@ -30,11 +28,9 @@ export default function SearchedProductsPage() {
   };
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // console.log(sessionStorage.getItem("searchedProducts"));
     const sessionSearchedProducts = JSON.parse(
       sessionStorage.getItem("searchedProducts") || ""
     );
-    console.log(window.location.href);
     sessionStorage.setItem(
       "lastVisitedPage",
       JSON.stringify(window.location.href)
@@ -51,6 +47,15 @@ export default function SearchedProductsPage() {
       JSON.stringify(findClickedProduct[0])
     );
   };
+  const searchStatus = useSelector((state: Array<product>) => {
+    return state[0];
+  });
+
+  useEffect(() => {
+    setSearchedProducts(
+      JSON.parse(sessionStorage.getItem("searchedProducts") || "")
+    );
+  }, [searchStatus]);
 
   return (
     <div className=" bg-bodybg h-screen ">
@@ -115,9 +120,6 @@ export default function SearchedProductsPage() {
             </div>
           )}
         </div>
-      </div>
-      <div>
-        <div className="w-100vw h-2 bg-black opacity-15 z-20"></div>
       </div>
     </div>
   );

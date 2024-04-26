@@ -5,40 +5,40 @@ import { rootStore } from "../../../../store/type";
 import { productClusterProp } from "../../../../declare";
 
 const Footwear = () => {
-  const allFeaturedDress = useSelector(
+  const allFeaturedFootwear = useSelector(
     (state: rootStore) => state.allFeaturedFootwear[0]
   );
 
   const printProductCluster = () => {
     //It just consoles log the allFeaturedDress from GlobalState in redux toolkit
-    if (allFeaturedDress) {
-      console.log({ "allFeaturedDress": allFeaturedDress });
+    if (allFeaturedFootwear) {
+      console.log({ "allFeaturedFootwear": allFeaturedFootwear });
 
-      for (let i = 0; i < allFeaturedDress.length; i += 2) {
+      for (let i = 0; i < allFeaturedFootwear.length; i += 2) {
         const pairs: productClusterProp = {
           leftRow: {
-            _id: allFeaturedDress[i]._id,
-            name: allFeaturedDress[i].name,
-            desc: allFeaturedDress[i].desc,
-            ratingRate: allFeaturedDress[i].ratingRate,
-            ratingCount: allFeaturedDress[i].ratingCount,
-            priceOriginal: allFeaturedDress[i].priceOriginal,
-            priceCurrent: allFeaturedDress[i].priceCurrent,
-            img1: allFeaturedDress[i].img1,
-            img2: allFeaturedDress[i].img2,
-            img3: allFeaturedDress[i].img3,
+            _id: allFeaturedFootwear[i]._id,
+            name: allFeaturedFootwear[i].name,
+            desc: allFeaturedFootwear[i].desc,
+            ratingRate: allFeaturedFootwear[i].ratingRate,
+            ratingCount: allFeaturedFootwear[i].ratingCount,
+            priceOriginal: allFeaturedFootwear[i].priceOriginal,
+            priceCurrent: allFeaturedFootwear[i].priceCurrent,
+            img1: allFeaturedFootwear[i].img1,
+            img2: allFeaturedFootwear[i].img2,
+            img3: allFeaturedFootwear[i].img3,
           },
           rightRow: {
-            _id: allFeaturedDress[i + 1]._id,
-            name: allFeaturedDress[i + 1].name,
-            desc: allFeaturedDress[i + 1].desc,
-            ratingRate: allFeaturedDress[i + 1].ratingRate,
-            ratingCount: allFeaturedDress[i + 1].ratingCount,
-            priceOriginal: allFeaturedDress[i + 1].priceOriginal,
-            priceCurrent: allFeaturedDress[i + 1].priceCurrent,
-            img1: allFeaturedDress[i + 1].img1,
-            img2: allFeaturedDress[i + 1].img2,
-            img3: allFeaturedDress[i + 1].img3,
+            _id: allFeaturedFootwear[i + 1]._id,
+            name: allFeaturedFootwear[i + 1].name,
+            desc: allFeaturedFootwear[i + 1].desc,
+            ratingRate: allFeaturedFootwear[i + 1].ratingRate,
+            ratingCount: allFeaturedFootwear[i + 1].ratingCount,
+            priceOriginal: allFeaturedFootwear[i + 1].priceOriginal,
+            priceCurrent: allFeaturedFootwear[i + 1].priceCurrent,
+            img1: allFeaturedFootwear[i + 1].img1,
+            img2: allFeaturedFootwear[i + 1].img2,
+            img3: allFeaturedFootwear[i + 1].img3,
           },
         };
 

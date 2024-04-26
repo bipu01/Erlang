@@ -13,7 +13,7 @@ const postProductSchema = new mongoose_1.default.Schema({
         type: Number,
         required: true
     },
-    description: {
+    desc: {
         type: String,
         required: true
     },
