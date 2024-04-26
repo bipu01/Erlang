@@ -10,7 +10,7 @@ export const BuyNowBtn = (prop: buttonPropInterface) => {
         prop.primary
           ? "bg-primaryBlue text-bodybg rounded-md"
           : "bg-bodybg text-primaryBlue rounded-md"
-      } px-3vw sm:px-5vw py-2 sm:py-3 ${sizeOfLessMajorText}  
+      } px-15vw sm:px-5vw ${sizeOfLessMajorText} w-45vw sm:w-auto py-3 sm:py-3
   items-center flex gap-1 sm:gap-2 font-normal sm:font-medium tracking-wider
   whitespace-nowrap`}
     >
@@ -35,10 +35,10 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
         className={`${
           prop.primary
             ? "bg-primaryBlue text-bodybg rounded-md px-3vw sm:px-4 lg:px-5"
-            : "bg-bodybg text-primaryBlue rounded-md py-2 sm:py-3 px-3vw sm:px-4vw "
+            : "bg-bodybg text-primaryBlue rounded-md py-2 sm:py-3 px-10vw sm:px-4vw "
         } ${sizeOfLessMajorText} ${
           prop.custom
-        } py-1 items-center flex gap-1 sm:gap-2 font-medium tracking-wider 
+        } py-1 items-center flex gap-1 sm:gap-2 font-medium tracking-wider w-45vw sm:w-auto 
         whitespace-nowrap`}
         onClick={handleAddToCart}
       >

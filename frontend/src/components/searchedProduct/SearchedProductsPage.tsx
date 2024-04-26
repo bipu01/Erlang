@@ -66,7 +66,7 @@ export default function SearchedProductsPage() {
           </h1>
         </div>
         <div>
-          {searchedProducts.length > 0 ? (
+          {searchedProducts ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  gap-10 ">
               {searchedProducts.map((product: product) => (
                 <Link to={"/product"} key={product._id}>
