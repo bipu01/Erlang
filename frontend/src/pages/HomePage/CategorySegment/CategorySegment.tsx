@@ -27,9 +27,9 @@ const CategorySegment = () => {
     dispatchFootwear(
       addFootwear(allFeaturedlProducts.data.featuredFootwearCluster)
     );
-    console.log({
-      "allFeaturedFootwear": allFeaturedlProducts.data.featuredFootwearCluster,
-    });
+    // console.log({
+    //   "allFeaturedFootwear": allFeaturedlProducts.data.featuredFootwearCluster,
+    // });
     const allFeaturedProducts = [allFeaturedlProducts.data];
 
     sessionStorage.setItem(
