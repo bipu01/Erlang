@@ -11,13 +11,13 @@ export default function AboutUsPage() {
         <ScrollToTop />
         <div className=" mt-2">
           <div className="">
-            <p className=" text-sm sm:text-2xl xmd:text-2xl  text-primaryBlue font-bold py-2 ">
+            <p className=" text-sm sm:text-2xl xmd:text-4xl  text-primaryBlue font-bold py-2 ">
               About us
             </p>
             <div className=" bg-black opacity-20 w-full h-[1px] sm:h-[2px] "></div>
           </div>
           <div className=" w-full py-4">
-            <p className=" text-xs sm:text-sm  xmd:text-base text-primaryBlue break-words">
+            <p className=" text-xs sm:text-sm  xmd:text-lg text-primaryBlue break-words">
               Erlang Fashion Store is your premier destination for stylish
               clothing that combines quality, sustainability, and exceptional
               customer service. With a diverse selection of on-trend apparel, we
@@ -101,7 +101,7 @@ export default function AboutUsPage() {
             <div className=" bg-black opacity-20 w-full h-[1px] sm:h-[2px] "></div>
           </div>
           <div className=" pt-2 sm:pt-4">
-            <p className="text-xs sm:text-sm  xmd:text-base text-primaryBlue break-words">
+            <p className="text-xs sm:text-sm  xmd:text-lg text-primaryBlue break-words ">
               In the digital landscape, Erlang Fashion Store emerged, founded
               with a vision by fashion enthusiasts. Their mission: to offer
               trendy attire that elevates style effortlessly. Rooted in

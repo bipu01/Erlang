@@ -13,22 +13,24 @@ export default function Search() {
     setSearchTerm(e.target.value);
   };
 
-  const handelSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handeSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await axios.get(
       `http://localhost:3000/api/search/searchProduct?q=${searchTerm}`
     );
     dispatchSearchedProducts(addSearchedProducts("Searched again"));
     sessionStorage.setItem("searchedProducts", JSON.stringify(res.data));
+
     navigate(`/searchedProducts?searchTerm=${searchTerm}`, {
       state: { searchedProducts: res.data },
     });
+    window.location.reload();
   };
 
   return (
     <div className=" relative pb-1 sm:pb-0">
       <div className="">
-        <form onSubmit={handelSubmit}>
+        <form onSubmit={handeSubmit}>
           <input
             type="text"
             id="search"

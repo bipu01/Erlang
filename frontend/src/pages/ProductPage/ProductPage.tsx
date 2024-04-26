@@ -23,13 +23,12 @@ const ProductPage = () => {
           className={`relative bg-bgLightBlue py-4 sm:py-16 sm:pt-16 ${paddingForPage}`}
         >
           <ScrollToTop />
-
           <Link to={`${lastVisitedPage}`}>
             <div className="absolute left-6 top-8 sm:left-8 sm:top-4 z-30 hover:cursor-pointer">
               <BackArrow height={32} width={32} borderThickness={3} />
             </div>
           </Link>
-          <div className=" grid grid-rows-2 sm:grid-cols-5">
+          <div className=" grid sm:grid-rows-2 sm:grid-cols-5">
             <div className="relative sm:col-span-2 h-60vh min-w-15rem lg:h-70vh p-1 bg-bodybg rounded-sm shadow-customDown">
               <img
                 src={openedProduct.img1}
@@ -43,7 +42,7 @@ const ProductPage = () => {
               </div>
             </div>
 
-            <div className=" sm:col-span-3 pt-5 sm:pt-0 sm:pl-8 flex flex-col justify-between">
+            <div className=" sm:col-span-3 pt-5 sm:pt-0 sm:pl-8 flex flex-col justify-between gap-6 sm:gap-0">
               <div className=" space-y-5% mb-5% sm:mb-10%">
                 <div>
                   <h3
