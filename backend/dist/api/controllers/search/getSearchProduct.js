@@ -19,7 +19,7 @@ const getSearchProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
         const result = yield productSchema_1.default.find({
             $or: [
                 { name: { $regex: searchTerm, $options: 'i' } },
-                { description: { $regex: searchTerm, $options: 'i' } },
+                { desc: { $regex: searchTerm, $options: 'i' } },
                 { category: { $regex: searchTerm, $options: 'i' } }
             ]
         });
