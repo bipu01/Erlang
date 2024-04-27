@@ -35,7 +35,7 @@ const getEveryFeatured = (req, res) => __awaiter(void 0, void 0, void 0, functio
             featuredDressCluster[i] = {
                 _id: element._id.toString(),
                 "name": element.name || "",
-                "desc": element.description || "",
+                "desc": element.desc || "",
                 "priceCurrent": element.priceCurrent || 0,
                 "priceOriginal": element.priceOriginal || 0,
                 "img1": element.img1 || "",
@@ -53,7 +53,7 @@ const getEveryFeatured = (req, res) => __awaiter(void 0, void 0, void 0, functio
             featuredJewelleryCluster[j] = {
                 _id: element._id.toString(),
                 "name": element.name || "",
-                "desc": element.description || "",
+                "desc": element.desc || "",
                 "priceCurrent": element.priceCurrent,
                 "priceOriginal": element.priceOriginal,
                 "img1": element.img1,
@@ -68,10 +68,10 @@ const getEveryFeatured = (req, res) => __awaiter(void 0, void 0, void 0, functio
         });
         let k = 0;
         featuredFootwearList.forEach((element) => {
-            featuredFootwearCluster[j] = {
+            featuredFootwearCluster[k] = {
                 _id: element._id.toString(),
                 "name": element.name || "",
-                "desc": element.description || "",
+                "desc": element.desc || "",
                 "priceCurrent": element.priceCurrent || 0,
                 "priceOriginal": element.priceOriginal || 0,
                 "img1": element.img1 || "",

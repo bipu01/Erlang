@@ -34,11 +34,11 @@ export const AddToCartButton = (prop: buttonPropInterface) => {
         id={`addToCart` + prop._id}
         className={`${
           prop.primary
-            ? "bg-primaryBlue text-bodybg rounded-md px-3vw sm:px-4 lg:px-5"
-            : "bg-bodybg text-primaryBlue rounded-md py-2 sm:py-3 px-10vw sm:px-4vw "
+            ? "bg-primaryBlue text-bodybg rounded-md px-5vw sm:px-4 lg:px-5  w-full sm:w-auto"
+            : "bg-bodybg text-primaryBlue rounded-md py-1 sm:py-3 px-10vw sm:px-4vw w-45vw sm:w-auto"
         } ${sizeOfLessMajorText} ${
           prop.custom
-        } py-1 items-center flex gap-1 sm:gap-2 font-medium tracking-wider w-45vw sm:w-auto 
+        } py-1 items-center flex gap-1 sm:gap-2 font-medium tracking-wider
         whitespace-nowrap`}
         onClick={handleAddToCart}
       >

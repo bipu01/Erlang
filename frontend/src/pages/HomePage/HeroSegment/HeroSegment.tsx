@@ -12,7 +12,7 @@ export default function HeroSegment() {
         <div className="col-span-4 sm:col-span-2 mt-5 sm:mt-0  max-h-40vh sm:max-h-95vh relative">
           <img
             className=" w-full h-full object-cover object-top  "
-            src="./assets/image1.png "
+            src="./assets/Dress/Co Fall 2019 Fashion Show.jpeg"
             alt=""
           />
           <div className=" absolute top-16 flex flex-col gap-44 sm:gap-64 xl:gap-96 -right-3 sm:-right-4">
