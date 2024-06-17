@@ -16,7 +16,7 @@ const CategorySegment = () => {
 
   const getAllFeaturedProducts = async () => {
     const allFeaturedlProducts = await axios.get(
-      config.backendURL + "getEveryFeatured/"
+      config.backendURL + "/getEveryFeatured"
     );
 
     dispatchDress(addDress(allFeaturedlProducts.data.featuredDressCluster));
