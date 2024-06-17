@@ -1,6 +1,6 @@
 
 const config ={
-    backendURL : `https://erlang.onrender.com/`
+    backendURL : `https://erlang.onrender.com`
 }
 
 export default config
