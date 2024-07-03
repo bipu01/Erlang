@@ -1,6 +1,6 @@
 
 const config ={
-    backendURL : `http://localhost:3000/api`
+    backendURL : `https://erlangbackend-3.onrender.com/api`
 }
 
 export default config
