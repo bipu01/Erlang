@@ -58,18 +58,6 @@ app.use(express_1.default.json());
 app.use(cors(corsOptions));
 const PORT = process.env.PORT;
 
-const allowedOrigins = ["https://erlang.vercel.app/"];
-
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-
 app.get("/", (req, res) => {
   res.json({ message: "Hello from Erlang backend" });
 });

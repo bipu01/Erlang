@@ -13,10 +13,25 @@ import searchRouter from "./api/routes/searchRouter";
 
 const app = express();
 app.use(express.json())
-app.use(cors({
-    origin:`http://localhost:5173`,
-    optionsSuccessStatus: 200 
-}))
+
+// const allowedOrigins = ["https://erlang.vercel.app/"];
+
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
+
+const corsOptions = {
+    origin: "https://erlang.vercel.app/", // Allow only this origin
+    optionsSuccessStatus: 200     // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  app.use(cors(corsOptions));
+  
 
 const PORT = config.port||3000
 
