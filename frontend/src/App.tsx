@@ -13,6 +13,7 @@ import ProductPage from "./pages/ProductPage";
 import PostProducts from "./pages/PostProducts";
 import RootLayout from "./RootLayout";
 import SearchedProduct from "./components/searchedProduct";
+import SignUpPage from "./pages/SignUpPage/SignupPage";
 // import Footer from "./Footer";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contactUs" element={<ContactUsPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="/postProducts" element={<PostProducts />} />
         <Route path="/searchedProducts" element={<SearchedProduct />} />
       </Route>

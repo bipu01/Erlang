@@ -50,20 +50,20 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="">
-              {/* <Link to="/login">
+              <Link to="/login">
                 <img
                   className="h-7 aspect-square sm:h-9"
                   src="./assets/userr.svg"
                   alt=""
                 />
-              </Link> */}
-              <Link to="/postProducts">
+              </Link>
+              {/* <Link to="/postProducts">
                 <img
                   className="h-7 aspect-square sm:h-6 xmd:h-9"
                   src="./assets/userr.svg"
                   alt=""
                 />
-              </Link>
+              </Link> */}
             </div>
           </div>
           {/* icons of links to show in mobile screen */}

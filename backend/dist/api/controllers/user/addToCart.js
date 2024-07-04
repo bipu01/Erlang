@@ -18,7 +18,7 @@ const addToCart = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const mongoClient = new mongodb_1.MongoClient(config_1.default.mongoURI);
     try {
         yield mongoClient.connect();
-        mongoClient.db(config_1.default.database).collection(req.body.category).updateOne({ _id: req.body.id }, { cartItems: req.body.cartItems });
+        yield mongoClient.db(config_1.default.database).collection("users").updateOne({ _id: req.body.id }, { cartItems: req.body.cartItems });
     }
     catch (error) {
         res.json({ message: "something went wrong in addToCart ", error: error });

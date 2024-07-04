@@ -27,13 +27,13 @@ app.use(express.json())
 // };
 
 const corsOptions = {
-    origin: "https://erlang.vercel.app", // Allow only this origin
+    origin: [ 'http://localhost:5173', 'https://erlang.vercel.app'], // Allow only this origin
     optionsSuccessStatus: 200     // Some legacy browsers (IE11, various SmartTVs) choke on 204
   };
   app.use(cors(corsOptions));
   
 
-const PORT = config.port||3000
+const PORT = config.port || 3000
 
 app.get("/",(req,res)=>{
     res.json({message:"Hello from Erlang backend"})
