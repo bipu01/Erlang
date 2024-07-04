@@ -27,7 +27,7 @@ app.use(express.json())
 // };
 
 const corsOptions = {
-    origin: "https://erlang.vercel.app/", // Allow only this origin
+    origin: "https://erlang.vercel.app", // Allow only this origin
     optionsSuccessStatus: 200     // Some legacy browsers (IE11, various SmartTVs) choke on 204
   };
   app.use(cors(corsOptions));
