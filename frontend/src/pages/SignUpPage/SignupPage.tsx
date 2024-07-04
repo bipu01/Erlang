@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { paddingForPage } from "../../defineSize";
+import axios from "axios";
+// import config from "../../config/config";
 
-export default function LoginPage() {
+export default function SignUpPage() {
   const [formdata, setFormdata] = useState({});
 
   const handelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormdata({ ...formdata, [e.target.id]: e.target.value });
   };
 
-  const handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handelSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formdata);
-    alert("submitted");
+    const res = await axios.post(
+      `http://localhost:3000/api/user/signUp`,
+      formdata
+    );
+
+    console.log({ "response": res });
   };
 
   return (
@@ -34,13 +40,23 @@ export default function LoginPage() {
             </div> */}
             <div className=" flex flex-col items-center justify-center gap-8 pt-16">
               <div className="">
-                <p className=" text-4xl text-primaryBlue font-bold">Login</p>
+                <p className=" text-4xl text-primaryBlue font-bold">Sign up</p>
               </div>
               <div className=" flex flex-col gap-3">
                 <form
                   className=" flex flex-col gap-5 items-center "
                   onSubmit={handelSubmit}
                 >
+                  <input
+                    className="text-2xl py-2 px-8 sm:px-16 rounded-lg bg-white text-primaryBlue "
+                    type="text"
+                    required
+                    name=""
+                    id="name"
+                    placeholder="Name"
+                    onChange={handelChange}
+                  />
+
                   <input
                     className="text-2xl py-2 px-8 sm:px-16 rounded-lg bg-white text-primaryBlue "
                     type="email"
@@ -59,22 +75,17 @@ export default function LoginPage() {
                     placeholder="Password"
                     onChange={handelChange}
                   />
-                  <button
-                    className="bg-primaryBlue text-xl rounded-3xl py-2 px-12 mt-4  text-white w-1/2 hover:text-white hover:bg-primaryBlue"
-                    type="submit"
-                  >
-                    Login
-                  </button>
+                  <div className=" flex flex-col  items-center ">
+                    <button
+                      className="bg-primaryBlue w-auto text-xl rounded-3xl py-2 px-12 mt-4  text-white hover:text-white hover:bg-primaryBlue"
+                      type="submit"
+                    >
+                      Sign up
+                    </button>
+                  </div>
                 </form>
 
-                <div className=" flex flex-col items-center">
-                  <Link
-                    className=" border-b-2 text-bodybg opacity-50 border-bodybg"
-                    to=""
-                  >
-                    Forgot Password?
-                  </Link>
-                </div>
+                <div className=" flex flex-col items-center"></div>
                 <div className="flex flex-col items-center py-14">
                   <div className=" flex flex-row justify-center items-center bg-white rounded-md px-4 py-2 gap-2">
                     <img className=" w-8" src="./icons/google.svg" alt="" />
@@ -82,15 +93,12 @@ export default function LoginPage() {
                       Continue with Google
                     </p>
                   </div>
-
                   <p className="text-center mt-4">
                     <span className="opacity-70 text-white">
-                      Not a user? <br />
+                      Already a user? <br />
                     </span>
-                    <Link to={"/signup"}>
-                      <span className="underline text-primaryBlue">
-                        Sign Up
-                      </span>
+                    <Link to={"/login"}>
+                      <span className="underline text-primaryBlue">Log in</span>
                     </Link>
                   </p>
                 </div>
