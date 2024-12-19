@@ -29,9 +29,9 @@ const Navbar = () => {
             <div className="">
               <Link to="/contactUs">Contact us</Link>
             </div>
-            <div className="">
+            {/* <div className="">
               <Link to="/aboutUs">About us</Link>
-            </div>
+            </div> */}
             <div className="">
               <Link to="/cart">
                 <div className="flex gap-1 items-center">

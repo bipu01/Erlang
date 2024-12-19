@@ -25,24 +25,17 @@ const user_1 = __importDefault(require("./api/routes/user"));
 const featuredProductRouter_1 = __importDefault(require("./api/routes/featuredProductRouter"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const searchRouter_1 = __importDefault(require("./api/routes/searchRouter"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
+// import authenticateUser from "./api/middlewares/userJWTAuth";
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-// const allowedOrigins = ["https://erlang.vercel.app/"];
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-// };
+app.use((0, cookie_parser_1.default)());
 const corsOptions = {
-    origin: ['https://erlang.vercel.app', 'http://localhost:5173'], // Allow only this origin
-    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+    origin: ["http://localhost:3000", "https://erlang.vercel.app"], // Allow only this origin
+    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use((0, cors_1.default)(corsOptions));
-const PORT = config_1.default.port || 3000;
+const PORT = 4000 || config_1.default.port;
 app.get("/", (req, res) => {
     res.json({ message: "Hello from Erlang backend" });
 });

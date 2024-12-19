@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Hamburger() {
-
   const [show, setShow] = useState<boolean>(false);
 
   const handelHamClick = () => {
@@ -16,7 +15,7 @@ export default function Hamburger() {
     { link: "/aboutUs", icon: "/icons/about2.png", text: "About us" },
     { link: "/", icon: "/icons/profile.png", text: "Profile" },
     { link: "/cart", icon: "/icons/tick.png", text: "My orders" },
-    { link: "/login", icon: "/icons/exit.png", text: "Logout" },
+    { link: "/signup", icon: "/icons/exit.png", text: "Logout" },
   ];
 
   return (
@@ -47,8 +46,10 @@ export default function Hamburger() {
                   <img className=" h-5 w-5" src={item.icon} alt="" />
                   <p
                     className={`${
-                      index === menuItems.length - 1 ? "text-red-600" : ""}`}>
-                        {item.text}
+                      index === menuItems.length - 1 ? "text-red-600" : ""
+                    }`}
+                  >
+                    {item.text}
                   </p>
                 </div>
               </Link>

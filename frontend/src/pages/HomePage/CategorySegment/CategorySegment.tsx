@@ -16,17 +16,17 @@ const CategorySegment = () => {
 
   const getAllFeaturedProducts = async () => {
     const allFeaturedlProducts = await axios.get(
-      config.backendURL + "/getEveryFeatured"
+      config.backendURL + "/getEveryFeatured",
     );
     // console.log()
 
     dispatchDress(addDress(allFeaturedlProducts.data.featuredDressCluster));
 
     dispatchJewellery(
-      addJewellery(allFeaturedlProducts.data.featuredJewelleryCluster)
+      addJewellery(allFeaturedlProducts.data.featuredJewelleryCluster),
     );
     dispatchFootwear(
-      addFootwear(allFeaturedlProducts.data.featuredFootwearCluster)
+      addFootwear(allFeaturedlProducts.data.featuredFootwearCluster),
     );
     // console.log({
     //   "allFeaturedFootwear": allFeaturedlProducts.data.featuredFootwearCluster,
@@ -35,7 +35,7 @@ const CategorySegment = () => {
 
     sessionStorage.setItem(
       "allFeaturedProducts",
-      JSON.stringify(allFeaturedProducts)
+      JSON.stringify(allFeaturedProducts),
     );
   };
 
@@ -43,7 +43,7 @@ const CategorySegment = () => {
     getAllFeaturedProducts();
     sessionStorage.setItem(
       "lastVisitedPage",
-      JSON.stringify(window.location.href)
+      JSON.stringify(window.location.href),
     );
   }, []);
 
